@@ -1,7 +1,7 @@
+import Homepage from "./pages/Homepage";
+
 function App() {
-  return (
-   <h1 className='bg-[red]'>Yello</h1>
-  );
+  return <Homepage />;
 }
 
 export default App;
