@@ -1,11 +1,11 @@
-import Header from "../components/Header"
+import Header from "../components/Header";
 
 const Homepage = () => {
-return (
-    <div className="bg-black h-screen">
-        <Header />
+  return (
+    <div className="h-screen bg-black">
+      <Header />
     </div>
-)
-}
+  );
+};
 
-export default Homepage
+export default Homepage;
