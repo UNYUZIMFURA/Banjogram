@@ -1,15 +1,15 @@
-import PostInfo from "../Stories/PostInfo";
-import { BsThreeDots } from "react-icons/bs";
+import PostHeader from "./PostHeader";
 
 const Post = () => {
+  const random = Math.random();
   return (
-    <div className="bg-red-300 mt-4 flex min-h-[65vh] w-screen flex-col">
-      <div className="bg-[blue] flex justify-between h-[4rem] items-center px-1">
-        <PostInfo />
-        <BsThreeDots fill="white" size={18} cursor="pointer" />
+    <div className="mt-4 flex h-[80vh] w-screen flex-col bg-[red]">
+      <PostHeader />
+      <div className="h-[62%] w-full rounded-[0.2rem]">
+        <img src={`https://picsum.com/400/400?random=${random}`} alt="" />
       </div>
     </div>
   );
-};
+};   
 
 export default Post;
