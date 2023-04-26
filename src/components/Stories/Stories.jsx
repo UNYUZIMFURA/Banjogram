@@ -5,7 +5,7 @@ const Stories = () => {
   return (
     <div className="flex h-[7rem] items-center overflow-scroll scrollbar-hide">
       {
-        storyNum.map(item => <Story key={item}/>)
+        storyNum.map(item => <Story id={item} key={item}/>)
       }
     </div>
   );

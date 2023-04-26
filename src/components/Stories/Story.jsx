@@ -1,13 +1,17 @@
 import "./styles/story.css";
 
-const Story = () => {
+const Story = (props) => {
   const randomString = Math.random();
   return (
-    <div className="story ml-4 flex h-[4rem] min-w-[4rem]  cursor-pointer">
+    <div
+      className={`story ${
+        props.id == 1 ? "ml-0" : "ml-4"
+      } flex h-[4rem] min-w-[4rem]  cursor-pointer`}
+    >
       <img
         src={`https://picsum.photos/400/400?random=${randomString}`}
         alt="..."
-        className="h-[95%] rounded-full mx-auto my-auto"
+        className="mx-auto my-auto h-[95%] rounded-full"
       />
     </div>
   );
