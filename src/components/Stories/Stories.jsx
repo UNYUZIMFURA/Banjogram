@@ -1,11 +1,11 @@
 import Story from "./Story"
 
 const Stories = () => {
-  const items = [{ id: 1 }, { id: 2 }];
+  const storyNum = [1,2,3,4,5,6,7,8,9,0];
   return (
-    <div className="flex h-[7rem] items-center border border-[#3E4042]">
+    <div className="flex h-[7rem] items-center overflow-scroll scrollbar-hide">
       {
-        items.map(item => <Story key={item.id}/>)
+        storyNum.map(item => <Story key={item}/>)
       }
     </div>
   );

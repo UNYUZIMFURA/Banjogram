@@ -1,11 +1,13 @@
+import "./styles/story.css";
+
 const Story = () => {
   const randomString = Math.random();
   return (
-    <div className="ml-1 h-[4rem] w-[4rem] rounded-full border">
+    <div className="story ml-4 flex h-[4rem] min-w-[4rem]  cursor-pointer">
       <img
         src={`https://picsum.photos/400/400?random=${randomString}`}
-        alt="Loading..."
-        className="rounded-full"
+        alt="..."
+        className="h-[95%] rounded-full mx-auto my-auto"
       />
     </div>
   );
