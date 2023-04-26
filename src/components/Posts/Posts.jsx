@@ -8,7 +8,7 @@ const Posts = () => {
     { id: 4, userName: "kallehallden" },
   ];
   return (
-    <div className="h-screen w-screen bg-green-200">
+    <div className="bg-green-200">
       {posts.map((post) => (
         <Post id={post.id} key={post.id}/>
       ))}
