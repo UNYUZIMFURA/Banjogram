@@ -8,7 +8,7 @@ const Story = (props) => {
         props.id === 1 ? "ml-0" : "ml-4"
       } flex flex-col items-center justify-center gap-2`}
     >
-      <div className={`story  flex h-[4rem] min-w-[4rem] cursor-pointer`}>
+      <div className="story flex h-[4rem] min-w-[4rem] cursor-pointer">
         <img
           src={`https://picsum.photos/400/400?random=${randomString}`}
           alt="..."
