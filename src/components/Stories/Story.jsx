@@ -4,7 +4,7 @@ const Story = (props) => {
   const randomString = Math.random();
   return (
     <div
-      className={`h-[10rem] w-[4rem] ${
+      className={`h-full w-[4rem] ${
         props.id === 1 ? "ml-0" : "ml-4"
       } flex flex-col items-center justify-center gap-2`}
     >
