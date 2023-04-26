@@ -16,7 +16,7 @@ const Stories = () => {
   return (
     <div className="flex h-[7rem] items-center overflow-scroll border px-2 scrollbar-hide">
       {stories.map((item) => (
-        <Story id={item} key={item.id} userName={item.userName} />
+        <Story id={item.id} key={item.id} userName={item.userName} />
       ))}
     </div>
   );

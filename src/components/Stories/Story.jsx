@@ -6,7 +6,7 @@ const Story = (props) => {
     <div
       className={`h-[10rem] w-[4rem] ${
         props.id === 1 ? "ml-0" : "ml-4"
-      } overflow-hidde flex flex-col items-center justify-center gap-2`}
+      } flex flex-col items-center justify-center gap-2`}
     >
       <div className={`story  flex h-[4rem] min-w-[4rem] cursor-pointer`}>
         <img
@@ -14,8 +14,8 @@ const Story = (props) => {
           alt="..."
           className="mx-auto my-auto h-[92%] rounded-full"
         />
-      </div>  
-      <span className="text-white max-w-[4rem] text-[0.7rem] overflow-hidden">
+      </div>
+      <span className="max-w-[4rem] overflow-hidden text-[0.73rem] text-white">
         {props.userName}
       </span>
     </div>
