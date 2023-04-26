@@ -11,7 +11,7 @@ const Story = (props) => {
       <img
         src={`https://picsum.photos/400/400?random=${randomString}`}
         alt="..."
-        className="mx-auto my-auto h-[95%] rounded-full"
+        className="mx-auto my-auto h-[92%] rounded-full"
       />
     </div>
   );
