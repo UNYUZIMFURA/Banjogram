@@ -10,7 +10,7 @@ const Story = (props) => {
     >
       <div className="story flex h-[4rem] min-w-[4rem] cursor-pointer">
         <img
-          src={`https://picsum.photos/400/400?random=${randomString}`}
+          src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
           alt="..."
           className="mx-auto my-auto h-[92%] rounded-full"
         />
