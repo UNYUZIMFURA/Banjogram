@@ -13,6 +13,9 @@ const Post = () => {
           className="h-full w-full object-cover"
         />
       </div>
+      <div className="h-[5rem] w-full bg-blue-200">
+        <div></div>
+      </div>
     </div>
   );
 };
