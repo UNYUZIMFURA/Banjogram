@@ -1,4 +1,8 @@
 import PostHeader from "./PostHeader";
+import { FiHeart } from "react-icons/fi";
+import { FaRegComment } from "react-icons/fa";
+import { TbSend } from "react-icons/tb";
+import { FaRegBookmark } from "react-icons/fa";
 
 const Post = () => {
   const randomString = Math.random();
@@ -13,8 +17,16 @@ const Post = () => {
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="h-[5rem] w-full bg-blue-200">
-        <div></div>
+      <div className="flex h-[5rem] w-full flex-col p-[0.5rem]">
+        <div className="flex items-center justify-between gap-[0.5rem] py-[0.5rem]">
+          <div className="flex gap-4">
+            <FiHeart size={25} color="white" cursor="pointer" />
+            <FaRegComment size={25} color="white" cursor="pointer" />
+            <TbSend size={25} color="white" cursor="pointer" />
+          </div>
+          <FaRegBookmark size={20} color="white" cursor="pointer" />
+        </div>
+        <span className="text-white">19,705 likes</span>
       </div>
     </div>
   );
