@@ -28,7 +28,9 @@ const Post = () => {
         </div>
         <span className="text-white font-semibold text-[0.9rem]">19,705 likes</span>
       </div>
-      <div className="h-[3rem]"></div>
+      <div className="h-[4rem] bg-[green]">
+        <p className="text-[0.8rem] ">433_football @vinijr has the same amount of CL goals for Real Madridas @ronaldo. News came straight from @banjo</p>
+      </div>
       <div></div>
     </div>
   );
