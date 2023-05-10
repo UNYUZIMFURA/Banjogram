@@ -31,7 +31,9 @@ const Post = () => {
       <div className="px-[0.5rem] h-[4rem] bg-[green] overflow-scroll">
         <p className="text-[0.8rem] ">433_football @vinijr has the same amount of CL goals for Real Madridas @ronaldo. News came straight from @banjo</p>
       </div>
-      <div className="h-[4rem] bg-[gray]"></div>
+      <div className="h-[4rem] bg-[gray]">
+        <span>View 5 comments</span>
+      </div>
     </div>
   );
 };
