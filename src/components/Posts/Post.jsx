@@ -26,8 +26,10 @@ const Post = () => {
           </div>
           <FaRegBookmark size={20} color="white" cursor="pointer" />
         </div>
-        <span className="text-white">19,705 likes</span>
+        <span className="text-white font-semibold text-[0.9rem]">19,705 likes</span>
       </div>
+      <div className="h-[3rem]"></div>
+      <div></div>
     </div>
   );
 };
