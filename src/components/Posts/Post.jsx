@@ -44,15 +44,15 @@ const Post = () => {
           @ronaldo. News came straight from @banjo
         </p>
       </div>
-      <div className="flex flex-col gap-2 border-b border-[cyan] px-2 pb-9 pt-2 text-white">
-        <span className="cursor-pointer text-[0.9rem] text-[#5a5a5a]">
+      <div className="flex flex-col gap-2 border-b border-[#303030] px-2 pb-9 pt-2 text-white">
+        <span className="cursor-pointer text-[0.9rem] text-[#9b9b9b]">
           View all 10 comments
         </span>
         <p className="flex items-center justify-between text-[0.9rem]">
           <span>
             <span className="font-bold">ihirwe_olis</span> USA is still #1
           </span>
-          <FiHeart cursor="pointer" />
+          <FiHeart cursor="pointer" className="mr-1" />
         </p>
       </div>
     </div>
