@@ -16,7 +16,7 @@ const Post = () => {
           className=""
         />
       </div>
-      <div className="flex w-full flex-col gap-2 bg-[blue] p-4">
+      <div className="flex w-full flex-col gap-2 p-4">
         <div className="flex items-center justify-between gap-2 py-2">
           <div className="flex gap-4">
             <FiHeart size={25} color="white" cursor="pointer" />
@@ -38,7 +38,7 @@ const Post = () => {
           </span>
         </div>
       </div>
-      <div className="flex items-center overflow-scroll border-b border-green-500 px-2 h-32 scrollbar-hide">
+      <div className="flex items-center overflow-scroll px-2 h-32 scrollbar-hide">
         <p className="text-[0.9rem] text-white">
           433_football @vinijr has the same amount of CL goals for Real Madridas
           @ronaldo. News came straight from @banjo
