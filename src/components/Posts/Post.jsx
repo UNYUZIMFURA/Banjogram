@@ -26,13 +26,19 @@ const Post = () => {
           </div>
           <FaRegBookmark size={20} color="white" cursor="pointer" />
         </div>
-        <span className="text-white font-semibold text-[0.9rem]">19,705 likes</span>
+        <span className="text-[0.9rem] font-semibold text-white">
+          19,705 likes
+        </span>
       </div>
-      <div className="px-[0.5rem] h-[4rem] bg-[green] overflow-scroll">
-        <p className="text-[0.8rem] ">433_football @vinijr has the same amount of CL goals for Real Madridas @ronaldo. News came straight from @banjo</p>
+      <div className="flex h-[5rem] items-center overflow-scroll bg-[green] px-[0.5rem]">
+        <p className="text-[0.8rem] text-white">
+          433_football @vinijr has the same amount of CL goals for Real Madridas
+          @ronaldo. News came straight from @banjo
+        </p>
       </div>
-      <div className="h-[4rem] bg-[gray]">
-        <span>View 5 comments</span>
+      <div className="flex h-[4rem] flex-col bg-[gray]">
+        <span>View all 10 comments</span>
+        <span>iam_chrispin USA is still #1</span>
       </div>
     </div>
   );
