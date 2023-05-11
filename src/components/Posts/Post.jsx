@@ -31,14 +31,14 @@ const Post = () => {
         </span>
       </div>
       <div className="flex h-[5rem] items-center overflow-scroll bg-[green] px-[0.5rem]">
-        <p className="text-[0.8rem] text-white">
+        <p className="leading-[1.2rem] text-[0.9rem] text-white">
           433_football @vinijr has the same amount of CL goals for Real Madridas
           @ronaldo. News came straight from @banjo
         </p>
       </div>
       <div className="flex h-[4rem] flex-col bg-[gray]">
-        <span>View all 10 comments</span>
-        <span>iam_chrispin USA is still #1</span>
+        <span className="text-[0.9rem] cursor-pointer">View all 10 comments</span>
+        <span className="text-[0.8rem]">iam_chrispin USA is still #1</span>
       </div>
     </div>
   );
