@@ -6,7 +6,6 @@ import { FaRegBookmark } from "react-icons/fa";
 
 const Post = () => {
   const randomString = Math.random();
-  console.log(process.env.REACT_APP_IMAGES_ENDPOINT);
   return (
     <div className="mt-4 flex h-[80vh] w-screen flex-col">
       <PostHeader />
@@ -31,13 +30,13 @@ const Post = () => {
         </span>
       </div>
       <div className="flex h-[5rem] items-center overflow-scroll bg-[green] px-[0.5rem]">
-        <p className="leading-[1.2rem] text-[0.9rem] text-white">
+        <p className="text-[0.9rem] leading-[1.2rem] text-white">
           433_football @vinijr has the same amount of CL goals for Real Madridas
           @ronaldo. News came straight from @banjo
         </p>
       </div>
-      <div className="flex h-[4rem] flex-col bg-[gray]">
-        <span className="text-[0.9rem] cursor-pointer">View all 10 comments</span>
+      <div className="flex h-[8rem] flex-col py-2 gap-2 bg-[gray] px-[0.5rem]">
+        <span className="cursor-pointer text-[1rem]">View all 10 comments</span>
         <span className="text-[0.8rem]">iam_chrispin USA is still #1</span>
       </div>
     </div>
