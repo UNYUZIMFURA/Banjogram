@@ -26,7 +26,7 @@ const Post = () => {
           <FaRegBookmark size={20} color="white" cursor="pointer" />
         </div>
         <span className="text-[0.9rem] font-semibold text-white">
-          19,705 likes
+          Liked by @banjo and 109 others
         </span>
       </div>
       <div className="bg-[green] flex p-2 items-center overflow-scroll scrollbar-hide px-[0.5rem]">
@@ -37,7 +37,7 @@ const Post = () => {
       </div>
       <div className="border-b border-[cyan] flex p-5 flex-col gap-2 px-[0.5rem] text-white">
         <span className="cursor-pointer text-[1rem]">View all 10 comments</span>
-        <span className="text-[0.9rem]">iam_chrispin USA is still #1</span>
+        <p className="text-[0.9rem]"><span>ihirwe_olis</span> USA is still #1</p>
       </div>
     </div>
   );
