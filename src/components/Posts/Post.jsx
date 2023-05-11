@@ -44,7 +44,7 @@ const Post = () => {
           @ronaldo. News came straight from @banjo
         </p>
       </div>
-      <div className="flex flex-col gap-1 py-2 pb-7 border-b border-[cyan] px-2 text-white bg-yellow-700">
+      <div className="flex flex-col gap-2 pt-2 pb-9 border-b border-[cyan] px-2 text-white">
         <span className="cursor-pointer text-[0.9rem] text-[gray]">View all 10 comments</span>
         <p className="flex items-center justify-between text-[0.9rem]">
           <span>
