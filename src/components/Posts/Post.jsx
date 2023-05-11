@@ -46,12 +46,12 @@ const Post = () => {
       </div>
       <div className="flex flex-col gap-1 py-1 border-b border-[cyan] px-2 text-white bg-yellow-300">
         <span className="cursor-pointer text-[1rem]">View all 10 comments</span>
-        <div className="flex items-center justify-between text-[0.9rem]">
+        <p className="flex items-center justify-between text-[0.9rem]">
           <span>
             <span className="font-bold">ihirwe_olis</span> USA is still #1
           </span>
           <FiHeart cursor="pointer" />
-        </div>
+        </p>
       </div>
     </div>
   );
