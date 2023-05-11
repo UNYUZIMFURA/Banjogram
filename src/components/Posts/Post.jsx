@@ -38,7 +38,7 @@ const Post = () => {
           </span>
         </div>
       </div>
-      <div className="flex items-center overflow-scroll border-b border-green-500 px-2 py-10 scrollbar-hide">
+      <div className="flex items-center overflow-scroll border-b border-green-500 px-2 h-32 scrollbar-hide">
         <p className="text-[0.9rem] text-white">
           433_football @vinijr has the same amount of CL goals for Real Madridas
           @ronaldo. News came straight from @banjo
