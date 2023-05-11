@@ -9,7 +9,7 @@ const Post = () => {
   return (
     <div className="mt-4 flex h-[80vh] w-screen flex-col">
       <PostHeader />
-      <div className="flex h-[62%] w-full rounded-[0.2rem]">
+      <div className="flex h-[62%] w-full cursor-pointer rounded-[0.2rem]">
         <img
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
           alt=""
@@ -26,7 +26,7 @@ const Post = () => {
           <FaRegBookmark size={20} color="white" cursor="pointer" />
         </div>
         <div className="flex items-center gap-2">
-          <div className="h-5 w-5 rounded-full border cursor-pointer">
+          <div className="h-5 w-5 cursor-pointer rounded-full border">
             <img
               src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
               alt=""
@@ -44,8 +44,10 @@ const Post = () => {
           @ronaldo. News came straight from @banjo
         </p>
       </div>
-      <div className="flex flex-col gap-2 pt-2 pb-9 border-b border-[cyan] px-2 text-white">
-        <span className="cursor-pointer text-[0.9rem] text-[gray]">View all 10 comments</span>
+      <div className="flex flex-col gap-2 border-b border-[cyan] px-2 pb-9 pt-2 text-white">
+        <span className="cursor-pointer text-[0.9rem] text-[#5a5a5a]">
+          View all 10 comments
+        </span>
         <p className="flex items-center justify-between text-[0.9rem]">
           <span>
             <span className="font-bold">ihirwe_olis</span> USA is still #1
