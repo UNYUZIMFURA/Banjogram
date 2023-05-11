@@ -29,13 +29,13 @@ const Post = () => {
           19,705 likes
         </span>
       </div>
-      <div className="flex h-[5rem] items-center overflow-scroll bg-[green] px-[0.5rem]">
-        <p className="text-[0.9rem] leading-[1.2rem] text-white">
+      <div className="flex h-[5rem] items-center overflow-scroll px-[0.5rem]">
+        <p className="text-[0.9rem] text-white">
           433_football @vinijr has the same amount of CL goals for Real Madridas
           @ronaldo. News came straight from @banjo
         </p>
       </div>
-      <div className="border-b border-[black] flex h-[8rem] flex-col py-2 gap-2 bg-[gray] px-[0.5rem]">
+      <div className="border-b border-[cyan] flex h-[8rem] flex-col py-2 gap-2 px-[0.5rem] text-white">
         <span className="cursor-pointer text-[1rem]">View all 10 comments</span>
         <span className="text-[0.9rem]">iam_chrispin USA is still #1</span>
       </div>
