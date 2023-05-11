@@ -13,7 +13,7 @@ const Post = () => {
         <img
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
           alt=""
-          className="h-full w-full object-cover"
+          className=""
         />
       </div>
       <div className="flex h-[5rem] w-full flex-col p-[0.5rem]">
@@ -35,9 +35,9 @@ const Post = () => {
           @ronaldo. News came straight from @banjo
         </p>
       </div>
-      <div className="flex h-[8rem] flex-col py-2 gap-2 bg-[gray] px-[0.5rem]">
+      <div className="border-b border-[black] flex h-[8rem] flex-col py-2 gap-2 bg-[gray] px-[0.5rem]">
         <span className="cursor-pointer text-[1rem]">View all 10 comments</span>
-        <span className="text-[0.8rem]">iam_chrispin USA is still #1</span>
+        <span className="text-[0.9rem]">iam_chrispin USA is still #1</span>
       </div>
     </div>
   );
