@@ -37,7 +37,7 @@ const Post = () => {
       </div>
       <div className="border-b border-[cyan] flex p-5 flex-col gap-2 px-[0.5rem] text-white">
         <span className="cursor-pointer text-[1rem]">View all 10 comments</span>
-        <p className="text-[0.9rem]"><span>ihirwe_olis</span> USA is still #1</p>
+        <p className="text-[0.9rem]"><span className="font-bold">ihirwe_olis</span> USA is still #1</p>
       </div>
     </div>
   );
