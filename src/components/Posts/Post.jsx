@@ -16,8 +16,8 @@ const Post = () => {
           className=""
         />
       </div>
-      <div className="flex w-full flex-col p-[0.5rem]">
-        <div className="flex items-center justify-between gap-[0.5rem] py-[0.5rem]">
+      <div className="flex w-full flex-col bg-[blue] p-2">
+        <div className="flex items-center justify-between gap-2 py-2">
           <div className="flex gap-4">
             <FiHeart size={25} color="white" cursor="pointer" />
             <FaRegComment size={25} color="white" cursor="pointer" />
@@ -25,19 +25,24 @@ const Post = () => {
           </div>
           <FaRegBookmark size={20} color="white" cursor="pointer" />
         </div>
-        <span className="text-[0.9rem] font-semibold text-white">
-          Liked by @banjo and 109 others
-        </span>
+        <div className="flex">
+          <div className="h-4"></div>
+          <span className="text-[0.9rem] font-semibold text-white">
+            Liked by @banjo and 109 others
+          </span>
+        </div>
       </div>
-      <div className="bg-[green] flex p-2 items-center overflow-scroll scrollbar-hide px-[0.5rem]">
+      <div className="flex items-center overflow-scroll bg-[green] p-2 px-2 scrollbar-hide">
         <p className="text-[0.9rem] text-white">
           433_football @vinijr has the same amount of CL goals for Real Madridas
           @ronaldo. News came straight from @banjo
         </p>
       </div>
-      <div className="border-b border-[cyan] flex p-5 flex-col gap-2 px-[0.5rem] text-white">
+      <div className="flex flex-col gap-2 border-b border-[cyan] p-5 px-2 text-white">
         <span className="cursor-pointer text-[1rem]">View all 10 comments</span>
-        <p className="text-[0.9rem]"><span className="font-bold">ihirwe_olis</span> USA is still #1</p>
+        <p className="text-[0.9rem]">
+          <span className="font-bold">ihirwe_olis</span> USA is still #1
+        </p>
       </div>
     </div>
   );
