@@ -25,14 +25,14 @@ const Post = () => {
           </div>
           <FaRegBookmark size={20} color="white" cursor="pointer" />
         </div>
-        <div className="flex">
-          <div className="h-4"></div>
+        <div className="flex items-center gap-2">
+          <div className="h-5 w-5 rounded-full border border-violet-700"></div>
           <span className="text-[0.9rem] font-semibold text-white">
             Liked by @banjo and 109 others
           </span>
         </div>
       </div>
-      <div className="flex items-center overflow-scroll bg-[green] px-2 py-10 scrollbar-hide">
+      <div className="flex items-center overflow-scroll border-b border-green-500 px-2 py-10 scrollbar-hide">
         <p className="text-[0.9rem] text-white">
           433_football @vinijr has the same amount of CL goals for Real Madridas
           @ronaldo. News came straight from @banjo
@@ -40,7 +40,7 @@ const Post = () => {
       </div>
       <div className="flex flex-col gap-2 border-b border-[cyan] p-5 px-2 text-white">
         <span className="cursor-pointer text-[1rem]">View all 10 comments</span>
-        <div className="flex bg-[red] items-center justify-between text-[0.9rem]">
+        <div className="flex items-center justify-between text-[0.9rem]">
           <span>
             <span className="font-bold">ihirwe_olis</span> USA is still #1
           </span>
