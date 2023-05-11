@@ -44,7 +44,7 @@ const Post = () => {
           <span>
             <span className="font-bold">ihirwe_olis</span> USA is still #1
           </span>
-          <FiHeart />
+          <FiHeart cursor="pointer"/>
         </div>
       </div>
     </div>
