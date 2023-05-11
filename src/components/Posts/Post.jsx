@@ -26,7 +26,13 @@ const Post = () => {
           <FaRegBookmark size={20} color="white" cursor="pointer" />
         </div>
         <div className="flex items-center gap-2">
-          <div className="h-5 w-5 rounded-full border border-violet-700"></div>
+          <div className="h-5 w-5 rounded-full border cursor-pointer">
+            <img
+              src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
+              alt=""
+              className="rounded-full"
+            />
+          </div>
           <span className="text-[0.9rem] font-semibold text-white">
             Liked by @banjo and 109 others
           </span>
@@ -44,7 +50,7 @@ const Post = () => {
           <span>
             <span className="font-bold">ihirwe_olis</span> USA is still #1
           </span>
-          <FiHeart cursor="pointer"/>
+          <FiHeart cursor="pointer" />
         </div>
       </div>
     </div>
