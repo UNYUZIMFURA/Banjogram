@@ -6,13 +6,13 @@ import { TbSend } from "react-icons/tb";
 
 const NavBar = () => {
   return (
-    <div className="fixed bottom-0 flex h-[3rem] w-full items-center gap-3 bg-blue-200">
-      <AiFillHome size={30} />
-      <FaRegCompass size={30} />
-      <BiMoviePlay size={30} />
-      <CgAddR size={30} />
-      <TbSend size={30} />
-      <div className="h-8 w-8 rounded-full bg-slate-500"></div>
+    <div className="fixed bottom-0 flex h-[3rem] w-full items-center justify-around bg-blue-200">
+      <AiFillHome size={27} />
+      <FaRegCompass size={27} />
+      <BiMoviePlay size={29} />
+      <CgAddR size={28} />
+      <TbSend size={28} />
+      <div className="h-7 w-7 rounded-full bg-slate-500"></div>
     </div>
   );
 };
