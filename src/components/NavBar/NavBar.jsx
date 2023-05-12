@@ -8,10 +8,10 @@ const NavBar = () => {
   return (
     <div className="fixed bottom-0 flex h-[3rem] w-full items-center justify-around bg-blue-200">
       <AiFillHome size={27} />
-      <FaRegCompass size={27} />
-      <BiMoviePlay size={29} />
-      <CgAddR size={28} />
-      <TbSend size={28} />
+      <FaRegCompass size={26} />
+      <BiMoviePlay size={28} />
+      <CgAddR size={27} />
+      <TbSend size={27} />
       <div className="h-7 w-7 rounded-full bg-slate-500"></div>
     </div>
   );
