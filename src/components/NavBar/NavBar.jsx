@@ -8,16 +8,16 @@ const NavBar = () => {
   const randomString = Math.random();
   return (
     <div className="fixed bottom-0 flex h-[3rem] w-full items-center justify-around bg-black">
-      <AiFillHome size={27} fill="white" />
-      <FaRegCompass size={26} fill="white" />
-      <BiMoviePlay size={28} fill="white" />
-      <CgAddR size={27} color="white" />
-      <TbSend size={27} color="white" />
+      <AiFillHome size={27} fill="white" cursor="pointer"/>
+      <FaRegCompass size={26} fill="white" cursor="pointer"/>
+      <BiMoviePlay size={28} fill="white" cursor="pointer"/>
+      <CgAddR size={27} color="white" cursor="pointer"/>
+      <TbSend size={27} color="white" cursor="pointer"/>
       <div className="h-7 w-7 rounded-full bg-slate-500">
         <img
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
           alt=""
-          className="rounded-full"
+          className="rounded-full cursor-pointer"
         />
       </div>
     </div>
