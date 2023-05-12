@@ -2,6 +2,7 @@ import { AiFillHome } from "react-icons/ai";
 import { FaRegCompass } from "react-icons/fa";
 import {BiMoviePlay} from "react-icons/bi"
 import {CgAddR} from "react-icons/cg"
+import { TbSend } from "react-icons/tb";
 
 const NavBar = () => {
   return (
@@ -10,6 +11,7 @@ const NavBar = () => {
       <FaRegCompass />
       <BiMoviePlay />
       <CgAddR />
+      <TbSend />
     </div>
   );
 };
