@@ -5,7 +5,7 @@ import NavBar from "../components/NavBar/NavBar";
 
 const Homepage = () => {
   return (
-    <div className="h-screen bg-black">
+    <div className="fixed w-full h-screen bg-black">
       <Header />
       <Stories />
       <Posts />

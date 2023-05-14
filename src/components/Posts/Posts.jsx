@@ -8,7 +8,7 @@ const Posts = () => {
     // { id: 4, userName: "kallehallden" },
   ];
   return (
-    <div className="bg-black flex flex-col items-center w-full gap-[3rem] scrollbar-hide">
+    <div className="flex flex-col items-center w-full gap-[3rem] scrollbar-hide bg-gray-700 overflow-scroll">
       {posts.map((post) => (
         <Post id={post.id} key={post.id}/>
       ))}
