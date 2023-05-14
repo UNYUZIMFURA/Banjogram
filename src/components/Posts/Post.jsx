@@ -13,7 +13,7 @@ const Post = () => {
         <img
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
           alt=""
-          className=""
+          className="w-full object-cover"
         />
       </div>
       <div className="flex w-full flex-col gap-2 p-3">
@@ -44,7 +44,7 @@ const Post = () => {
           @ronaldo. News came straight from @banjo
         </p>
       </div>
-      <div className="flex flex-col gap-2 border-b border-[#303030] px-2 pb-9 pt-2 text-white">
+      <div className="flex flex-col gap-2 border-b border-[#303030] px-2 pb-9 pt-2 text-white bg-black">
         <span className="cursor-pointer text-[0.9rem] text-[#9b9b9b]">
           View all 10 comments
         </span>
