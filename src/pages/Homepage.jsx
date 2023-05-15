@@ -9,7 +9,7 @@ const Homepage = () => {
       <Header />
       <Stories />
       <Posts />
-      <NavBar />
+      {/* <NavBar /> */}
     </div>
   );
 };

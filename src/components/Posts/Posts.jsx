@@ -8,10 +8,10 @@ const Posts = () => {
     { id: 4, userName: "kallehallden" },
   ];
   return (
-    <div className="flex w-full overflow-scroll flex-col items-center gap-[3rem] scrollbar-hid bg-[red] h-[70vh]">
-      {/* {posts.map((post) => (
+    <div className="flex w-full overflow-scroll flex-col items-center gap-[3rem] bg-[red] h-[70vh]">
+      {posts.map((post) => (
         <Post id={post.id} key={post.id} />
-      ))} */}
+      ))}
     </div>
   );
 };
