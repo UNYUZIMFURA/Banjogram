@@ -41,7 +41,7 @@ const Post = () => {
       </div>
       <div className="flex items-center px-2 py-1 scrollbar-hide">
         <p className="text-[0.85rem] text-white">
-          <span className="font-bold">433_football</span> @vinijr has the same amount of CL goals for
+          <span className="font-bold cursor-pointer">433_football</span> <span className="text-[#0095F6] cursor-pointer">@vinijr</span> has the same amount of CL goals for
           Real Madridas @ronaldo. News came straight from @banjo
         </p>
       </div>
