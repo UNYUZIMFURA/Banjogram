@@ -5,11 +5,11 @@ import NavBar from "../components/NavBar/NavBar";
 
 const Homepage = () => {
   return (
-    <div className="fixed w-full h-screen bg-black overflow-scroll">
+    <div className="fixed w-full min-h-screen bg-black">
       <Header />
       <Stories />
       <Posts />
-      <NavBar />
+      {/* <NavBar /> */}
     </div>
   );
 };

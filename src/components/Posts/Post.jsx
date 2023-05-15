@@ -7,7 +7,7 @@ import { FaRegBookmark } from "react-icons/fa";
 const Post = () => {
   const randomString = Math.random();
   return (
-    <div className="mt-4 flex h-[80vh] w-screen flex-col min-[470px]:w-[29.5rem]">
+    <div className="mt-4 flex max-h-[80vh] w-screen flex-col min-[470px]:w-[29.5rem]">
       <PostHeader />
       <div className="flex h-[62%] w-full cursor-pointer rounded-[0.2rem]">
         <img
