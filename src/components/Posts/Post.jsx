@@ -7,13 +7,13 @@ import { FaRegBookmark } from "react-icons/fa";
 const Post = () => {
   const randomString = Math.random();
   return (
-    <div className="mt-4 flex min-h-[80vh] w-screen flex-col min-[470px]:w-[29.5rem] bg-blue-20">
+    <div className="bg-blue-20 mt-4 flex min-h-[80vh] w-screen flex-col min-[470px]:w-[29.5rem]">
       <PostHeader />
       <div className="flex h-[62%] w-full cursor-pointer rounded-[0.2rem]">
         <img
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
           alt=""
-          className="w-full object-cover rounded-t-[0.2rem]"
+          className="w-full rounded-t-[0.2rem] object-cover"
         />
       </div>
       <div className="flex w-full flex-col gap-2 p-3">
@@ -33,18 +33,19 @@ const Post = () => {
               className="rounded-full"
             />
           </div>
-          <p className="text-[0.9rem] text-white font-medium">
-            Liked by <span className="font-bold">banjo</span> and <span className="font-bold">109 others</span>
+          <p className="text-[0.9rem] font-medium text-white">
+            Liked by <span className="font-bold">banjo</span> and{" "}
+            <span className="font-bold">109 others</span>
           </p>
         </div>
       </div>
       <div className="flex items-center px-2 py-1 scrollbar-hide">
         <p className="text-[0.85rem] text-white">
-          433_football @vinijr has the same amount of CL goals for Real Madridas
-          @ronaldo. News came straight from @banjo
+          <span className="font-bold">433_football</span> @vinijr has the same amount of CL goals for
+          Real Madridas @ronaldo. News came straight from @banjo
         </p>
       </div>
-      <div className="flex flex-col gap-2 border-b border-[#303030] px-2 pb-9 pt-2 text-white bg-black">
+      <div className="flex flex-col gap-2 border-b border-[#303030] bg-black px-2 pb-9 pt-2 text-white">
         <span className="cursor-pointer text-[0.9rem] text-[#9b9b9b]">
           View all 10 comments
         </span>
