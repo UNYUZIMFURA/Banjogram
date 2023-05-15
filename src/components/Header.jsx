@@ -8,7 +8,7 @@ const Header = () => {
         Banjogram
       </span>
       <form className="w-68 flex h-[2.3rem] items-center justify-evenly rounded-md bg-[#272727] indent-8 outline-none">
-        <CiSearch size={20} color="#a1a1a1" />
+        <CiSearch size={20} color="#a1a1a1" cursor="pointer" />
         <input
           className="h-full w-[80%] bg-[#272727] text-white outline-none placeholder:font-light placeholder:text-[#a1a1a1]"
           placeholder="Search"
