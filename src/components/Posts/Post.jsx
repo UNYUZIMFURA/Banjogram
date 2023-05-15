@@ -33,9 +33,9 @@ const Post = () => {
               className="rounded-full"
             />
           </div>
-          <span className="text-[0.9rem] font-semibold text-white">
-            Liked by @banjo and 109 others
-          </span>
+          <p className="text-[0.9rem] text-white font-medium">
+            Liked by <span className="font-bold">banjo</span> and <span className="font-bold">109 others</span>
+          </p>
         </div>
       </div>
       <div className="flex items-center px-2 py-1 scrollbar-hide">
