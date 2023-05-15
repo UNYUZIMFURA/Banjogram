@@ -7,13 +7,13 @@ import { FaRegBookmark } from "react-icons/fa";
 const Post = () => {
   const randomString = Math.random();
   return (
-    <div className="mt-4 flex min-h-[80vh] w-screen flex-col min-[470px]:w-[29.5rem]">
+    <div className="mt-4 flex min-h-[80vh] w-screen flex-col min-[470px]:w-[29.5rem] bg-blue-20">
       <PostHeader />
       <div className="flex h-[62%] w-full cursor-pointer rounded-[0.2rem]">
         <img
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
           alt=""
-          className="w-full object-cover"
+          className="w-full object-cover rounded-t-[0.2rem]"
         />
       </div>
       <div className="flex w-full flex-col gap-2 p-3">
