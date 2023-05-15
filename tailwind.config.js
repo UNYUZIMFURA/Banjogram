@@ -3,9 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,jsx}"],
   theme: {
     fontFamily: {
-     'satisfy': ['Satisfy','cursive']
+      satisfy: ["Satisfy", "cursive"],
     },
     extend: {},
   },
-  plugins: [require('tailwind-scrollbar-hide')],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
