@@ -41,8 +41,8 @@ const Post = () => {
       </div>
       <div className="flex items-center px-2 py-1 scrollbar-hide">
         <p className="text-[0.85rem] text-white">
-          <span className="font-bold cursor-pointer">433_football</span> <span className="text-[#b5d3fa] cursor-pointer">@vinijr</span> has the same amount of CL goals for
-          Real Madridas @ronaldo. News came straight from @banjo
+          <span className="font-bold cursor-pointer">433_football</span> <span className="text-[#bed1e9] cursor-pointer">@vinijr</span> has the same amount of CL goals for
+          Real Madridas <span className="text-[#bed1e9] cursor-pointer">@ronaldo</span>. News came straight from <span className="text-[#bed1e9] cursor-pointer">#banjo</span>
         </p>
       </div>
       <div className="flex flex-col gap-2 border-b border-[#303030] bg-black px-2 pb-9 pt-2 text-white">
