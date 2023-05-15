@@ -7,7 +7,7 @@ import { TbSend } from "react-icons/tb";
 const NavBar = () => {
   const randomString = Math.random();
   return (
-    <div className="fixed bottom-0 flex h-[3rem] w-full items-center justify-around border-t border-[#303030]">
+    <div className="fixed bottom-0 flex h-[3rem] w-full items-center justify-around border-t border-[#303030] min-[768px]:top-0 bg-blue-200 min-[768px]:flex-col min-[768px]:h-screen min-[768px]:w-[3rem] min-[768px]:left-0">
       <AiFillHome size={25} fill="white" cursor="pointer" />
       <FaRegCompass size={24} fill="white" cursor="pointer" />
       <BiMoviePlay size={26} fill="white" cursor="pointer" />
