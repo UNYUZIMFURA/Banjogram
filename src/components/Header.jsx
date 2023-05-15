@@ -3,7 +3,7 @@ import { CiSearch } from "react-icons/ci";
 
 const Header = () => {
   return (
-    <div className="flex h-[8vh] items-center justify-center min-[470px]:justify-between px-8 border-b border-[#3E4042]">
+    <div className="flex h-[8vh] items-center justify-center min-[470px]:justify-between px-4 border-b border-[#3E4042]">
       <span className="hidden cursor-pointer font-satisfy text-2xl text-white min-[470px]:flex">
         Banjogram
       </span>
