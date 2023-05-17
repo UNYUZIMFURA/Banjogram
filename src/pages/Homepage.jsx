@@ -2,14 +2,18 @@ import Header from "../components/Header";
 import Stories from "../components/Stories/Stories";
 import Posts from "../components/Posts/Posts";
 import NavBar from "../components/NavBar/NavBar";
+import Suggested from "../components/Suggested/Suggested";
 
 const Homepage = () => {
   return (
-    <div className="flex h-screen w-full flex-col items-center md:items-end md:justify-center bg-black">
-      <div className="w-full md:w-[85%] flex flex-col items-center">
-        <Header />
-        <Stories />
-        <Posts />
+    <div className="flex h-screen w-full flex-col items-center bg-black md:items-center md:justify-center">
+      <div className="flex w-full flex-col items-center md:w-[85%] min-[1160px]:flex">
+        <div>
+          <Header />
+          <Stories />
+          <Posts />
+        </div>
+        {/* <Suggested /> */}
       </div>
       <NavBar />
     </div>
