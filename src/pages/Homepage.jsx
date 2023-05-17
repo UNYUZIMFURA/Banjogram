@@ -6,7 +6,7 @@ import NavBar from "../components/NavBar/NavBar";
 const Homepage = () => {
   return (
     <div className="flex h-screen w-full flex-col items-center bg-black md:justify-around">
-      <div className="w-full min-[767px]:w-[85%] bg-red-200">
+      <div className="w-full min-[767px]:w-[85%]">
         <Header />
         <Stories />
         <Posts />
