@@ -8,7 +8,7 @@ const Homepage = () => {
   return (
     <div className="flex h-screen w-full flex-col items-center bg-black md:items-center md:justify-center min-[1160px]:items-end">
       <div className="flex w-full flex-col items-center md:w-[85%] min-[1160px]:flex-row zmin-[1160px]:justify-around min-[1160px]:w-[90%]">
-        <div className="w-full">
+        <div className="w-full flex flex-col items-center">
           <Header />
           <Stories />
           <Posts />
