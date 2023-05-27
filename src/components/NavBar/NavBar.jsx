@@ -3,11 +3,12 @@ import { FaRegCompass } from "react-icons/fa";
 import { BiMoviePlay } from "react-icons/bi";
 import { CgAddR } from "react-icons/cg";
 import { TbSend } from "react-icons/tb";
+import {BsInstagram} from "react-icons/bs"
 
 const NavBar = () => {
   const randomString = Math.random();
   return (
-    <div className="fixed bottom-0 flex h-[3rem] w-full items-center justify-around border-t border-[#303030] md:top-0 md:flex-col md:h-screen md:w-[4.5rem] md:left-0">
+    <div className="fixed bottom-0 flex h-[3rem] w-full items-center justify-around border-t border-[#303030] md:top-0 md:flex-col md:h-screen md:w-[4.5rem] md:left-0 md:border-r">
       <AiFillHome size={25} fill="white" cursor="pointer" />
       <FaRegCompass size={24} fill="white" cursor="pointer" />
       <BiMoviePlay size={26} fill="white" cursor="pointer" />
