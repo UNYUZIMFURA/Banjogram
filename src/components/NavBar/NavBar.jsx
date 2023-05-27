@@ -9,9 +9,9 @@ const NavBar = () => {
   const randomString = Math.random();
   return (
     <div className="fixed bottom-0 h-[3rem] w-full items-center justify-around border-t border-[#303030] md:left-0 md:top-0 md:h-screen md:w-[4.5rem] md:flex-col md:border-r">
-      <div className="flex h-full w-full items-center justify-around md:flex-col">
-        {/* <BsInstagram /> */}
-        <div className="flex h-full w-full items-center justify-around bg-red-200">
+      <div className="flex items-center h-full w-full md:flex-col">
+        <BsInstagram size={25} fill="white" cursor="pointer" className="hidden"/>
+        <div className="flex h-full w-full items-center justify-around bg-red-200 md:flex-col">
           <AiFillHome size={25} fill="white" cursor="pointer" />
           <FaRegCompass size={24} fill="white" cursor="pointer" />
           <BiMoviePlay size={26} fill="white" cursor="pointer" />
