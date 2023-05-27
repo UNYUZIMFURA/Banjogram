@@ -9,7 +9,7 @@ const NavBar = () => {
   const randomString = Math.random();
   return (
     <div className="fixed bottom-0 flex h-[3rem] w-full items-center justify-around border-t border-[#303030] md:left-0 md:top-0 md:h-screen md:w-[4.5rem] md:flex-col md:border-r">
-      <div className="bg-red-100 w-full h-full flex items-center justify-around">
+      <div className="bg-red-100 w-full h-full flex items-center justify-around md:flex-col">
         <AiFillHome size={25} fill="white" cursor="pointer" />
         <FaRegCompass size={24} fill="white" cursor="pointer" />
         <BiMoviePlay size={26} fill="white" cursor="pointer" />
