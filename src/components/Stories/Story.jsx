@@ -4,11 +4,11 @@ const Story = (props) => {
   const randomString = Math.random();
   return (
     <div
-      className={`h-full w-16 ${
+      className={`h-full w-[4rem] ${
         props.id === 1 ? "ml-0" : "ml-4"
       } flex flex-col items-center justify-center gap-2`}
     >
-      <div className="story flex h-16 min-w-16 cursor-pointer">
+      <div className="story flex h-[4rem] min-w-[4rem] cursor-pointer">
         <img
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
           alt="..."
