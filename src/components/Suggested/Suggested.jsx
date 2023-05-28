@@ -1,4 +1,5 @@
 import ProfileDetails from "./ProfileDetails"
+import SuggestedAccount from "./SuggestedAccount"
 
 const Suggested = () => {
 return (
@@ -8,7 +9,13 @@ return (
             <span className="tracking-tight">Suggested for you</span>
             <span className="tracking-tight text-sm">See All</span>
         </div>
-        <div></div>
+        <div className="flex flex-col">
+            <SuggestedAccount />
+            <SuggestedAccount />
+            <SuggestedAccount />
+            <SuggestedAccount />
+            <SuggestedAccount />
+        </div>
     </div>
 )
 }
