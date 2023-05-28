@@ -33,23 +33,23 @@ const Post = () => {
               className="rounded-full"
             />
           </div>
-          <p className="text-[0.9rem] font-medium text-white">
+          <p className="text-sm font-medium text-white">
             Liked by <span className="font-bold cursor-pointer">banjo</span> and{" "}
             <span className="font-bold cursor-pointer">109 others</span>
           </p>
         </div>
       </div>
       <div className="flex items-center px-2 py-1 scrollbar-hide">
-        <p className="text-[0.85rem] text-white">
+        <p className="text-sm text-white">
           <span className="font-bold cursor-pointer">433_football</span> <span className="text-[#bed1e9] cursor-pointer">@vinijr</span> has the same amount of CL goals for
           Real Madristas <span className="text-[#bed1e9] cursor-pointer">@leo_messi</span>. News came straight from <span className="text-[#bed1e9] cursor-pointer">#banjo</span>
         </p>
       </div>
       <div className="flex flex-col gap-2 border-b border-[#303030] bg-black px-2 pb-9 pt-2 text-white">
-        <span className="cursor-pointer text-[0.9rem] text-[#9b9b9b]">
+        <span className="cursor-pointer text-sm text-[#9b9b9b]">
           View all 10 comments
         </span>
-        <p className="flex items-center justify-between text-[0.9rem]">
+        <p className="flex items-center justify-between text-sm">
           <span>
             <span className="font-bold">ihirwe_olis</span> USA is still #1
           </span>
