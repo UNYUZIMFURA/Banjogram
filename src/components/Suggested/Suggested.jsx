@@ -13,14 +13,14 @@ const Suggested = () => {
         followedBy: "tresorr_officiel"
     },{
         username: "rca.alumni",
-        followedBy: "joykevin"
+        followedBy: "joy_kevin_banjo"
     },{
         username: "moustapha_iradukunda",
         followedBy: "manzi_cedrick"
     },
 ]
 return (
-    <div className="h-[25rem] w-[20rem] bg-slate-500 hidden min-[1160px]:flex flex-col mt-6">
+    <div className="w-[20rem] text-white hidden min-[1160px]:flex flex-col mt-6">
         <ProfileDetails />
         <div className="flex justify-between px-1">
             <span className="tracking-tight">Suggested for you</span>
@@ -30,6 +30,18 @@ return (
            {
             suggestedInfo.map(suggestion => <SuggestedAccount key={suggestedInfo[suggestion]} username={suggestion.username} followedBy={suggestion.followedBy}/>)
            }
+        </div>
+        <div className="py-2 text-xs flex gap-2 flex-wrap w-[90%] group group-hover:underline">
+          <span>About</span> 
+          <span>Help</span>
+          <span>Press</span>
+          <span>API</span>
+          <span>Jobs</span>
+          <span>Privacy</span>
+          <span>Terms</span>
+          <span>Locations</span>
+          <span>Language</span>
+          <span>Meta Verified</span>
         </div>
     </div>
 )
