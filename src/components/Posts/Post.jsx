@@ -34,7 +34,7 @@ const Post = () => {
             />
           </div>
           <p className="text-sm font-medium text-white">
-            Liked by <span className="font-bold cursor-pointer">banjo</span> and{" "}
+            Liked by <span className="font-bold cursor-pointer">cristiano</span> and{" "}
             <span className="font-bold cursor-pointer">109 others</span>
           </p>
         </div>
