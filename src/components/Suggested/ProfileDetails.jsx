@@ -12,10 +12,10 @@ const ProfileDetails = () => {
         </div>
         <div className="flex flex-col ">
           <span className="">joykevinrobin</span>
-          <span className="tracking-tight">JOY KEVIN ROBIN</span>
+          <span className="tracking-tight text-[rgb(168,168,168)]">JOY KEVIN ROBIN</span>
         </div>
       </div>
-      <span className="text-sm font-medium text-[#0095F6]">Switch</span>
+      <span className="text-sm font-medium text-[rgb(0,149,246)]">Switch</span>
     </div>
   );
 };

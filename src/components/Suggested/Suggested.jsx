@@ -23,7 +23,7 @@ return (
     <div className="w-[20rem] text-white hidden min-[1160px]:flex flex-col mt-6">
         <ProfileDetails />
         <div className="flex justify-between px-1">
-            <span className="tracking-tight">Suggested for you</span>
+            <span className="tracking-tight text-[rgb(168,168,168)] font-semibold">Suggested for you</span>
             <span className="tracking-tight text-sm">See All</span>
         </div>
         <div className="flex flex-col">
@@ -31,7 +31,7 @@ return (
             suggestedInfo.map(suggestion => <SuggestedAccount key={suggestedInfo[suggestion]} username={suggestion.username} followedBy={suggestion.followedBy}/>)
            }
         </div>
-        <div className="py-2 text-xs flex gap-2 flex-wrap w-[90%] group group-hover:underline">
+        <div className="py-2 text-xs flex gap-2 flex-wrap w-[90%] group group-hover:underline text-[rgb(115,115,115)]">
           <span>About</span> 
           <span>Help</span>
           <span>Press</span>
@@ -43,6 +43,7 @@ return (
           <span>Language</span>
           <span>Meta Verified</span>
         </div>
+        <span className="tracking-tight text-sm text-[rgb(115,115,115)]">© 2023 BANJOGRAM FROM BANJO</span>
     </div>
 )
 }
