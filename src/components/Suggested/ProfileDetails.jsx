@@ -3,7 +3,7 @@ const ProfileDetails = () => {
   return (
     <div className="flex h-16 w-full items-center justify-between px-1">
       <div className="flex gap-4">
-        <div className="h-12 w-12 rounded-full ">
+        <div className="h-12 w-12 rounded-full cursor-pointer">
           <img
             src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
             alt="..."
