@@ -38,7 +38,7 @@ const Suggested = () => {
     "Meta Verified",
   ];
   return (
-    <div className="mt-6 hidden w-[20rem] flex-col text-white min-[1160px]:flex">
+    <div className="gap-2 mt-6 hidden w-[20rem] flex-col text-white min-[1160px]:flex">
       <ProfileDetails />
       <div className="flex justify-between px-1">
         <span className="font-semibold text-sm tracking-tight text-[rgb(168,168,168)]">
