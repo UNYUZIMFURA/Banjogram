@@ -60,7 +60,7 @@ const Suggested = () => {
           <span key={index}>{link}</span>
         ))}
       </div>
-      <span className="text-sm tracking-tight text-[rgb(115,115,115)]">
+      <span className="text-xs tracking-tight text-[rgb(115,115,115)]">
         © 2023 BANJOGRAM FROM BANJO
       </span>
     </div>
