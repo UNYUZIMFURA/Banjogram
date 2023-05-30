@@ -9,7 +9,7 @@ import {RiMenuFill} from "react-icons/ri"
 const NavBar = () => {
   const randomString = Math.random();
   return (
-    <div className="fixed w-full bottom-0 h-12 border-t border-[#303030] md:left-0 md:top-0 md:h-screen md:w-[4.5rem] md:border-r md:flex md:flex-col md:items-center md:gap-64">
+    <div className="fixed w-full bottom-0 h-12 border-t border-[#303030] md:left-0 md:top-0 md:h-screen md:w-[4.5rem] md:border-r md:flex md:flex-col md:items-center md:gap-64 min-[1264px]:static">
       <div className="flex items-center h-full w-full md:flex-col md:py-8 md:h-fit md:gap-12">
         <BsInstagram size={23} fill="white" cursor="pointer" className="hidden md:flex"/>
         <div className="flex h-full w-full items-center justify-around md:flex-col md:justify-center md:gap-10 md:h-fit">
