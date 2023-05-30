@@ -1,7 +1,7 @@
 const SuggestedAccount = (props) => {
   const randomString = Math.random();
   return (
-    <div className="flex h-16 w-full items-center justify-between px-1">
+    <div className="cursor-pointer flex h-16 w-full items-center justify-between px-1">
       <div className="flex gap-4">
         <div className="h-10 w-10 rounded-full cursor-pointer">
         <img

@@ -55,7 +55,7 @@ const Suggested = () => {
           />
         ))}
       </div>
-      <div className="group flex w-[90%] flex-wrap gap-2 py-2 text-xs text-[rgb(115,115,115)] group-hover:underline">
+      <div className="cursor-pointer flex w-[90%] flex-wrap gap-2 py-2 text-xs text-[rgb(115,115,115)]">
         {links.map((link, index) => (
           <span key={index}>{link}</span>
         ))}
