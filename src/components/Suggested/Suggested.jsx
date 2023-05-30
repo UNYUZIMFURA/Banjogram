@@ -1,51 +1,70 @@
-import ProfileDetails from "./ProfileDetails"
-import SuggestedAccount from "./SuggestedAccount"
+import ProfileDetails from "./ProfileDetails";
+import SuggestedAccount from "./SuggestedAccount";
 
 const Suggested = () => {
-    const suggestedInfo = [{
-        username: "jay_loo1",
-        followedBy: "sugirayvan"
-    },{
-        username: "_patriicke",
-        followedBy: "edmond_gaks"
-    },{
-        username: "__i.divin__",
-        followedBy: "tresorr_officiel"
-    },{
-        username: "rca.alumni",
-        followedBy: "joy_kevin_banjo"
-    },{
-        username: "moustapha_iradukunda",
-        followedBy: "manzi_cedrick"
+  const suggestedInfo = [
+    {
+      username: "jay_loo1",
+      followedBy: "sugirayvan",
     },
-]
-return (
-    <div className="w-[20rem] text-white hidden min-[1160px]:flex flex-col mt-6">
-        <ProfileDetails />
-        <div className="flex justify-between px-1">
-            <span className="tracking-tight text-[rgb(168,168,168)] font-semibold">Suggested for you</span>
-            <span className="tracking-tight text-sm">See All</span>
-        </div>
-        <div className="flex flex-col">
-           {
-            suggestedInfo.map(suggestion => <SuggestedAccount key={suggestedInfo[suggestion]} username={suggestion.username} followedBy={suggestion.followedBy}/>)
-           }
-        </div>
-        <div className="py-2 text-xs flex gap-2 flex-wrap w-[90%] group group-hover:underline text-[rgb(115,115,115)]">
-          <span>About</span> 
-          <span>Help</span>
-          <span>Press</span>
-          <span>API</span>
-          <span>Jobs</span>
-          <span>Privacy</span>
-          <span>Terms</span>
-          <span>Locations</span>
-          <span>Language</span>
-          <span>Meta Verified</span>
-        </div>
-        <span className="tracking-tight text-sm text-[rgb(115,115,115)]">© 2023 BANJOGRAM FROM BANJO</span>
-    </div>
-)
-}
+    {
+      username: "_patriicke",
+      followedBy: "edmond_gaks",
+    },
+    {
+      username: "__i.divin__",
+      followedBy: "tresorr_officiel",
+    },
+    {
+      username: "rca.alumni",
+      followedBy: "joy_kevin_banjo",
+    },
+    {
+      username: "moustapha_iradukunda",
+      followedBy: "manzi_cedrick",
+    },
+  ];
 
-export default Suggested
+  const links = [
+    "About",
+    "Help",
+    "Press",
+    "API",
+    "Jobs",
+    "Privacy",
+    "Terms",
+    "Locations",
+    "Language",
+    "Meta Verified",
+  ];
+  return (
+    <div className="mt-6 hidden w-[20rem] flex-col text-white min-[1160px]:flex">
+      <ProfileDetails />
+      <div className="flex justify-between px-1">
+        <span className="font-semibold tracking-tight text-[rgb(168,168,168)]">
+          Suggested for you
+        </span>
+        <span className="text-sm tracking-tight">See All</span>
+      </div>
+      <div className="flex flex-col">
+        {suggestedInfo.map((suggestion, index) => (
+          <SuggestedAccount
+            key={index}
+            username={suggestion.username}
+            followedBy={suggestion.followedBy}
+          />
+        ))}
+      </div>
+      <div className="group flex w-[90%] flex-wrap gap-2 py-2 text-xs text-[rgb(115,115,115)] group-hover:underline">
+        {links.map((link, index) => (
+          <span key={index}>{link}</span>
+        ))}
+      </div>
+      <span className="text-sm tracking-tight text-[rgb(115,115,115)]">
+        © 2023 BANJOGRAM FROM BANJO
+      </span>
+    </div>
+  );
+};
+
+export default Suggested;
