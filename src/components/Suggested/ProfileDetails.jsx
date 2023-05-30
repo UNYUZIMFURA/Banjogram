@@ -10,7 +10,7 @@ const ProfileDetails = () => {
             className="rounded-full object-cover"
           />
         </div>
-        <div className="flex flex-col cursor-pointer">
+        <div className="flex flex-col cursor-pointe">
           <span className="">joykevinrobin</span>
           <span className="tracking-tight text-[rgb(168,168,168)]">JOY KEVIN ROBIN</span>
         </div>
