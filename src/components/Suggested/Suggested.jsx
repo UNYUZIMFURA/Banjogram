@@ -41,10 +41,10 @@ const Suggested = () => {
     <div className="mt-6 hidden w-[20rem] flex-col text-white min-[1160px]:flex">
       <ProfileDetails />
       <div className="flex justify-between px-1">
-        <span className="font-semibold tracking-tight text-[rgb(168,168,168)]">
+        <span className="font-semibold text-sm tracking-tight text-[rgb(168,168,168)]">
           Suggested for you
         </span>
-        <span className="text-sm tracking-tight">See All</span>
+        <span className="text-xs tracking-tight font-semibold">See All</span>
       </div>
       <div className="flex flex-col">
         {suggestedInfo.map((suggestion, index) => (
