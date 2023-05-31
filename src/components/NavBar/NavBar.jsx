@@ -5,6 +5,7 @@ import { CgAddR } from "react-icons/cg";
 import { TbSend } from "react-icons/tb";
 import { BsInstagram } from "react-icons/bs";
 import { RiMenuFill } from "react-icons/ri";
+import { CiSearch } from "react-icons/ci";
 
 const NavBar = () => {
   const randomString = Math.random();
@@ -26,6 +27,10 @@ const NavBar = () => {
             <span className="hidden text-white min-[1264px]:flex">Home</span>
           </div>
           <div className="flex gap-4">
+            <CiSearch size={20} fill="white" cursor="pointer" />
+            <span className="hidden text-white min-[1264px]:flex">Search</span>
+          </div>
+          <div className="flex gap-4">
             <FaRegCompass size={24} fill="white" cursor="pointer" />
             <span className="hidden text-white min-[1264px]:flex">Explore</span>
           </div>
@@ -39,9 +44,11 @@ const NavBar = () => {
           </div>
           <div className="flex gap-4">
             <TbSend size={25} color="white" cursor="pointer" />
-            <span className="hidden text-white min-[1264px]:flex">Messages</span>
+            <span className="hidden text-white min-[1264px]:flex">
+              Messages
+            </span>
           </div>
-          <div className="h-6 w-6 rounded-full min-[1264px]:flex gap-4">
+          <div className="h-6 w-6 gap-4 rounded-full min-[1264px]:flex">
             <img
               src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
               alt=""
