@@ -5,7 +5,7 @@ import { CgAddR } from "react-icons/cg";
 import { TbSend } from "react-icons/tb";
 import { BsInstagram } from "react-icons/bs";
 import { RiMenuFill } from "react-icons/ri";
-import { CiSearch } from "react-icons/ci";
+import { FiSearch } from "react-icons/fi";
 
 const NavBar = () => {
   const randomString = Math.random();
@@ -22,12 +22,12 @@ const NavBar = () => {
           Banjogram
         </span>
         <div className="flex h-full w-full items-center justify-around md:h-fit md:flex-col md:justify-center md:gap-10 min-[1264px]:items-start">
-          <div className="flex gap-4">
+          <div className="flex gap-4 bg-red-200 w-full">
             <AiFillHome size={25} fill="white" cursor="pointer" />
             <span className="hidden text-white min-[1264px]:flex">Home</span>
           </div>
-          <div className="flex gap-4">
-            <CiSearch size={20} fill="white" cursor="pointer" />
+          <div className="hidden gap-4 min-[1264px]:flex">
+            <FiSearch size={20} color="white" cursor="pointer" />
             <span className="hidden text-white min-[1264px]:flex">Search</span>
           </div>
           <div className="flex gap-4">
