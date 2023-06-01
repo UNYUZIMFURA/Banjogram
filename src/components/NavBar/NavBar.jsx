@@ -24,31 +24,31 @@ const NavBar = () => {
         <div className="min-[1264px]:items-center flex h-full w-full items-center justify-around md:h-fit md:flex-col md:justify-center md:gap-10">
           <div className="min-[1264px] flex gap-4 bg-red-100 min-[1264px]:w-[93%] min-[1264px]:p-2 min-[1264px]:pl-8">
             <AiFillHome size={25} fill="white" cursor="pointer" />
-            <span className="hidden text-white min-[1264px]:flex">Home</span>
+            <span className="hidden text-white min-[1264px]:flex cursor-pointer">Home</span>
           </div>
-          <div className="hidden gap-4 pl-8 min-[1264px]:flex">
+          <div className="hidden min-[1264px]:w-[93%] gap-4 pl-8 min-[1264px]:flex">
             <FiSearch size={20} color="white" cursor="pointer" />
-            <span className="hidden text-white min-[1264px]:flex">Search</span>
+            <span className="hidden text-white min-[1264px]:flex cursor-pointer">Search</span>
           </div>
-          <div className="flex gap-4 min-[1264px]:pl-8">
+          <div className="flex min-[1264px]:w-[93%] gap-4 min-[1264px]:pl-8">
             <FaRegCompass size={24} fill="white" cursor="pointer" />
-            <span className="hidden text-white min-[1264px]:flex">Explore</span>
+            <span className="hidden text-white min-[1264px]:flex cursor-pointer">Explore</span>
           </div>
-          <div className="flex gap-4 min-[1264px]:pl-8">
+          <div className="flex min-[1264px]:w-[93%] gap-4 min-[1264px]:pl-8">
             <BiMoviePlay size={26} fill="white" cursor="pointer" />
-            <span className="hidden text-white min-[1264px]:flex">Reels</span>
+            <span className="hidden text-white min-[1264px]:flex cursor-pointer">Reels</span>
           </div>
-          <div className="flex gap-4 min-[1264px]:pl-8">
+          <div className="flex min-[1264px]:w-[93%] gap-4 min-[1264px]:pl-8">
             <CgAddR size={25} color="white" cursor="pointer" />
-            <span className="hidden text-white min-[1264px]:flex">Create</span>
+            <span className="hidden text-white min-[1264px]:flex cursor-pointer">Create</span>
           </div>
-          <div className="flex gap-4 min-[1264px]:pl-8">
+          <div className="flex min-[1264px]:w-[93%] gap-4 min-[1264px]:pl-8">
             <TbSend size={25} color="white" cursor="pointer" />
-            <span className="hidden text-white min-[1264px]:flex">
+            <span className="hidden text-white min-[1264px]:flex cursor-pointer">
               Messages
             </span>
           </div>
-          <div className="flex gap-4 min-[1264px]:pl-8 bg-[red]">
+          <div className="flex min-[1264px]:w-[93%] gap-4 min-[1264px]:pl-7">
             <div className="h-[1.7rem] w-[1.7rem] rounded-full bg-slate-200">
               <img
                 src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
@@ -56,7 +56,7 @@ const NavBar = () => {
                 className="h-full w-full cursor-pointer rounded-full"
               />
             </div>
-            <span className="hidden text-white min-[1264px]:flex">Profile</span>
+            <span className="hidden text-white min-[1264px]:flex cursor-pointer">Profile</span>
           </div>
         </div>
       </div>
