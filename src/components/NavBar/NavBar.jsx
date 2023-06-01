@@ -10,8 +10,8 @@ import { FiSearch } from "react-icons/fi";
 const NavBar = () => {
   const randomString = Math.random();
   return (
-    <div className="fixed bottom-0 h-12 w-full border-t border-[#303030] md:left-0 md:top-0 md:flex md:h-screen md:w-[4.5rem] md:flex-col md:items-center md:gap-64 md:border-r min-[1264px]:static min-[1264px]:w-[17.5rem]">
-      <div className="bg-slate-20 flex h-full w-full items-center md:h-fit md:flex-col md:gap-12 md:py-8 min-[1264px]:items-start">
+    <div className="fixed bottom-0 h-12 w-full border-t border-[#303030] md:left-0 md:top-0 md:flex md:h-screen md:w-[4.5rem] md:flex-col md:items-center md:gap-44 md:border-r min-[1264px]:static min-[1264px]:w-[17.5rem]">
+      <div className="flex h-full w-full items-center md:h-fit md:flex-col md:gap-12 md:py-8 min-[1264px]:items-start">
         <BsInstagram
           size={23}
           fill="white"
@@ -26,7 +26,7 @@ const NavBar = () => {
             <AiFillHome size={25} fill="white"/>
             <span className="hidden text-white min-[1264px]:flex ">Home</span>
           </div>
-          <div className="hidden min-[1264px]:w-[93%] gap-4 pl-8 min-[1264px]:flex">
+          <div className="min-[1264px] flex gap-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] cursor-pointer min-[1264px]:w-[93%] min-[1264px]:p-3 rounded-[0.2rem] min-[1264px]:pl-8">
             <FiSearch size={20} color="white" />
             <span className="hidden text-white min-[1264px]:flex ">Search</span>
           </div>
