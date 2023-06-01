@@ -22,33 +22,33 @@ const NavBar = () => {
           Banjogram
         </span>
         <div className="b200 min-[1264px]:items-center flex h-full w-full items-center justify-around md:h-fit md:flex-col md:justify-center md:gap-10 min-[1264px]:gap-4">
-          <div className="min-[1264px] flex gap-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] cursor-pointer min-[1264px]:w-[90%] min-[1264px]:p-3 rounded-md min-[1264px]:pl-8">
+          <div className="min-[1264px] flex gap-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] cursor-pointer min-[1264px]:w-[90%] min-[1264px]:p-3 rounded-lg min-[1264px]:pl-8">
             <AiFillHome size={25} fill="white"/>
             <span className="hidden text-white min-[1264px]:flex ">Home</span>
           </div>
-          <div className="min-[1264px] flex gap-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] cursor-pointer min-[1264px]:w-[90%] min-[1264px]:p-3 rounded-[0.2rem] min-[1264px]:pl-8">
+          <div className="md:flex hidden gap-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] cursor-pointer min-[1264px]:w-[90%] min-[1264px]:p-3 rounded-lg min-[1264px]:pl-8">
             <FiSearch size={20} color="white" />
             <span className="hidden text-white min-[1264px]:flex ">Search</span>
           </div>
-          <div className="min-[1264px] flex gap-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] cursor-pointer min-[1264px]:w-[90%] min-[1264px]:p-3 rounded-[0.2rem] min-[1264px]:pl-8">
+          <div className="min-[1264px] flex gap-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] cursor-pointer min-[1264px]:w-[90%] min-[1264px]:p-3 rounded-lg min-[1264px]:pl-8">
             <FaRegCompass size={24} fill="white" />
             <span className="hidden text-white min-[1264px]:flex ">Explore</span>
           </div>
-          <div className="min-[1264px] flex gap-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] cursor-pointer min-[1264px]:w-[90%] min-[1264px]:p-3 rounded-[0.2rem] min-[1264px]:pl-8">
+          <div className="min-[1264px] flex gap-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] cursor-pointer min-[1264px]:w-[90%] min-[1264px]:p-3 rounded-lg min-[1264px]:pl-8">
             <BiMoviePlay size={26} fill="white"/>
             <span className="hidden text-white min-[1264px]:flex">Reels</span>
           </div>
-          <div className="min-[1264px] flex gap-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] cursor-pointer min-[1264px]:w-[90%] min-[1264px]:p-3 rounded-[0.2rem] min-[1264px]:pl-8">
+          <div className="min-[1264px] flex gap-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] cursor-pointer  min-[1264px]:w-[90%] min-[1264px]:p-3 rounded-lg min-[1264px]:pl-8">
             <CgAddR size={25} color="white"/>
             <span className="hidden text-white min-[1264px]:flex">Create</span>
           </div>
-          <div className="min-[1264px] flex gap-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] cursor-pointer min-[1264px]:w-[90%] min-[1264px]:p-3 rounded-[0.2rem] min-[1264px]:pl-8">
+          <div className="min-[1264px] flex gap-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] cursor-pointer min-[1264px]:w-[90%] min-[1264px]:p-3 rounded-lg min-[1264px]:pl-8">
             <TbSend size={25} color="white"/>
             <span className="hidden text-white min-[1264px]:flex ">
               Messages
             </span>
           </div>
-          <div className="min-[1264px] flex gap-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] cursor-pointer min-[1264px]:w-[90%] min-[1264px]:p-3 rounded-[0.2rem] min-[1264px]:pl-8">
+          <div className="min-[1264px] flex gap-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] cursor-pointer min-[1264px]:w-[90%] min-[1264px]:p-3 rounded-lg min-[1264px]:pl-8">
             <div className="h-[1.7rem] w-[1.7rem] rounded-full bg-slate-200">
               <img
                 src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
