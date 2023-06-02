@@ -21,7 +21,7 @@ const NavBar = () => {
         <span className="hidden cursor-pointer font-satisfy text-2xl text-white min-[1264px]:ml-12 min-[1264px]:flex">
           Banjogram
         </span>
-        <div className="b200 flex h-full w-full items-center justify-around md:h-fit md:flex-col md:justify-center md:gap-10 min-[1264px]:items-center min-[1264px]:gap-4">
+        <div className="flex h-full w-full items-center justify-around md:h-fit md:flex-col md:justify-center md:gap-10 min-[1264px]:items-center min-[1264px]:gap-4">
           <div className="min-[1264px] flex cursor-pointer gap-4 rounded-lg min-[1264px]:w-[90%] min-[1264px]:p-3 min-[1264px]:pl-8 min-[1264px]:hover:bg-[rgba(255,255,255,.1)]">
             <AiFillHome size={25} fill="white" />
             <span className="hidden text-white min-[1264px]:flex ">Home</span>
