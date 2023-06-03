@@ -4,7 +4,7 @@ import SuggestedAccount from "./SuggestedAccount";
 const Suggested = () => {
   const suggestedInfo = [
     {
-      username: "jay_loo1",
+      username: "joy_kevin_banjo",
       followedBy: "sugirayvan",
     },
     {
@@ -20,7 +20,7 @@ const Suggested = () => {
       followedBy: "joy_kevin_banjo",
     },
     {
-      username: "joy_kevin_banjo",
+      username: "jay_loo1",
       followedBy: "manzi_cedrick",
     },
   ];
