@@ -20,7 +20,7 @@ const Suggested = () => {
       followedBy: "joy_kevin_banjo",
     },
     {
-      username: "moustapha_iradukunda",
+      username: "joy_kevin_banjo",
       followedBy: "manzi_cedrick",
     },
   ];
