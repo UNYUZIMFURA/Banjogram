@@ -6,7 +6,7 @@ const Stories = () => {
     { id: 2, userName: "k.mbappe" },
     { id: 3, userName: "paulkagame" },
     { id: 4, userName: "kallehallden" },
-    { id: 5, userName: "psg" },
+    { id: 5, userName: "al_nassr" },
     { id: 6, userName: "kevin_banjo" },
     { id: 7, userName: "neymarjr" },
     { id: 8, userName: "_rl9" },
