@@ -14,6 +14,7 @@ const Post = () => {
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
           alt=""
           className="w-full rounded-t-[0.2rem] object-cover"
+          loading="lazy"
         />
       </div>
       <div className="flex w-full flex-col gap-2 p-3">
@@ -31,6 +32,7 @@ const Post = () => {
               src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
               alt=""
               className="rounded-full"
+              loading="lazy"
             />
           </div>
           <p className="text-sm font-medium text-white">

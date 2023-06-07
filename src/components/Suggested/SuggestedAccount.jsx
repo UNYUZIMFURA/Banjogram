@@ -8,6 +8,7 @@ const SuggestedAccount = (props) => {
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
           alt="..."
           className="object-cover rounded-full"
+          loading="lazy"
         />
         </div>
         <div className="flex flex-col gap-1">

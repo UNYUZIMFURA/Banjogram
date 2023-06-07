@@ -13,6 +13,7 @@ const Story = (props) => {
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
           alt="..."
           className="mx-auto my-auto h-[92%] rounded-full"
+          loading="lazy"
         />
       </div>
       <span className="max-w-16 overflow-hidden text-xs text-white">
