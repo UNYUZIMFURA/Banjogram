@@ -6,8 +6,16 @@ import { TbSend } from "react-icons/tb";
 import { BsInstagram } from "react-icons/bs";
 import { RiMenuFill } from "react-icons/ri";
 import { FiHeart, FiSearch } from "react-icons/fi";
+import { useSelector, useDispatch } from "react-redux";
+import { showDiv } from "../../redux/actions";
 
-const NavBar = () => {
+const NavBar = () => {  
+  const dispatch = useDispatch()
+
+  const displayDiv = () => {
+    dispatch(showDiv())
+  }
+
   const randomString = Math.random();
   return (
     <div className="fixed bottom-0 h-12 w-full border-t border-[#303030] md:left-0 md:top-0 md:flex md:h-screen md:w-[4.5rem] md:flex-col md:items-center md:gap-52 md:border-r min-[1264px]:sticky min-[1264px]:w-[17.5rem] 2xl:w-[20rem]">
@@ -50,7 +58,7 @@ const NavBar = () => {
             <FiHeart size={20} color="white" />
             <span className="hidden text-white min-[1264px]:flex ">Notifications</span>
           </div>
-          <div className="min-[1264px] flex cursor-pointer gap-4 rounded-lg  min-[1264px]:w-[90%] min-[1264px]:p-3 min-[1264px]:pl-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] ">
+          <div className="min-[1264px] flex cursor-pointer gap-4 rounded-lg  min-[1264px]:w-[90%] min-[1264px]:p-3 min-[1264px]:pl-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] " onClick={()=>displayDiv()}>
             <CgAddR size={25} color="white" />
             <span className="hidden text-white min-[1264px]:flex">Create</span>
           </div>
