@@ -18,7 +18,7 @@ const NavBar = () => {
 
   const randomString = Math.random();
   return (
-    <div className="fixed bottom-0 h-12 w-full border-t border-[#303030] md:left-0 md:top-0 md:flex md:h-screen md:w-[4.5rem] md:flex-col md:items-center md:gap-52 md:border-r min-[1264px]:sticky min-[1264px]:w-[17.5rem] 2xl:w-[20rem]">
+    <div className="fixed bottom-0 h-12 w-full border-t border-[#303030] md:left-0 md:top-0 md:flex md:h-screen md:w-[4.5rem] md:flex-col md:items-center md:justify-between md:pb-20 md:border-r min-[1264px]:static min-[1264px]:w-[17.5rem] 2xl:w-[20rem]">
       <div className="flex h-full w-full items-center md:h-fit md:flex-col md:gap-8 md:py-8 min-[1264px]:items-start">
         <BsInstagram
           size={23}
@@ -74,7 +74,7 @@ const NavBar = () => {
           </div>
         </div>
       </div>
-      <div className="min-[1264px] flex cursor-pointer gap-5 rounded-lg min-[1264px]:w-[90%] min-[1264px]:p-3 min-[1264px]:pl-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] ">
+      <div className="flex cursor-pointer gap-5 rounded-lg min-[1264px]:w-[90%] min-[1264px]:p-3 min-[1264px]:pl-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] ">
         <RiMenuFill
           fill="white"
           size={25}
