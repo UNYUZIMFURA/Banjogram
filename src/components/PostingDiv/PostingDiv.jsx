@@ -4,12 +4,12 @@ import { hideDiv } from "../../redux/actions";
 
 const PostingDiv = () => {
   const dispatch = useDispatch()
-  const hideDiv = () => {
+  const closeDiv = () => {
     dispatch(hideDiv())
   }
 
   return (
-    <div className="fixed h-screen w-screen flex items-center justify-center bg-[#00000098]" onClick={()=> hideDiv}>
+    <div className="fixed h-screen w-screen flex items-center justify-center bg-[#00000098]" onClick={()=> closeDiv()}>
     <div className="fixed top-1/4 flex h-[50vh] w-full flex-col justify-between bg-[#272727]">
       <div className="flex h-[2.8rem] w-full items-center justify-center border-b border-[#3E404] font-semibold text-white">
         <span>Create new post</span>
