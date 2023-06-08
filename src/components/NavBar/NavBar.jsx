@@ -6,7 +6,7 @@ import { TbSend } from "react-icons/tb";
 import { BsInstagram } from "react-icons/bs";
 import { RiMenuFill } from "react-icons/ri";
 import { FiHeart, FiSearch } from "react-icons/fi";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { showDiv } from "../../redux/actions";
 
 const NavBar = () => {  
