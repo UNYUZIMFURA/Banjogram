@@ -1,6 +1,8 @@
-import { FiImage } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { hideDiv } from "../../redux/actions";
+import SvgElement from "./SvgElement";
+
+
 
 const PostingDiv = () => {
   const dispatch = useDispatch()
@@ -15,7 +17,7 @@ const PostingDiv = () => {
         <span className="text-md">Create new post</span>
       </div>
       <div className="text-white flex flex-grow flex-col items-center justify-center gap-5 ">
-        <FiImage size={60} />
+           <SvgElement />
         <span className="text-lg">Drag photos and videos here</span>
         <button className="bg-[rgb(0,149,246)] font-semibold text-sm px-2 py-2 rounded-lg outline-none">Select from computer</button>
       </div>
@@ -23,5 +25,6 @@ const PostingDiv = () => {
     </div>
   );
 };
+
 
 export default PostingDiv;
