@@ -9,8 +9,8 @@ const PostingDiv = () => {
   }
 
   return (
-    <div className="fixed h-screen w-screen flex items-center justify-center bg-[#00000098]" onClick={()=> closeDiv()}>
-    <div className="fixed top-1/4 flex h-[47vh] w-full flex-col justify-between bg-[#272727] min-[350px]:w-[21.7rem] rounded-xl" >
+    <div className="z-[1] fixed h-screen w-screen flex items-center justify-center bg-[#00000098]" onClick={()=> closeDiv()}>
+    <div className="fixed top-1/4 flex h-[47vh] w-full flex-col justify-between bg-[#272727] min-[350px]:w-[21.7rem] rounded-xl min-[720px]:w-[50%]" >
       <div className="flex h-[2.8rem] w-full items-center justify-center border-b border-[#3E4042] font-semibold text-white">
         <span className="text-md">Create new post</span>
       </div>
