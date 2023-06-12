@@ -2,8 +2,6 @@ import { useDispatch } from "react-redux";
 import { hideDiv } from "../../redux/actions";
 import SvgElement from "./SvgElement";
 
-
-
 const PostingDiv = () => {
   const dispatch = useDispatch()
   const closeDiv = () => {
