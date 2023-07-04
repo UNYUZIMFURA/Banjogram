@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { hideDiv } from "../../redux/actions";
 import SvgElement from "./SvgElement";
-import { useState } from "react";
+import { FiArrowLeft } from "react-icons/fi";
 
 const PostingDiv = () => {
   const [image, setImage] = useState("");
@@ -40,8 +41,10 @@ const PostingDiv = () => {
       id="uploadDivHolder"
     >
       <form className="flex h-[48vh] w-full flex-col justify-between rounded-xl bg-[#272727] min-[350px]:w-[21.7rem] min-[720px]:h-[55vw] min-[720px]:w-[50%] min-[970px]:h-[40rem] min-[970px]:w-[37rem] min-[1905px]:h-[48rem] min-[1905px]:w-[45rem]">
-        <div className="flex h-[2.8rem] w-full items-center justify-center border-b border-[#3E4042] font-semibold text-white">
-          <span className="text-md">Create new post</span>
+        <div className="flex h-[2.8rem] w-full items-center justify-between px-4 border-b border-[#3E4042] font-semibold text-white">
+          <FiArrowLeft size={25}/>
+          <span className="text-md mx-auto">Create new post</span>
+          <span className="text-[rgb(0,149,246)] cursor-pointer">Next</span>
         </div>
 
         <div className="flex h-[90%] flex-col items-center justify-center text-white min-[868px]:h-[92%] min-[970px]:h-[93%] min-[1905px]:h-[94.2%]">
