@@ -8,11 +8,21 @@ const PostingDiv = () => {
   const [image, setImage] = useState("");
   const dispatch = useDispatch();
 
+  const arrowLeft = document.getElementById("arrow-left");
+  const nextTxt = document.getElementById("next-txt");
+  const childOne = document.getElementById("child-1");
+  const imageDiv = document.getElementById("img-div");
+  const postingDiv = document.getElementById("postingDiv");
+
   const displayImage = () => {
-    const childOne = document.getElementById("child-1");
-    const imageDiv = document.getElementById("img-div");
+    // arrowLeft.style.display = "inline";
+    nextTxt.style.display = "inline";
     childOne.style.display = "none";
     imageDiv.style.display = "flex";
+  };
+
+  const addPostDetails = () => {
+    postingDiv.style.width = "65rem";
   };
 
   const handleImage = (e) => {
@@ -40,11 +50,20 @@ const PostingDiv = () => {
       onClick={(e) => closeUploadDiv(e)}
       id="uploadDivHolder"
     >
-      <form className="flex h-[48vh] w-full flex-col justify-between rounded-xl bg-[#272727] min-[350px]:w-[21.7rem] min-[720px]:h-[55vw] min-[720px]:w-[50%] min-[970px]:h-[40rem] min-[970px]:w-[37rem] min-[1905px]:h-[48rem] min-[1905px]:w-[45rem]">
-        <div className="flex h-[2.8rem] w-full items-center justify-between px-4 border-b border-[#3E4042] font-semibold text-white">
-          <FiArrowLeft size={25}/>
+      <form
+        className="flex h-[48vh] w-full flex-col justify-between rounded-xl bg-[#272727] min-[350px]:w-[21.7rem] min-[720px]:h-[55vw] min-[720px]:w-[50%] min-[970px]:h-[40rem] min-[970px]:w-[37rem] min-[1905px]:h-[48rem] min-[1905px]:w-[45rem]"
+        id="postingDiv"
+      >
+        <div className="flex h-[2.8rem] w-full items-center justify-between border-b border-[#3E4042] px-4 font-semibold text-white">
+          <FiArrowLeft size={25} id="arrow-left" className="hidden" />
           <span className="text-md mx-auto">Create new post</span>
-          <span className="text-[rgb(0,149,246)] cursor-pointer">Next</span>
+          <span
+            className="hidden cursor-pointer text-[rgb(0,149,246)]"
+            id="next-txt"
+            onClick={addPostDetails}
+          >
+            Next
+          </span>
         </div>
 
         <div className="flex h-[90%] flex-col items-center justify-center text-white min-[868px]:h-[92%] min-[970px]:h-[93%] min-[1905px]:h-[94.2%]">
