@@ -8,21 +8,22 @@ const PostingDiv = () => {
   const [image, setImage] = useState("");
   const dispatch = useDispatch();
 
-  const arrowLeft = document.getElementById("arrow-left");
-  const nextTxt = document.getElementById("next-txt");
-  const childOne = document.getElementById("child-1");
-  const imageDiv = document.getElementById("img-div");
   const postingDiv = document.getElementById("postingDiv");
 
   const displayImage = () => {
-    // arrowLeft.style.display = "inline";
+    const arrowLeft = document.getElementById("arrow-left");
+    const nextTxt = document.getElementById("next-txt");
+    const childOne = document.getElementById("child-1");
+    const imageDiv = document.getElementById("img-div");
+    arrowLeft.style.display = "inline";
     nextTxt.style.display = "inline";
     childOne.style.display = "none";
     imageDiv.style.display = "flex";
   };
 
   const addPostDetails = () => {
-    postingDiv.style.width = "65rem";
+    postingDiv.style.backgroundColor = "red"
+    postingDiv.style.width = "";
   };
 
   const handleImage = (e) => {
@@ -46,7 +47,7 @@ const PostingDiv = () => {
 
   return (
     <div
-      className="fixed top-0 z-[1]  flex h-screen w-screen items-center justify-center bg-[#00000098]"
+      className="fixed top-0 z-[1]  flex h-screen w-screen items-center justify-center bg-[#00000098] overflow-scroll"
       onClick={(e) => closeUploadDiv(e)}
       id="uploadDivHolder"
     >
