@@ -22,8 +22,7 @@ const PostingDiv = () => {
   };
 
   const addPostDetails = () => {
-    postingDiv.style.backgroundColor = "red"
-   
+    postingDiv.style.backgroundColor = "red";
   };
 
   const handleImage = (e) => {
@@ -47,15 +46,19 @@ const PostingDiv = () => {
 
   return (
     <div
-      className="fixed top-0 z-[1] flex items-center justify-center h-screen w-screen  bg-[#00000098] overflow-scroll"
+      className="fle fixed top-0 z-[1] flex h-screen w-screen items-center justify-center  overflow-scroll bg-[#00000098]"
       onClick={(e) => closeUploadDiv(e)}
       id="uploadDivHolder"
     >
-      <div id='mobile-caption-div' className="h-[30vh] w-[20rem] fixed bg-red-400 z-[1]"></div>
       <form
-        className="fixed flex h-[48vh] w-full flex-col justify-between rounded-xl bg-[#272727] min-[350px]:w-[21.7rem] min-[720px]:h-[55vw] min-[720px]:w-[50%] min-[970px]:h-[40rem] min-[970px]:w-[37rem] min-[1905px]:h-[48rem] min-[1905px]:w-[45rem]"
+        className="flex h-[48vh] w-full flex-col justify-between rounded-xl bg-[#272727] min-[350px]:w-[21.7rem] min-[720px]:h-[55vw] min-[720px]:w-[50%] min-[970px]:h-[40rem] min-[970px]:w-[37rem] min-[1905px]:h-[48rem] min-[1905px]:w-[45rem]"
         id="postingDiv"
       >
+        <textarea
+          id="mobile-caption-div h-full w-full"
+          placeholder="Write a caption..."
+          className="fixed left-[calc(50%-10rem)] top-[calc(50%-10vh)] z-[1] h-[20vh] w-[20rem] rounded-lg bg-[#494949] outline-none text-white px-4 py-4"
+        />
         <div className="flex h-[2.8rem] w-full items-center justify-between border-b border-[#3E4042] px-4 font-semibold text-white">
           <FiArrowLeft size={25} id="arrow-left" className="hidden" />
           <span className="text-md mx-auto">Create new post</span>
