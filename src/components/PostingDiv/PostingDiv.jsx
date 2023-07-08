@@ -23,7 +23,7 @@ const PostingDiv = () => {
 
   const addPostDetails = () => {
     postingDiv.style.backgroundColor = "red"
-    postingDiv.style.width = "";
+    postingDiv.style.width = "100rem";
   };
 
   const handleImage = (e) => {
@@ -52,7 +52,7 @@ const PostingDiv = () => {
       id="uploadDivHolder"
     >
       <form
-        className="flex h-[48vh] w-full flex-col justify-between rounded-xl bg-[#272727] min-[350px]:w-[21.7rem] min-[720px]:h-[55vw] min-[720px]:w-[50%] min-[970px]:h-[40rem] min-[970px]:w-[37rem] min-[1905px]:h-[48rem] min-[1905px]:w-[45rem]"
+        className="fixed flex h-[48vh] w-full flex-col justify-between rounded-xl bg-[#272727] min-[350px]:w-[21.7rem] min-[720px]:h-[55vw] min-[720px]:w-[50%] min-[970px]:h-[40rem] min-[970px]:w-[37rem] min-[1905px]:h-[48rem] min-[1905px]:w-[45rem]"
         id="postingDiv"
       >
         <div className="flex h-[2.8rem] w-full items-center justify-between border-b border-[#3E4042] px-4 font-semibold text-white">
