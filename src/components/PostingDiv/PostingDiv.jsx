@@ -23,7 +23,7 @@ const PostingDiv = () => {
 
   const addPostDetails = () => {
     postingDiv.style.backgroundColor = "red"
-    postingDiv.style.width = "100rem";
+   
   };
 
   const handleImage = (e) => {
@@ -47,10 +47,11 @@ const PostingDiv = () => {
 
   return (
     <div
-      className="fixed top-0 z-[1]  flex h-screen w-screen items-center justify-center bg-[#00000098] overflow-scroll"
+      className="fixed top-0 z-[1] flex items-center justify-center h-screen w-screen  bg-[#00000098] overflow-scroll"
       onClick={(e) => closeUploadDiv(e)}
       id="uploadDivHolder"
     >
+      <div id='mobile-caption-div' className="h-[30vh] w-[20rem] fixed bg-red-400 z-[1]"></div>
       <form
         className="fixed flex h-[48vh] w-full flex-col justify-between rounded-xl bg-[#272727] min-[350px]:w-[21.7rem] min-[720px]:h-[55vw] min-[720px]:w-[50%] min-[970px]:h-[40rem] min-[970px]:w-[37rem] min-[1905px]:h-[48rem] min-[1905px]:w-[45rem]"
         id="postingDiv"
