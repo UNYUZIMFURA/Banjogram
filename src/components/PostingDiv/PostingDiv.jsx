@@ -1,13 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { hideDiv } from "../../redux/actions";
 import SvgElement from "./SvgElement";
 import { FiArrowLeft } from "react-icons/fi";
 
 const PostingDiv = () => {
-  const [image, setImage] = useState("");
+  const [mobileView, setMobileView] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
   const dispatch = useDispatch();
-  const postingDiv = document.getElementById('postingDiv')
+  const [nextClicked, setNextClicked] = useState(false);
+  const [image, setImage] = useState("");
+  const postingDiv = document.getElementById("postingDiv");
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  });
+
+  useEffect(() => {
+    const checkWidth = () => {
+      setMobileView((prevState) => !prevState);
+    };
+    checkWidth();
+  }, [width]);
 
   const displayImage = () => {
     const arrowLeft = document.getElementById("arrow-left");
@@ -21,12 +39,11 @@ const PostingDiv = () => {
   };
 
   const addPostDetails = () => {
+    setNextClicked((prevState) => !prevState);
     if (!(window.innerWidth < 768)) {
-      postingDiv.style.width = "50rem"
-      return
+      postingDiv.style.width = "50rem";
+      return;
     }
-    const mobileCaptionDiv = document.getElementById("mobile-caption-div");
-    mobileCaptionDiv.style.display = "flex";
   };
 
   const handleImage = (e) => {
@@ -64,17 +81,19 @@ const PostingDiv = () => {
         className="flex h-[48vh] w-full flex-col justify-between rounded-xl bg-[#272727] min-[350px]:w-[21.7rem] min-[720px]:h-[55vw] min-[720px]:w-[50%] min-[970px]:h-[40rem] min-[970px]:w-[37rem] min-[1905px]:h-[48rem] min-[1905px]:w-[45rem]"
         id="postingDiv"
       >
-        <div
-          className="fixed left-0 top-0 z-[1] hidden h-screen w-screen items-center justify-center bg-[#00000077]"
-          id="mobile-caption-div"
-          onClick={(e) => closeCaptionDiv(e)}
-        >
-          <textarea
-            id="f"
-            placeholder="Write a caption..."
-            className="h-[20vh] w-[20rem] rounded-lg bg-[#272727] px-4 py-4 text-white outline-none"
-          />
-        </div>
+        {mobileView && nextClicked ? (
+          <div
+            className="fixed left-0 top-0 z-[1] flex h-screen w-screen items-center justify-center bg-[#00000077]"
+            id="mobile-caption-div"
+            onClick={(e) => closeCaptionDiv(e)}
+          >
+            <textarea
+              id=""
+              placeholder="Write a caption..."
+              className="h-[20vh] w-[20rem] rounded-lg bg-[#272727] px-4 py-4 text-white outline-none"
+            />
+          </div>
+        ) : null}
         <div className="flex h-[2.8rem] w-full items-center justify-between border-b border-[#3E4042] px-4 font-semibold text-white">
           <FiArrowLeft size={25} id="arrow-left" className="hidden" />
           <span className="text-md mx-auto">Create new post</span>
