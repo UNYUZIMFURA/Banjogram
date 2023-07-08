@@ -8,8 +8,6 @@ const PostingDiv = () => {
   const [image, setImage] = useState("");
   const dispatch = useDispatch();
 
-  const postingDiv = document.getElementById("postingDiv");
-
   const displayImage = () => {
     const arrowLeft = document.getElementById("arrow-left");
     const nextTxt = document.getElementById("next-txt");
@@ -22,6 +20,7 @@ const PostingDiv = () => {
   };
 
   const addPostDetails = () => {
+    if (!(window.innerWidth < 768)) return
     const mobileCaptionDiv = document.getElementById("mobile-caption-div");
     mobileCaptionDiv.style.display = "flex";
   };
@@ -46,7 +45,6 @@ const PostingDiv = () => {
   };
 
   const closeCaptionDiv = (e) => {
-    console.log(e.target.id);
     if (e.target.id !== "mobile-caption-div") return;
     const mobileCaptionDiv = document.getElementById("mobile-caption-div");
     mobileCaptionDiv.style.display = "none";
