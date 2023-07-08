@@ -22,7 +22,8 @@ const PostingDiv = () => {
   };
 
   const addPostDetails = () => {
-    postingDiv.style.backgroundColor = "red";
+    const mobileCaptionDiv = document.getElementById("mobile-caption-div");
+    mobileCaptionDiv.style.display = "flex";
   };
 
   const handleImage = (e) => {
@@ -55,9 +56,9 @@ const PostingDiv = () => {
         id="postingDiv"
       >
         <textarea
-          id="mobile-caption-div h-full w-full"
+          id="mobile-caption-div"
           placeholder="Write a caption..."
-          className="fixed left-[calc(50%-10rem)] top-[calc(50%-10vh)] z-[1] h-[20vh] w-[20rem] rounded-lg bg-[#494949] outline-none text-white px-4 py-4"
+          className="fixed left-[calc(50%-10rem)] top-[calc(50%-10vh)] z-[1] hidden h-[20vh] w-[20rem] rounded-lg bg-[#494949] px-4 py-4 text-white outline-none"
         />
         <div className="flex h-[2.8rem] w-full items-center justify-between border-b border-[#3E4042] px-4 font-semibold text-white">
           <FiArrowLeft size={25} id="arrow-left" className="hidden" />
