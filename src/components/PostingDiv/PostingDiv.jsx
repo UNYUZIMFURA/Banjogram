@@ -15,17 +15,18 @@ const PostingDiv = () => {
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
+      setMobileView(true)
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  });
+  },[]);
 
   useEffect(() => {
     const checkWidth = () => {
       setMobileView((prevState) => !prevState);
     };
     checkWidth();
-  }, [width]);
+  }, [nextClicked, width]);
 
   const displayImage = () => {
     const arrowLeft = document.getElementById("arrow-left");
@@ -39,11 +40,12 @@ const PostingDiv = () => {
   };
 
   const addPostDetails = () => {
-    setNextClicked((prevState) => !prevState);
     if (!(window.innerWidth < 768)) {
       postingDiv.style.width = "50rem";
       return;
     }
+    setNextClicked((prevState) => !prevState);
+
   };
 
   const handleImage = (e) => {
