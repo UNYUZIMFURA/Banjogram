@@ -7,6 +7,7 @@ import { FiArrowLeft } from "react-icons/fi";
 const PostingDiv = () => {
   const [image, setImage] = useState("");
   const dispatch = useDispatch();
+  const postingDiv = document.getElementById('postingDiv')
 
   const displayImage = () => {
     const arrowLeft = document.getElementById("arrow-left");
@@ -20,7 +21,10 @@ const PostingDiv = () => {
   };
 
   const addPostDetails = () => {
-    if (!(window.innerWidth < 768)) return
+    if (!(window.innerWidth < 768)) {
+      postingDiv.style.width = "50rem"
+      return
+    }
     const mobileCaptionDiv = document.getElementById("mobile-caption-div");
     mobileCaptionDiv.style.display = "flex";
   };
