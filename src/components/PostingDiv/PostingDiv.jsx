@@ -46,9 +46,11 @@ const PostingDiv = () => {
   };
 
   const closeCaptionDiv = (e) => {
+    console.log(e.target.id);
+    if (e.target.id !== "mobile-caption-div") return;
     const mobileCaptionDiv = document.getElementById("mobile-caption-div");
-    mobileCaptionDiv.style.display = 'none'
-  }
+    mobileCaptionDiv.style.display = "none";
+  };
 
   return (
     <div
@@ -60,9 +62,13 @@ const PostingDiv = () => {
         className="flex h-[48vh] w-full flex-col justify-between rounded-xl bg-[#272727] min-[350px]:w-[21.7rem] min-[720px]:h-[55vw] min-[720px]:w-[50%] min-[970px]:h-[40rem] min-[970px]:w-[37rem] min-[1905px]:h-[48rem] min-[1905px]:w-[45rem]"
         id="postingDiv"
       >
-        <div className="bg-[#00000077] top-0 left-0 hidden fixed items-center justify-center h-screen w-screen z-[1]" id="mobile-caption-div" onClick={closeCaptionDiv}>
+        <div
+          className="fixed left-0 top-0 z-[1] hidden h-screen w-screen items-center justify-center bg-[#00000077]"
+          id="mobile-caption-div"
+          onClick={(e) => closeCaptionDiv(e)}
+        >
           <textarea
-            id=""
+            id="f"
             placeholder="Write a caption..."
             className="h-[20vh] w-[20rem] rounded-lg bg-[#272727] px-4 py-4 text-white outline-none"
           />
