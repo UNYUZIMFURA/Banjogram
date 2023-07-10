@@ -38,11 +38,11 @@ const PostingDiv = () => {
   };
 
   const closeCaptionDiv = (e) => {
-    setNextClicked(false);
-    setMobileView(false);
     if (e.target.id !== "mobile-caption-div") return;
     const mobileCaptionDiv = document.getElementById("mobile-caption-div");
     mobileCaptionDiv.style.display = "none";
+    setNextClicked(false);
+    setMobileView(false);
   };
 
   const handleImage = (e) => {
