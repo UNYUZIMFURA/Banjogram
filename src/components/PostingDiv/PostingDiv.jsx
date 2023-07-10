@@ -10,51 +10,22 @@ const PostingDiv = () => {
   const dispatch = useDispatch();
   const [nextClicked, setNextClicked] = useState(false);
   const [image, setImage] = useState("");
-  const [a, setA] = useState(false);
-
-  const changeState = () => {
-    setA(true);
-  };
 
   useEffect(() => {
     const addPostDetails = () => {
-      const postingDiv = document.getElementById("postingDiv");
-      setNextClicked(true);
       if (window.innerWidth < 768 || width < 768) {
         setMobileView(true);
       } else {
         setMobileView(false);
       }
     };
-    addPostDetails()
-  }, [a,width]);
+    addPostDetails();
+  }, [width, nextClicked]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
-  });
-
-  const displayImage = () => {
-    const arrowLeft = document.getElementById("arrow-left");
-    const nextTxt = document.getElementById("next-txt");
-    const childOne = document.getElementById("child-1");
-    const imageDiv = document.getElementById("img-div");
-    arrowLeft.style.display = "inline";
-    nextTxt.style.display = "inline";
-    childOne.style.display = "none";
-    imageDiv.style.display = "flex";
+  const handleResize = () => {
+    setWidth(window.innerWidth);
   };
-
-  const handleImage = (e) => {
-    const file = e.target.files[0];
-    const type = file.type.slice(0, 5);
-    if (type === "image") {
-      setImage(e.target.files[0]);
-      displayImage();
-    }
-  };
+  window.addEventListener("resize", handleResize);
 
   const closeDiv = () => {
     dispatch(hideDiv());
@@ -70,6 +41,26 @@ const PostingDiv = () => {
     if (e.target.id !== "mobile-caption-div") return;
     const mobileCaptionDiv = document.getElementById("mobile-caption-div");
     mobileCaptionDiv.style.display = "none";
+  };
+
+  const handleImage = (e) => {
+    const file = e.target.files[0];
+    const type = file.type.slice(0, 5);
+    if (type === "image") {
+      setImage(e.target.files[0]);
+      displayImage();
+    }
+  };
+
+  const displayImage = () => {
+    const arrowLeft = document.getElementById("arrow-left");
+    const nextTxt = document.getElementById("next-txt");
+    const childOne = document.getElementById("child-1");
+    const imageDiv = document.getElementById("img-div");
+    arrowLeft.style.display = "inline";
+    nextTxt.style.display = "inline";
+    childOne.style.display = "none";
+    imageDiv.style.display = "flex";
   };
 
   return (
@@ -101,7 +92,7 @@ const PostingDiv = () => {
           <span
             className="hidden cursor-pointer text-[rgb(0,149,246)]"
             id="next-txt"
-            onClick={changeState}
+            onClick={() => setNextClicked(true)}
           >
             Next
           </span>
