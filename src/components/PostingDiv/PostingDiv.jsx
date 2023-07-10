@@ -6,42 +6,24 @@ import { FiArrowLeft } from "react-icons/fi";
 
 const PostingDiv = () => {
   const [mobileView, setMobileView] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
+  // const [width, setWidth] = useState(window.innerWidth);
   const dispatch = useDispatch();
   const [nextClicked, setNextClicked] = useState(false);
   const [image, setImage] = useState("");
 
-  useEffect(() => {
-    const postingDiv = document.getElementById("postingDiv");
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-      if (width < 768) {
+  const addPostDetails = () => {
+    const postingDiv = document.getElementById("postingDiv"); 
+      setNextClicked(true);
+      if (window.innerWidth < 768) {
         setMobileView(true);
-        addPostDetails();
       } else {
         setMobileView(false);
-        addPostDetails();
       }
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  };
 
   useEffect(() => {
-    const checkWidth = () => {
-      setMobileView(true);
-    };
-    checkWidth();
-  }, [nextClicked, width]);
-
-  const addPostDetails = () => {
-    const postingDiv = document.getElementById("postingDiv");
-    if (!(window.innerWidth < 768)) {
-      postingDiv.style.width = "50rem";
-      return;
-    }
-    setNextClicked(true);
-  };
+    
+  })
 
   const displayImage = () => {
     const arrowLeft = document.getElementById("arrow-left");
