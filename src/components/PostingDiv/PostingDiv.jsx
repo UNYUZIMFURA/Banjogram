@@ -10,17 +10,17 @@ const PostingDiv = () => {
   const dispatch = useDispatch();
   const [nextClicked, setNextClicked] = useState(false);
   const [image, setImage] = useState("");
-  const postingDiv = document.getElementById("postingDiv");
 
   useEffect(() => {
+    const postingDiv = document.getElementById("postingDiv");
     const handleResize = () => {
       setWidth(window.innerWidth);
       if (width < 768) {
         setMobileView(true);
-        addPostDetails()
+        addPostDetails();
       } else {
-        setMobileView(false)
-        addPostDetails()
+        setMobileView(false);
+        addPostDetails();
       }
     };
     window.addEventListener("resize", handleResize);
@@ -34,6 +34,15 @@ const PostingDiv = () => {
     checkWidth();
   }, [nextClicked, width]);
 
+  const addPostDetails = () => {
+    const postingDiv = document.getElementById("postingDiv");
+    if (!(window.innerWidth < 768)) {
+      postingDiv.style.width = "50rem";
+      return;
+    }
+    setNextClicked(true);
+  };
+
   const displayImage = () => {
     const arrowLeft = document.getElementById("arrow-left");
     const nextTxt = document.getElementById("next-txt");
@@ -43,14 +52,6 @@ const PostingDiv = () => {
     nextTxt.style.display = "inline";
     childOne.style.display = "none";
     imageDiv.style.display = "flex";
-  };
-
-  const addPostDetails = () => {
-    if (!(window.innerWidth < 768)) {
-      postingDiv.style.width = "50rem";
-      return;
-    }
-    setNextClicked(true);
   };
 
   const handleImage = (e) => {
