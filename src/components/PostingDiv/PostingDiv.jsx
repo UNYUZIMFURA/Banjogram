@@ -14,12 +14,14 @@ const PostingDiv = () => {
   useEffect(() => {
     const addPostDetails = () => {
       if (window.innerWidth < 768 || width < 768) {
-        console.log('this is it', mobileView)
+        const postingDiv = document.getElementById("postingDiv");
+        const addPostDetails = document.getElementById("add-post-details");
+        postingDiv.style.width = "50%";
+        addPostDetails.style.display = "none";
         setMobileView(true);
       } else {
-        console.log('are we still here',width, window.innerWidth)
-        setMobileView(false);   
-        if (nextClicked && !mobileView) {
+        setMobileView(false);
+        if (nextClicked) {
           const postingDiv = document.getElementById("postingDiv");
           const imgDiv = document.getElementById("img-div");
           const childOne = document.getElementById("child-1");
