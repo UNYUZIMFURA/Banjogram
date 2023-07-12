@@ -17,8 +17,14 @@ const PostingDiv = () => {
         const postingDiv = document.getElementById("postingDiv");
         const imgDiv = document.getElementById("img-div");
         const addPostDetails = document.getElementById("add-post-details");
-        postingDiv.style.width = "50%";
-        imgDiv.style.width = "100%"
+        if (window.innerWidth >= 350) {
+          postingDiv.style.width = "21.7rem";
+        } else if (window.innerWidth >= 720) {
+          postingDiv.style.width = "50%";
+        } else {
+          postingDiv.style.width = "100%";
+        }
+        imgDiv.style.width = "100%";
         addPostDetails.style.display = "none";
         setMobileView(true);
       } else {
