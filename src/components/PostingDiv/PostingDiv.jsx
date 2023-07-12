@@ -15,8 +15,10 @@ const PostingDiv = () => {
     const addPostDetails = () => {
       if (window.innerWidth < 768 || width < 768) {
         const postingDiv = document.getElementById("postingDiv");
+        const imgDiv = document.getElementById("img-div");
         const addPostDetails = document.getElementById("add-post-details");
         postingDiv.style.width = "50%";
+        imgDiv.style.width = "100%"
         addPostDetails.style.display = "none";
         setMobileView(true);
       } else {
