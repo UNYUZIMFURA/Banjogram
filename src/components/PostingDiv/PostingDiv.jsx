@@ -16,11 +16,20 @@ const PostingDiv = () => {
       if (window.innerWidth < 768 || width < 768) {
         setMobileView(true);
       } else {
-        setMobileView(false);
+        if (nextClicked) {
+          const postingDiv = document.getElementById("postingDiv");
+          const imgDiv = document.getElementById("img-div");
+          const childOne = document.getElementById("child-1");
+          const addPostDetails = document.getElementById("add-post-details");
+          postingDiv.style.width = "95%";
+          imgDiv.style.width = "50%";
+          childOne.style.flexDirection = "row";
+          addPostDetails.style.display = "flex";
+        }
       }
     };
     addPostDetails();
-  }, [width, nextClicked]);
+  }, [width, nextClicked, mobileView]);
 
   const handleResize = () => {
     setWidth(window.innerWidth);
@@ -57,11 +66,11 @@ const PostingDiv = () => {
   const displayImage = () => {
     const arrowLeft = document.getElementById("arrow-left");
     const nextTxt = document.getElementById("next-txt");
-    const childOne = document.getElementById("child-1");
+    const childTwo = document.getElementById("child-2");
     const imageDiv = document.getElementById("img-div");
     arrowLeft.style.display = "inline";
     nextTxt.style.display = "inline";
-    childOne.style.display = "none";
+    childTwo.style.display = "none";
     imageDiv.style.display = "flex";
   };
 
@@ -100,10 +109,13 @@ const PostingDiv = () => {
           </span>
         </div>
 
-        <div className="flex h-[90%] flex-col items-center justify-center text-white min-[868px]:h-[92%] min-[970px]:h-[93%] min-[1905px]:h-[94.2%]">
+        <div
+          className="flex h-[90%] flex-col items-center justify-center text-white min-[868px]:h-[92%] min-[970px]:h-[93%] min-[1905px]:h-[94.2%]"
+          id="child-1"
+        >
           <div
             className="flex flex-col items-center justify-center gap-4"
-            id="child-1"
+            id="child-2"
           >
             <SvgElement />
             <span className="text-lg">Drag photos and videos here</span>
@@ -120,7 +132,7 @@ const PostingDiv = () => {
               Select from computer
             </label>
           </div>
-          <div className="hidden max-h-full" id="img-div">
+          <div className="hidden w-full h-full bg-red-200" id="img-div">
             {image ? (
               <img
                 src={URL.createObjectURL(image)}
@@ -129,6 +141,10 @@ const PostingDiv = () => {
               />
             ) : null}
           </div>
+          <div
+            id="add-post-details"
+            className="hidden h-full w-1/2 bg-green-400"
+          ></div>
         </div>
       </form>
     </div>
