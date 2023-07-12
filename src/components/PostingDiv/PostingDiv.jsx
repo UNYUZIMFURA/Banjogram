@@ -34,7 +34,7 @@ const PostingDiv = () => {
         imgDiv.style.width = "100%";
         addPostDetails.style.display = "none";
         setMobileView(true);
-        
+
       } else {
         setMobileView(false);
         if (nextClicked) {
@@ -45,7 +45,7 @@ const PostingDiv = () => {
           postingDiv.style.width = "95%";
           imgDiv.style.width = "50%";
           childOne.style.flexDirection = "row";
-          addPostDetails.style.display = "flex";
+          addPostDetails.style.display = "flex"
         }
       }
     };
