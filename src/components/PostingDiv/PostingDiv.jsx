@@ -14,10 +14,12 @@ const PostingDiv = () => {
   useEffect(() => {
     const addPostDetails = () => {
       if (window.innerWidth < 768 || width < 768) {
+        console.log('this is it', mobileView)
         setMobileView(true);
       } else {
-        setMobileView(false)
-        if (nextClicked){
+        console.log('are we still here',width, window.innerWidth)
+        setMobileView(false);   
+        if (nextClicked && !mobileView) {
           const postingDiv = document.getElementById("postingDiv");
           const imgDiv = document.getElementById("img-div");
           const childOne = document.getElementById("child-1");
@@ -133,7 +135,7 @@ const PostingDiv = () => {
               Select from computer
             </label>
           </div>
-          <div className="hidden h-full w-full bg-red-200" id="img-div">
+          <div className="hidden h-full w-full" id="img-div">
             {image ? (
               <img
                 src={URL.createObjectURL(image)}
