@@ -16,7 +16,8 @@ const PostingDiv = () => {
       if (window.innerWidth < 768 || width < 768) {
         setMobileView(true);
       } else {
-        if (nextClicked) {
+        setMobileView(false)
+        if (nextClicked){
           const postingDiv = document.getElementById("postingDiv");
           const imgDiv = document.getElementById("img-div");
           const childOne = document.getElementById("child-1");
@@ -132,7 +133,7 @@ const PostingDiv = () => {
               Select from computer
             </label>
           </div>
-          <div className="hidden w-full h-full bg-red-200" id="img-div">
+          <div className="hidden h-full w-full bg-red-200" id="img-div">
             {image ? (
               <img
                 src={URL.createObjectURL(image)}
