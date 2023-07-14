@@ -16,7 +16,7 @@ const PostingDiv = () => {
       setWidth(window.innerWidth);
     };
 
-    const debounceHandleResize = debounce(handleResize, 200);
+    const debounceHandleResize = debounce(handleResize, 500);
 
     window.addEventListener("resize", debounceHandleResize);
 
@@ -28,7 +28,6 @@ const PostingDiv = () => {
   const debounce = (func, delay) => {
     let timerId;
     return (...args) => {
-      console.log(args);
       clearTimeout(timerId);
       timerId = setTimeout(() => {
         func.apply(this, args);
