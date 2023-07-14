@@ -12,6 +12,31 @@ const PostingDiv = () => {
   const [image, setImage] = useState("");
 
   useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    const debounceHandleResize = debounce(handleResize, 200);
+
+    window.addEventListener("resize", debounceHandleResize);
+
+    return () => {
+      window.removeEventListener("resize", debounceHandleResize);
+    };
+  }, []);
+
+  const debounce = (func, delay) => {
+    let timerId;
+    return (...args) => {
+      console.log(args);
+      clearTimeout(timerId);
+      timerId = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  };
+
+  useEffect(() => {
     const addPostDetails = () => {
       if (window.innerWidth < 768 || width < 768) {
         const postingDiv = document.getElementById("postingDiv");
@@ -34,7 +59,6 @@ const PostingDiv = () => {
         imgDiv.style.width = "100%";
         addPostDetails.style.display = "none";
         setMobileView(true);
-
       } else {
         setMobileView(false);
         if (nextClicked) {
@@ -45,17 +69,12 @@ const PostingDiv = () => {
           postingDiv.style.width = "95%";
           imgDiv.style.width = "50%";
           childOne.style.flexDirection = "row";
-          addPostDetails.style.display = "flex"
+          addPostDetails.style.display = "flex";
         }
       }
     };
     addPostDetails();
   }, [width, nextClicked, mobileView]);
-
-  const handleResize = () => {
-    setWidth(window.innerWidth);
-  };
-  window.addEventListener("resize", handleResize);
 
   const closeDiv = () => {
     dispatch(hideDiv());
