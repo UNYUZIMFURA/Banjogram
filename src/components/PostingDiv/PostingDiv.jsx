@@ -25,16 +25,16 @@ const PostingDiv = () => {
     };
   }, []);
 
-  const debounce = (func, delay) => {
+  const debounce = (fn, delay) => {
     let timerId;
-    return (...args) => {
+    return () => {
       clearTimeout(timerId);
       timerId = setTimeout(() => {
-        func.apply(this, args);
+        fn()
       }, delay);
     };
   };
-
+  
   useEffect(() => {
     const addPostDetails = () => {
       if (window.innerWidth < 768 || width < 768) {
