@@ -16,7 +16,7 @@ const PostingDiv = () => {
       setWidth(window.innerWidth);
     };
 
-    const debounceHandleResize = debounce(handleResize, 500);
+    const debounceHandleResize = debounce(handleResize, 300);
 
     window.addEventListener("resize", debounceHandleResize);
 
@@ -30,11 +30,11 @@ const PostingDiv = () => {
     return () => {
       clearTimeout(timerId);
       timerId = setTimeout(() => {
-        fn()
+        fn();
       }, delay);
     };
   };
-  
+
   useEffect(() => {
     const addPostDetails = () => {
       if (window.innerWidth < 768 || width < 768) {
@@ -49,10 +49,8 @@ const PostingDiv = () => {
 
         if (window.innerWidth >= 350) {
           postingDiv.style.width = "21.7rem";
-        } else if (window.innerWidth >= 720) {
+        } else if (window.innerWidth >= 768) {
           postingDiv.style.width = "50%";
-        } else {
-          postingDiv.style.width = "100%";
         }
 
         imgDiv.style.width = "100%";
@@ -65,7 +63,7 @@ const PostingDiv = () => {
           const imgDiv = document.getElementById("img-div");
           const childOne = document.getElementById("child-1");
           const addPostDetails = document.getElementById("add-post-details");
-          postingDiv.style.width = "95%";
+          postingDiv.style.width = window.innerWidth >= 965 ? "68rem" : "95%";
           imgDiv.style.width = "50%";
           childOne.style.flexDirection = "row";
           addPostDetails.style.display = "flex";
