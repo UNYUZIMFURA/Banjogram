@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { hideDiv } from "../../redux/actions";
 import SvgElement from "./SvgElement";
 import { FiArrowLeft } from "react-icons/fi";
+import Picker from "emoji-picker-react";
 
 const PostingDiv = () => {
   const [mobileView, setMobileView] = useState(false);
@@ -114,6 +115,10 @@ const PostingDiv = () => {
     imageDiv.style.display = "flex";
   };
 
+  // const onEmojiClick(e, emojiObject) => {
+  //   set
+  // }
+
   return (
     <div
       className="fixed top-0 z-[1] flex h-screen w-screen items-center justify-center bg-[#00000098]"
@@ -183,7 +188,7 @@ const PostingDiv = () => {
           </div>
           <div
             id="add-post-details"
-            className="p-4 gap-2 hidden h-full w-1/2 flex-col bg-[#272727]"
+            className="p-4 items-center justify-around hidden h-full w-1/2 flex-col bg-[#272727]"
           >
             <div className="flex gap-2 p-1 items-center">
               <div className="h-8 w-8 cursor-pointer rounded-full">
@@ -197,6 +202,7 @@ const PostingDiv = () => {
               <span>joykevinrobin</span>
             </div>
             <textarea className="h-[50%] bg-[#272727] text-white outline-non" placeholder="Write a caption..."/>
+            <Picker height="90%" />
           </div>
         </div>
       </form>
