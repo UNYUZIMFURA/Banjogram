@@ -10,6 +10,7 @@ const PostingDiv = () => {
   const dispatch = useDispatch();
   const [nextClicked, setNextClicked] = useState(false);
   const [image, setImage] = useState("");
+  const randomString = Math.random();
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,7 +39,7 @@ const PostingDiv = () => {
   useEffect(() => {
     const addPostDetails = () => {
       if (window.innerWidth < 768 || width < 768) {
-        const postingDiv = document.getElementById("postingDiv");
+        const postingDiv = document.getElementById("posting-div");
         const imgDiv = document.getElementById("img-div");
         const addPostDetails = document.getElementById("add-post-details");
 
@@ -59,11 +60,11 @@ const PostingDiv = () => {
       } else {
         setMobileView(false);
         if (nextClicked) {
-          const postingDiv = document.getElementById("postingDiv");
+          const postingDiv = document.getElementById("posting-div");
           const imgDiv = document.getElementById("img-div");
           const childOne = document.getElementById("child-1");
           const addPostDetails = document.getElementById("add-post-details");
-          postingDiv.style.width = window.innerWidth >= 965 ? "68rem" : "95%";
+          postingDiv.style.width = window.innerWidth >= 1125 ? "68rem" : "95%";
           imgDiv.style.width = "50%";
           childOne.style.flexDirection = "row";
           addPostDetails.style.display = "flex";
@@ -105,6 +106,8 @@ const PostingDiv = () => {
     const nextTxt = document.getElementById("next-txt");
     const childTwo = document.getElementById("child-2");
     const imageDiv = document.getElementById("img-div");
+
+    imageDiv.style.borderRadius = "0.75rem";
     arrowLeft.style.display = "inline";
     nextTxt.style.display = "inline";
     childTwo.style.display = "none";
@@ -119,7 +122,7 @@ const PostingDiv = () => {
     >
       <form
         className="flex h-[48vh] w-full flex-col justify-between rounded-xl bg-[#272727] min-[350px]:w-[21.7rem] min-[720px]:h-[55vw] min-[720px]:w-[50%] min-[970px]:h-[40rem] min-[970px]:w-[37rem] min-[1905px]:h-[48rem] min-[1905px]:w-[45rem]"
-        id="postingDiv"
+        id="posting-div"
       >
         {mobileView && nextClicked ? (
           <div
@@ -180,8 +183,21 @@ const PostingDiv = () => {
           </div>
           <div
             id="add-post-details"
-            className="hidden h-full w-1/2 bg-green-400"
-          ></div>
+            className="p-4 gap-2 hidden h-full w-1/2 flex-col bg-[#272727]"
+          >
+            <div className="flex gap-2 p-1 items-center">
+              <div className="h-8 w-8 cursor-pointer rounded-full">
+                <img
+                  src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
+                  alt="..."
+                  className="rounded-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <span>joykevinrobin</span>
+            </div>
+            <textarea className="h-[50%] bg-[#272727] text-white outline-non" placeholder="Write a caption..."/>
+          </div>
         </div>
       </form>
     </div>
