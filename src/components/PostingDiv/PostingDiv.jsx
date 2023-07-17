@@ -111,7 +111,7 @@ const PostingDiv = () => {
       setWidth(window.innerWidth);
     };
 
-    const debounceHandleResize = debounce(handleResize, 300);
+    const debounceHandleResize = debounce(handleResize, 100);
 
     window.addEventListener("resize", debounceHandleResize);
 
@@ -275,7 +275,7 @@ const PostingDiv = () => {
               />
             ) : null}
           </div>
-          <div
+          <form
             id="add-post-details"
             className="hidden h-full w-1/2 flex-col items-start gap-4 bg-[#272727] p-4 min-[770px]:w-[40%]"
           >
@@ -291,15 +291,15 @@ const PostingDiv = () => {
               <span className="text-sm font-bold">joykevinrobin</span>
             </div>
             <textarea
-              className="outline-non h-[10rem] w-full bg-[#272727] p-4 text-white"
+              className="h-[10rem] w-full bg-[#272727]  text-white outline-none"
               placeholder="Write a caption..."
             />
-            <div className="flex h-[7rem] w-full flex-wrap  gap-[1rem] overflow-scroll bg-[#272727] scrollbar-hide">
+            <div className="flex h-[7rem] w-[90%] flex-wrap  gap-4 overflow-scroll bg-[#272727] scrollbar-hide">
               {arr.map((el) => (
                 <span>{el}</span>
               ))}
             </div>
-          </div>
+          </form>
         </div>
       </form>
     </div>
