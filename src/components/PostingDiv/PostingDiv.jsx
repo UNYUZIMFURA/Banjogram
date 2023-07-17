@@ -136,7 +136,7 @@ const PostingDiv = () => {
         const postingDiv = document.getElementById("posting-div");
         const imgDiv = document.getElementById("img-div");
         const addPostDetails = document.getElementById("add-post-details");
-        const userImage = document.getElementById("user-image")
+        const userImage = document.getElementById("user-image");
 
         /* Removing Previously Made DOM Manipulations of ->
            Enabling User to Add Caption in Desktop Version and Larger Breakpoints
@@ -150,8 +150,8 @@ const PostingDiv = () => {
         }
 
         imgDiv.style.width = "100%";
-        imgDiv.style.borderRadius = "0"
-        userImage.style.borderRadius = "0"
+        imgDiv.style.borderRadius = "0";
+        userImage.style.borderRadius = "0";
         addPostDetails.style.display = "none";
         setMobileView(true);
       } else {
@@ -161,16 +161,16 @@ const PostingDiv = () => {
           const imgDiv = document.getElementById("img-div");
           const childOne = document.getElementById("child-1");
           const addPostDetails = document.getElementById("add-post-details");
-          const userImage = document.getElementById("user-image")
+          const userImage = document.getElementById("user-image");
 
           postingDiv.style.width = window.innerWidth >= 1125 ? "68rem" : "95%";
-          postingDiv.style.borderRadius = "0.5rem"
+          postingDiv.style.borderRadius = "0.5rem";
           imgDiv.style.width = window.innerWidth > 770 ? "60%" : "50%";
-          imgDiv.style.borderBottomLeftRadius = "0.5rem"
-          userImage.style.borderBottomLeftRadius = "0.5rem"
+          imgDiv.style.borderBottomLeftRadius = "0.5rem";
+          userImage.style.borderBottomLeftRadius = "0.5rem";
           childOne.style.flexDirection = "row";
           addPostDetails.style.display = "flex";
-          addPostDetails.style.borderBottomRightRadius = "0.5rem"
+          addPostDetails.style.borderBottomRightRadius = "0.5rem";
         }
       }
     };
@@ -182,7 +182,7 @@ const PostingDiv = () => {
   };
 
   const closeUploadDiv = (e) => {
-    if (e.target.id === "uploadDivHolder") {
+    if (e.target.id === "upload-div-holder") {
       closeDiv();
     }
   };
@@ -221,7 +221,7 @@ const PostingDiv = () => {
     <div
       className="fixed top-0 z-[1] flex h-screen w-screen items-center justify-center bg-[#00000098]"
       onClick={(e) => closeUploadDiv(e)}
-      id="uploadDivHolder"
+      id="upload-div-holder"
     >
       <form
         className="flex h-[48vh] w-full flex-col justify-between rounded-xl bg-[#272727] min-[350px]:w-[21.7rem] min-[720px]:h-[55vw] min-[720px]:w-[50%] min-[970px]:h-[40rem] min-[970px]:w-[37rem] min-[1905px]:h-[48rem] min-[1905px]:w-[45rem]"
