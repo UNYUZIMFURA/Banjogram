@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { hideDiv } from "../../redux/actions";
 import SvgElement from "./SvgElement";
 import { FiArrowLeft } from "react-icons/fi";
-import Picker from "emoji-picker-react";
 
 const PostingDiv = () => {
   const [mobileView, setMobileView] = useState(false);
@@ -12,6 +11,100 @@ const PostingDiv = () => {
   const [nextClicked, setNextClicked] = useState(false);
   const [image, setImage] = useState("");
   const randomString = Math.random();
+  const [arr] = useState([
+    "✌",
+    "😂",
+    "😝",
+    "😁",
+    "😱",
+    "👉",
+    "🙌",
+    "🍻",
+    "🔥",
+    "🌈",
+    "☀",
+    "🎈",
+    "🌹",
+    "💄",
+    "🎀",
+    "⚽",
+    "🎾",
+    "🏁",
+    "😡",
+    "👿",
+    "🐻",
+    "🐶",
+    "🐬",
+    "🐟",
+    "🍀",
+    "👀",
+    "🚗",
+    "🍎",
+    "💝",
+    "💙",
+    "👌",
+    "❤",
+    "😍",
+    "😉",
+    "😓",
+    "😳",
+    "💪",
+    "💩",
+    "🍸",
+    "🔑",
+    "💖",
+    "🌟",
+    "🎉",
+    "🌺",
+    "🎶",
+    "👠",
+    "🏈",
+    "⚾",
+    "🏆",
+    "👽",
+    "💀",
+    "🐵",
+    "🐮",
+    "🐩",
+    "🐎",
+    "💣",
+    "👃",
+    "👂",
+    "🍓",
+    "💘",
+    "💜",
+    "👊",
+    "💋",
+    "😘",
+    "😜",
+    "😵",
+    "🙏",
+    "👋",
+    "🚽",
+    "💃",
+    "💎",
+    "🚀",
+    "🌙",
+    "🎁",
+    "⛄",
+    "🌊",
+    "⛵",
+    "🏀",
+    "🎱",
+    "💰",
+    "👶",
+    "👸",
+    "🐰",
+    "🐷",
+    "🐍",
+    "🐫",
+    "🔫",
+    "👄",
+    "🚲",
+    "🍉",
+    "💛",
+    "💚",
+  ]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -66,7 +159,7 @@ const PostingDiv = () => {
           const childOne = document.getElementById("child-1");
           const addPostDetails = document.getElementById("add-post-details");
           postingDiv.style.width = window.innerWidth >= 1125 ? "68rem" : "95%";
-          imgDiv.style.width = "50%";
+          imgDiv.style.width = window.innerWidth > 770 ? "60%" : "50%";
           childOne.style.flexDirection = "row";
           addPostDetails.style.display = "flex";
         }
@@ -114,10 +207,6 @@ const PostingDiv = () => {
     childTwo.style.display = "none";
     imageDiv.style.display = "flex";
   };
-
-  // const onEmojiClick(e, emojiObject) => {
-  //   set
-  // }
 
   return (
     <div
@@ -188,9 +277,9 @@ const PostingDiv = () => {
           </div>
           <div
             id="add-post-details"
-            className="p-4 items-center justify-around hidden h-full w-1/2 flex-col bg-[#272727]"
+            className="hidden h-full w-1/2 flex-col items-start gap-4 bg-[#272727] p-4 min-[770px]:w-[40%]"
           >
-            <div className="flex gap-2 p-1 items-center">
+            <div className="flex items-center gap-2 p-1">
               <div className="h-8 w-8 cursor-pointer rounded-full">
                 <img
                   src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
@@ -199,10 +288,17 @@ const PostingDiv = () => {
                   loading="lazy"
                 />
               </div>
-              <span>joykevinrobin</span>
+              <span className="text-sm font-bold">joykevinrobin</span>
             </div>
-            <textarea className="h-[50%] bg-[#272727] text-white outline-non" placeholder="Write a caption..."/>
-            <Picker height="90%" />
+            <textarea
+              className="outline-non h-[10rem] w-full bg-[#272727] p-4 text-white"
+              placeholder="Write a caption..."
+            />
+            <div className="flex h-[7rem] w-full flex-wrap  gap-[1rem] overflow-scroll bg-[#272727] scrollbar-hide">
+              {arr.map((el) => (
+                <span>{el}</span>
+              ))}
+            </div>
           </div>
         </div>
       </form>
