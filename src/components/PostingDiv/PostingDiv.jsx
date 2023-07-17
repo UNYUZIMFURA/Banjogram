@@ -11,7 +11,7 @@ const PostingDiv = () => {
   const [nextClicked, setNextClicked] = useState(false);
   const [image, setImage] = useState("");
   const randomString = Math.random();
-  const [arr] = useState([
+  const [emojiArr] = useState([
     "✌",
     "😂",
     "😝",
@@ -111,7 +111,7 @@ const PostingDiv = () => {
       setWidth(window.innerWidth);
     };
 
-    const debounceHandleResize = debounce(handleResize, 100);
+    const debounceHandleResize = debounce(handleResize, 300);
 
     window.addEventListener("resize", debounceHandleResize);
 
@@ -136,6 +136,7 @@ const PostingDiv = () => {
         const postingDiv = document.getElementById("posting-div");
         const imgDiv = document.getElementById("img-div");
         const addPostDetails = document.getElementById("add-post-details");
+        const userImage = document.getElementById("user-image")
 
         /* Removing Previously Made DOM Manipulations of ->
            Enabling User to Add Caption in Desktop Version and Larger Breakpoints
@@ -149,6 +150,8 @@ const PostingDiv = () => {
         }
 
         imgDiv.style.width = "100%";
+        imgDiv.style.borderRadius = "0"
+        userImage.style.borderRadius = "0"
         addPostDetails.style.display = "none";
         setMobileView(true);
       } else {
@@ -158,10 +161,16 @@ const PostingDiv = () => {
           const imgDiv = document.getElementById("img-div");
           const childOne = document.getElementById("child-1");
           const addPostDetails = document.getElementById("add-post-details");
+          const userImage = document.getElementById("user-image")
+
           postingDiv.style.width = window.innerWidth >= 1125 ? "68rem" : "95%";
+          postingDiv.style.borderRadius = "0.5rem"
           imgDiv.style.width = window.innerWidth > 770 ? "60%" : "50%";
+          imgDiv.style.borderBottomLeftRadius = "0.5rem"
+          userImage.style.borderBottomLeftRadius = "0.5rem"
           childOne.style.flexDirection = "row";
           addPostDetails.style.display = "flex";
+          addPostDetails.style.borderBottomRightRadius = "0.5rem"
         }
       }
     };
@@ -269,6 +278,7 @@ const PostingDiv = () => {
           <div className="hidden h-full w-full" id="img-div">
             {image ? (
               <img
+                id="user-image"
                 src={URL.createObjectURL(image)}
                 alt=""
                 className="h-full w-full object-cover"
@@ -295,8 +305,8 @@ const PostingDiv = () => {
               placeholder="Write a caption..."
             />
             <div className="flex h-[7rem] w-[90%] flex-wrap  gap-4 overflow-scroll bg-[#272727] scrollbar-hide">
-              {arr.map((el) => (
-                <span>{el}</span>
+              {emojiArr.map((el) => (
+                <span className="cursor-pointer">{el}</span>
               ))}
             </div>
           </form>
