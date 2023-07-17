@@ -285,7 +285,7 @@ const PostingDiv = () => {
               />
             ) : null}
           </div>
-          <form
+          <div
             id="add-post-details"
             className="hidden h-full w-1/2 flex-col items-start gap-4 bg-[#272727] p-4 min-[770px]:w-[40%]"
           >
@@ -305,11 +305,11 @@ const PostingDiv = () => {
               placeholder="Write a caption..."
             />
             <div className="flex h-[7rem] w-[90%] flex-wrap  gap-4 overflow-scroll bg-[#272727] scrollbar-hide">
-              {emojiArr.map((el) => (
-                <span className="cursor-pointer">{el}</span>
+              {emojiArr.map((el, id) => (
+                <span className="cursor-pointer" key={id}></span>
               ))}
             </div>
-          </form>
+          </div>
         </div>
       </form>
     </div>
