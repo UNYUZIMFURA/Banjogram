@@ -145,8 +145,10 @@ const PostingDiv = () => {
 
         if (window.innerWidth >= 350) {
           postingDiv.style.width = "21.7rem";
+          // postingDiv.style.height = "48vh"
         } else if (window.innerWidth >= 768) {
           postingDiv.style.width = "50%";
+          // postingDiv.style.height = "48vh"
         }
 
         imgDiv.style.width = "100%";
@@ -163,9 +165,9 @@ const PostingDiv = () => {
           const addPostDetails = document.getElementById("add-post-details");
           const userImage = document.getElementById("user-image");
 
-          postingDiv.style.width = window.innerWidth >= 1125 ? "68rem" : "95%";
+          postingDiv.style.width = window.innerWidth >= 1100 ? "68rem" : "95%";
           postingDiv.style.borderRadius = "0.5rem";
-          imgDiv.style.width = window.innerWidth > 770 ? "70%" : "50%";
+          imgDiv.style.width = window.innerWidth > 1100 ? "70%" : "50%";
           imgDiv.style.borderBottomLeftRadius = "0.5rem";
           userImage.style.borderBottomLeftRadius = "0.5rem";
           childOne.style.flexDirection = "row";
@@ -287,7 +289,7 @@ const PostingDiv = () => {
           </div>
           <div
             id="add-post-details"
-            className="hidden h-full w-1/2 flex-col items-start gap-4 bg-[#272727] p-4 min-[770px]:w-[30%]"
+            className="hidden h-full w-1/2 flex-col items-start gap-4 bg-[#272727] p-4 min-[1100px]:w-[30%]"
           >
             <div className="flex items-center gap-2 p-1">
               <div className="h-8 w-8 cursor-pointer rounded-full">
