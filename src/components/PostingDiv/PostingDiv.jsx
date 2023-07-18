@@ -289,9 +289,9 @@ const PostingDiv = () => {
           </div>
           <div
             id="add-post-details"
-            className="hidden h-full w-1/2 flex-col items-start gap-4 bg-[#272727] p-4 min-[1100px]:w-[30%]"
+            className="hidden h-full w-1/2 flex-col items-start gap-5 bg-[#272727] p-4 pl-5 pr-2 min-[1100px]:w-[30%]"
           >
-            <div className="flex items-center gap-2 p-1">
+            <div className="flex items-center gap-3 py-1">
               <div className="h-8 w-8 cursor-pointer rounded-full">
                 <img
                   src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
