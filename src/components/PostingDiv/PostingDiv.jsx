@@ -111,7 +111,7 @@ const PostingDiv = () => {
       setWidth(window.innerWidth);
     };
 
-    const debounceHandleResize = debounce(handleResize, 300);
+    const debounceHandleResize = debounce(handleResize, -100);
 
     window.addEventListener("resize", debounceHandleResize);
 
@@ -165,7 +165,7 @@ const PostingDiv = () => {
 
           postingDiv.style.width = window.innerWidth >= 1125 ? "68rem" : "95%";
           postingDiv.style.borderRadius = "0.5rem";
-          imgDiv.style.width = window.innerWidth > 770 ? "60%" : "50%";
+          imgDiv.style.width = window.innerWidth > 770 ? "70%" : "50%";
           imgDiv.style.borderBottomLeftRadius = "0.5rem";
           userImage.style.borderBottomLeftRadius = "0.5rem";
           childOne.style.flexDirection = "row";
@@ -287,7 +287,7 @@ const PostingDiv = () => {
           </div>
           <div
             id="add-post-details"
-            className="hidden h-full w-1/2 flex-col items-start gap-4 bg-[#272727] p-4 min-[770px]:w-[40%]"
+            className="hidden h-full w-1/2 flex-col items-start gap-4 bg-[#272727] p-4 min-[770px]:w-[30%]"
           >
             <div className="flex items-center gap-2 p-1">
               <div className="h-8 w-8 cursor-pointer rounded-full">
@@ -306,7 +306,7 @@ const PostingDiv = () => {
             />
             <div className="flex h-[7rem] w-[90%] flex-wrap  gap-4 overflow-scroll bg-[#272727] scrollbar-hide">
               {emojiArr.map((el, id) => (
-                <span className="cursor-pointer" key={id}></span>
+                <span className="cursor-pointer" key={id}>{el}</span>
               ))}
             </div>
           </div>
