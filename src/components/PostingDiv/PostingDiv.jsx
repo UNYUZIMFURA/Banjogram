@@ -9,121 +9,27 @@ const PostingDiv = () => {
   const [nextClicked, setNextClicked] = useState(false);
   const [image, setImage] = useState("");
   const randomString = Math.random();
-  const [emojiArr] = useState([
-    "✌",
-    "😂",
-    "😝",
-    "😁",
-    "😱",
-    "👉",
-    "🙌",
-    "🍻",
-    "🔥",
-    "🌈",
-    "☀",
-    "🎈",
-    "🌹",
-    "💄",
-    "🎀",
-    "⚽",
-    "🎾",
-    "🏁",
-    "😡",
-    "👿",
-    "🐻",
-    "🐶",
-    "🐬",
-    "🐟",
-    "🍀",
-    "👀",
-    "🚗",
-    "🍎",
-    "💝",
-    "💙",
-    "👌",
-    "❤",
-    "😍",
-    "😉",
-    "😓",
-    "😳",
-    "💪",
-    "💩",
-    "🍸",
-    "🔑",
-    "💖",
-    "🌟",
-    "🎉",
-    "🌺",
-    "🎶",
-    "👠",
-    "🏈",
-    "⚾",
-    "🏆",
-    "👽",
-    "💀",
-    "🐵",
-    "🐮",
-    "🐩",
-    "🐎",
-    "💣",
-    "👃",
-    "👂",
-    "🍓",
-    "💘",
-    "💜",
-    "👊",
-    "💋",
-    "😘",
-    "😜",
-    "😵",
-    "🙏",
-    "👋",
-    "🚽",
-    "💃",
-    "💎",
-    "🚀",
-    "🌙",
-    "🎁",
-    "⛄",
-    "🌊",
-    "⛵",
-    "🏀",
-    "🎱",
-    "💰",
-    "👶",
-    "👸",
-    "🐰",
-    "🐷",
-    "🐍",
-    "🐫",
-    "🔫",
-    "👄",
-    "🚲",
-    "🍉",
-    "💛",
-    "💚",
-  ]);
 
   useEffect(() => {
-    const addPostDetails = () => {
-        if (nextClicked) {
-          const postingDiv = document.getElementById("posting-div");
-          const imgDiv = document.getElementById("img-div");
-          const childOne = document.getElementById("child-1");
-          const addPostDetails = document.getElementById("add-post-details");
-          const userImage = document.getElementById("user-image");
+    if (nextClicked) {
+      const addPostDetails = () => {
+        const postingDiv = document.getElementById("posting-div");
+        const imgDiv = document.getElementById("img-div");
+        const childOne = document.getElementById("child-1");
+        const addPostDetails = document.getElementById("add-post-details");
+        const userImage = document.getElementById("user-image");
 
-          postingDiv.style.width = window.innerWidth >= 1100 ? "68rem" : "95%";
-          postingDiv.style.borderRadius = "0.5rem";
-          imgDiv.style.width = window.innerWidth > 1100 ? "67%" : "50%";
-          imgDiv.style.borderBottomLeftRadius = "0.5rem";
-          userImage.style.borderBottomLeftRadius = "0.5rem";
-          childOne.style.flexDirection = "row";
-          addPostDetails.style.display = "flex";
-          addPostDetails.style.borderBottomRightRadius = "0.5rem";
-        }
-      }
-    addPostDetails();
+        postingDiv.style.width = window.innerWidth >= 1100 ? "68rem" : "95%";
+        postingDiv.style.borderRadius = "0.5rem";
+        imgDiv.style.width = window.innerWidth > 1100 ? "67%" : "50%";
+        imgDiv.style.borderBottomLeftRadius = "0.5rem";
+        userImage.style.borderBottomLeftRadius = "0.5rem";
+        childOne.style.flexDirection = "row";
+        addPostDetails.style.display = "flex";
+        addPostDetails.style.borderBottomRightRadius = "0.5rem";
+      };
+      addPostDetails();
+    }
   }, [nextClicked]);
 
   const closeDiv = () => {
@@ -232,11 +138,7 @@ const PostingDiv = () => {
               className="h-[10rem] w-full bg-[#272727]  text-white outline-none"
               placeholder="Write a caption..."
             />
-            <div className="flex h-[7rem] w-[90%] flex-wrap  gap-4 overflow-scroll bg-[#272727] scrollbar-hide">
-              {emojiArr.map((el, id) => (
-                <span className="cursor-pointer" key={id}>{el}</span>
-              ))}
-            </div>
+            <div className="flex h-[7rem] w-[90%] flex-wrap  gap-4 overflow-scroll bg-[#4d4d4d] scrollbar-hide"></div>
           </div>
         </div>
       </form>
