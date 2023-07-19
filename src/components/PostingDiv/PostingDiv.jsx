@@ -11,7 +11,7 @@ const PostingDiv = () => {
   const randomString = Math.random();
 
   useEffect(() => {
-    if (nextClicked) {
+    if (nextClicked) {  
       const addPostDetails = () => {
         const postingDiv = document.getElementById("posting-div");
         const imgDiv = document.getElementById("img-div");
@@ -115,7 +115,7 @@ const PostingDiv = () => {
                 id="user-image"
                 src={URL.createObjectURL(image)}
                 alt=""
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover rounded-b-xl"
               />
             ) : null}
           </div>
@@ -135,10 +135,9 @@ const PostingDiv = () => {
               <span className="text-sm font-bold">joykevinrobin</span>
             </div>
             <textarea
-              className="h-[10rem] w-full bg-[#272727]  text-white outline-none"
+              className="h-[10rem] w-full bg-[#272727] border rounded-lg p-4  text-white outline-none"
               placeholder="Write a caption..."
             />
-            <div className="flex h-[7rem] w-[90%] flex-wrap  gap-4 overflow-scroll bg-[#4d4d4d] scrollbar-hide"></div>
           </div>
         </div>
       </form>
