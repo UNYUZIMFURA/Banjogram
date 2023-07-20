@@ -8,11 +8,11 @@ const Story = (props) => {
         props.id === 1 ? "ml-0" : "ml-4"
       } flex flex-col items-center justify-center gap-2`}
     >
-      <div className="story flex h-[4rem] min-w-[4rem] cursor-pointer">
+      <div className="story flex h-[4rem] min-w-[4rem] cursor-pointer p-[1.1px]">
         <img
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
           alt="..."
-          className="mx-auto my-auto h-[92%] rounded-full"
+          className="rounded-full"
           loading="lazy"
         />
       </div>
