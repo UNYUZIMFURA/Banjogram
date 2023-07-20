@@ -6,12 +6,14 @@ import { FiArrowLeft } from "react-icons/fi";
 
 const PostingDiv = () => {
   const dispatch = useDispatch();
-  const [nextClicked, setNextClicked] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
   const [image, setImage] = useState("");
+  const [nextClicked, setNextClicked] = useState(false);
+
   const randomString = Math.random();
 
   useEffect(() => {
-    if (nextClicked) {  
+    if (nextClicked) {
       const addPostDetails = () => {
         const postingDiv = document.getElementById("posting-div");
         const imgDiv = document.getElementById("img-div");
@@ -30,7 +32,28 @@ const PostingDiv = () => {
       };
       addPostDetails();
     }
-  }, [nextClicked]);
+  }, [nextClicked, windowWidth]);
+
+  useEffect(() => {
+    console.log(windowWidth);
+  }, [windowWidth]);
+
+  useEffect(() => {
+    const debounce = (fn, delay) => {
+      return () => {
+        setTimeout(() => {
+          fn();
+        }, delay);
+      };
+    };
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    const debounceHandleResize = debounce(handleResize, 1000);
+    window.addEventListener("resize", debounceHandleResize);
+  });
 
   const closeDiv = () => {
     dispatch(hideDiv());
@@ -115,7 +138,7 @@ const PostingDiv = () => {
                 id="user-image"
                 src={URL.createObjectURL(image)}
                 alt=""
-                className="h-full w-full object-cover rounded-b-xl"
+                className="h-full w-full rounded-b-xl object-cover"
               />
             ) : null}
           </div>
@@ -135,7 +158,7 @@ const PostingDiv = () => {
               <span className="text-sm font-bold">joykevinrobin</span>
             </div>
             <textarea
-              className="h-[10rem] w-full bg-[#272727] border rounded-lg p-4  text-white outline-none"
+              className="h-[10rem] w-full rounded-lg border bg-[#272727] p-4  text-white outline-none"
               placeholder="Write a caption..."
             />
           </div>
