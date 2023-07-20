@@ -23,7 +23,7 @@ const PostingDiv = () => {
 
         postingDiv.style.width = window.innerWidth >= 1100 ? "68rem" : "95%";
         postingDiv.style.borderRadius = "0.5rem";
-        imgDiv.style.width = window.innerWidth > 1100 ? "67%" : "50%";
+        imgDiv.style.width = window.innerWidth > 768 ? "67%" : "50%";
         imgDiv.style.borderBottomLeftRadius = "0.5rem";
         userImage.style.borderBottomLeftRadius = "0.5rem";
         childOne.style.flexDirection = "row";
@@ -33,10 +33,6 @@ const PostingDiv = () => {
       addPostDetails();
     }
   }, [nextClicked, windowWidth]);
-
-  useEffect(() => {
-    console.log(windowWidth);
-  }, [windowWidth]);
 
   useEffect(() => {
     const debounce = (fn, delay) => {
@@ -51,7 +47,7 @@ const PostingDiv = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    const debounceHandleResize = debounce(handleResize, 1000);
+    const debounceHandleResize = debounce(handleResize, -1000);
     window.addEventListener("resize", debounceHandleResize);
   });
 
@@ -144,7 +140,7 @@ const PostingDiv = () => {
           </div>
           <div
             id="add-post-details"
-            className="hidden h-full w-1/2 flex-col items-start gap-5 bg-[#272727] p-4 pl-5 pr-2 min-[1100px]:w-[33%]"
+            className="hidden h-full w-1/2 flex-col items-start gap-6 p-4 py-6 bg-[#272727] min-[768px]:w-[33%]"
           >
             <div className="flex items-center gap-3 py-1">
               <div className="h-8 w-8 cursor-pointer rounded-full">
@@ -158,7 +154,7 @@ const PostingDiv = () => {
               <span className="text-sm font-bold">joykevinrobin</span>
             </div>
             <textarea
-              className="h-[10rem] w-full rounded-lg border bg-[#272727] p-4  text-white outline-none"
+              className="h-[10rem] w-full rounded-lg border border-[#3E4042] resize-none bg-[#272727] p-4 text-white outline-none"
               placeholder="Write a caption..."
             />
           </div>
