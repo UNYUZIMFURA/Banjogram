@@ -2,7 +2,7 @@ import ProfileDetails from "./ProfileDetails";
 import SuggestedAccount from "./SuggestedAccount";
 
 const Suggested = () => {
-  const suggestedInfo = [
+  const suggestedAcc = [
     {
       username: "joy_kevin_banjo",
       followedBy: "sugirayvan",
@@ -47,7 +47,7 @@ const Suggested = () => {
         <span className="text-xs tracking-tight font-semibold">See All</span>
       </div>
       <div className="flex flex-col">
-        {suggestedInfo.map((suggestion, index) => (
+        {suggestedAcc.map((suggestion, index) => (
           <SuggestedAccount
             key={index}
             username={suggestion.username}
