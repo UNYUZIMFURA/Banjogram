@@ -8,7 +8,7 @@ const Story = (props) => {
         props.id === 1 ? "ml-0" : "ml-4"
       } flex flex-col items-center justify-center gap-2`}
     >
-      <div className="story flex h-[4rem] min-w-[4rem] cursor-pointer p-[1.1px]">
+      <div className="story h-[4rem] min-w-[4rem] cursor-pointer grid place-items-center">
         <img
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
           alt="..."
