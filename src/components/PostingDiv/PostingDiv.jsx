@@ -32,23 +32,13 @@ const PostingDiv = () => {
       };
       addPostDetails();
     }
-  }, [nextClicked]);
+  }, [nextClicked, windowWidth]);
 
   useEffect(() => {
-    const debounce = (fn, delay) => {
-      return () => {
-        setTimeout(() => {
-          fn();
-        }, delay);
-      };
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
     };
-
-    // const handleResize = () => {
-    //   setWindowWidth(window.innerWidth);
-    // };
-
-    // const debounceHandleResize = debounce(handleResize, -1000);
-    // window.addEventListener("resize", debounceHandleResize);
+    window.addEventListener("resize", handleResize);
   });
 
   const closeDiv = () => {
@@ -140,7 +130,7 @@ const PostingDiv = () => {
           </div>
           <div
             id="add-post-details"
-            className="hidden h-full w-1/2 flex-col items-start gap-6 p-4 py-6 bg-[#272727] min-[768px]:w-[33%]"
+            className="hidden h-full w-1/2 flex-col items-start gap-6 bg-[#272727] p-4 py-6 min-[768px]:w-[33%]"
           >
             <div className="flex items-center gap-3 py-1">
               <div className="h-8 w-8 cursor-pointer rounded-full">
@@ -154,7 +144,7 @@ const PostingDiv = () => {
               <span className="text-sm font-bold">joykevinrobin</span>
             </div>
             <textarea
-              className="h-[10rem] w-full rounded-lg border border-[#3E4042] resize-none bg-[#272727] p-4 text-white outline-none"
+              className="h-[10rem] w-full resize-none rounded-lg border border-[#3E4042] bg-[#272727] p-4 text-white outline-none"
               placeholder="Write a caption..."
             />
           </div>
