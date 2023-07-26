@@ -1,5 +1,5 @@
-const toggleVisibility = (state = false, action) => {
-  switch (action.type) {
+const toggleVisibility = (state: boolean = false, action) => {
+  switch (action.type as string) {
     case "SHOW":
       return true;
     case "HIDE":

@@ -32,7 +32,7 @@ const PostingDiv = () => {
       };
       addPostDetails();
     }
-  }, [nextClicked, windowWidth]);
+  }, [nextClicked]);
 
   useEffect(() => {
     const debounce = (fn, delay) => {
@@ -43,12 +43,12 @@ const PostingDiv = () => {
       };
     };
 
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+    // const handleResize = () => {
+    //   setWindowWidth(window.innerWidth);
+    // };
 
-    const debounceHandleResize = debounce(handleResize, -1000);
-    window.addEventListener("resize", debounceHandleResize);
+    // const debounceHandleResize = debounce(handleResize, -1000);
+    // window.addEventListener("resize", debounceHandleResize);
   });
 
   const closeDiv = () => {
