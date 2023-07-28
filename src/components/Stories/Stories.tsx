@@ -1,4 +1,5 @@
 import Story from "./Story";
+import React from "react";
 
 const Stories = () => {
   const stories = [

@@ -1,6 +1,12 @@
 import "./styles/story.css";
+import React from "react";
 
-const Story = (props) => {
+type StoryProps = {
+  id: number
+  userName: string
+}
+
+const Story = (props: StoryProps) => {
   const randomString = Math.random();
   return (
     <div

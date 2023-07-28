@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,jsx}"],
+  content: ["./src/**/*.{html,jsx,tsx}"],
   theme: {
     fontFamily: {
       satisfy: ["Satisfy", "cursive"],

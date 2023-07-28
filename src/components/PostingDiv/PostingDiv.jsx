@@ -119,14 +119,14 @@ const PostingDiv = () => {
             </label>
           </div>
           <div className="hidden h-full w-full" id="img-div">
-            {image ? (
+            {image && (
               <img
                 id="user-image"
                 src={URL.createObjectURL(image)}
                 alt=""
                 className="h-full w-full rounded-b-xl object-cover"
               />
-            ) : null}
+            )}
           </div>
           <div
             id="add-post-details"
