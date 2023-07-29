@@ -9,6 +9,7 @@ const PostingDiv = () => {
   const [windowWidth, setWindowWidth] = useState(0);
   const [image, setImage] = useState("");
   const [nextClicked, setNextClicked] = useState(false);
+  const [caption, setCaption] = useState("")
 
   const randomString = Math.random();
 
@@ -40,6 +41,10 @@ const PostingDiv = () => {
     };
     window.addEventListener("resize", handleResize);
   });
+
+  useEffect(() => {
+    console.log(caption)
+  }, [caption])
 
   const closeDiv = () => {
     dispatch(hideDiv());
@@ -146,6 +151,7 @@ const PostingDiv = () => {
             <textarea
               className="h-[10rem] w-full resize-none rounded-lg border border-[#3E4042] bg-[#272727] p-4 text-white outline-none"
               placeholder="Write a caption..."
+              onChange={(e)=> setCaption(e.target.value)}
             />
           </div>
         </div>
