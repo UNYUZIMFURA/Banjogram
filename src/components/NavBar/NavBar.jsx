@@ -85,7 +85,7 @@ const NavBar = () => {
           size={25}
           className="hidden cursor-pointer md:flex"
         />
-        <span className="hidden text-white min-[1264px]:flex ">More</span>
+        <span className="hidden text-white min-[1264px]:flex">More</span>
       </div>
     </div>
   );

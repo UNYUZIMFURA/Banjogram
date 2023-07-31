@@ -1,3 +1,5 @@
+import React, { useEffect } from "react";
+import { useState } from "react";
 import PostHeader from "./PostHeader";
 import { FiHeart } from "react-icons/fi";
 import { FaRegComment } from "react-icons/fa";
@@ -5,13 +7,25 @@ import { TbSend } from "react-icons/tb";
 import { FaRegBookmark } from "react-icons/fa";
 
 const Post = () => {
-  const randomString = Math.random();
+  const [randomNumsArr, setRandomNumsArr] = useState<number[]>([]);
+
+  function generateRand() {
+    const randomString = Math.random();
+    return randomString;
+  }
+
+  useEffect(() => {
+    setRandomNumsArr([generateRand(), generateRand()]);
+  }, []);
+
+  console.log(randomNumsArr);
+
   return (
     <div className="mt-4 flex min-h-[80vh] w-screen flex-col min-[470px]:w-[29.5rem]">
       <PostHeader />
       <div className="flex h-[62%] w-full cursor-pointer rounded-[0.2rem]">
         <img
-          src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
+          src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomNumsArr[0]}`}
           alt=""
           className="w-full rounded-t-[0.2rem] object-cover"
           loading="lazy"
@@ -29,21 +43,29 @@ const Post = () => {
         <div className="flex items-center gap-2">
           <div className="h-5 w-5 cursor-pointer rounded-full border">
             <img
-              src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
+              src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomNumsArr[1]}`}
               alt=""
               className="rounded-full"
               loading="lazy"
             />
           </div>
           <p className="text-sm font-medium text-white">
-            Liked by <span className="font-bold cursor-pointer">cristiano</span> and{" "}
-            <span className="font-bold cursor-pointer">109 others</span>
+            Liked by <span className="cursor-pointer font-bold">cristiano</span>{" "}
+            and <span className="cursor-pointer font-bold">109 others</span>
           </p>
         </div>
       </div>
       <div className="flex items-center px-2 py-1 scrollbar-hide">
         <p className="text-sm text-white">
-          <span className="font-bold cursor-pointer">433_football</span> <span className="text-[#bed1e9] cursor-pointer">@leo_messi</span> has moved to Inter Miami just as<span className="text-[#bed1e9] cursor-pointer"> @cristiano</span> moved to Al Nassr, news straight from <span className="text-[#bed1e9] cursor-pointer"> #banjo</span>
+          <span className="cursor-pointer font-bold">433_football</span>{" "}
+          <span className="cursor-pointer text-[#bed1e9]">@leo_messi</span> has
+          moved to Inter Miami just as
+          <span className="cursor-pointer text-[#bed1e9]">
+            {" "}
+            @cristiano
+          </span>{" "}
+          moved to Al Nassr, news straight from{" "}
+          <span className="cursor-pointer text-[#bed1e9]"> #banjo</span>
         </p>
       </div>
       <div className="flex flex-col gap-2 border-b border-[#303030] bg-black px-2 pb-9 pt-2 text-white">
