@@ -1,11 +1,13 @@
 import React from "react";
+
 import { IoLogoFacebook } from "react-icons/io";
 
 const Login = () => {
   return (
-    <div className="flex h-screen w-screen items-center justify-center">
-      <div className="flex h-[80vh] w-[95%] flex-col items-center gap-2">
-        <div className="flex w-full flex-col items-center pt-5 gap-4 border">
+    <div className="flex h-screen w-screen items-center justify-center min-[876px]:justify-around">
+      <div className="hidden min-[876px]:flex h-[80vh] w-1/2 bg-[red] "></div>
+      <div className="flex h-[80vh] bg-[green] w-[95%] flex-col items-center gap-2  min-[370px]:w-[22rem]">
+        <div className="flex w-full flex-col items-center pt-5 gap-4 border border-black">
           <span className="cursor-pointer font-bold font-satisfy text-[2.3rem] text-black">
             Banjogram
           </span>
@@ -49,9 +51,9 @@ const Login = () => {
         </div>
         <div className="flex items-center gap-4 py-2 w-full flex-col text-sm">
           <span>Get the app.</span>
-          <div className="flex w-full gap-2 justify-around">
-          <img src="/apple_store.png" alt="" className="h-9 cursor-pointer" />
-          <img src="/play_store.png" alt="" className="h-9 cursor-pointer" />
+          <div className="max-w-[18rem] flex justify-around">
+          <img src="/apple_store.png" alt="" className="h-auto w-[47%] cursor-pointer" />
+          <img src="/play_store.png" alt="" className="h-auto w-[47%] cursor-pointer" />
           </div>
         </div>
       </div>
