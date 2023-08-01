@@ -23,10 +23,10 @@ const SearchSvg = () => {
       class="_ab6-"
       color="rgb(245, 245, 245)"
       fill="rgb(245, 245, 245)"
-      height="24"
+      height={window.innerWidth >= 768 ? "24": "18" }
       role="img"
       viewBox="0 0 24 24"
-      width="24"
+      width={window.innerWidth >= 768 ? "24": "18" }
     >
       <path
         d="M19 10.5A8.5 8.5 0 1 1 10.5 2a8.5 8.5 0 0 1 8.5 8.5Z"

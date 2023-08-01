@@ -7,7 +7,7 @@ const Header = () => {
         Banjogram
       </span>
       <div className="flex items-center h-full gap-6 px-2">
-        <form className="w-68 flex h-9 items-center justify-evenly rounded-md bg-[#272727] indent-8 outline-none">
+        <form className="max-w-68 flex h-9 items-center justify-evenly rounded-md bg-[#272727] indent-8 outline-none">
           <SearchSvg />
           <input
             className="h-full w-[80%] bg-[#272727] text-white outline-none placeholder:font-light placeholder:text-[#a1a1a1]"
