@@ -3,7 +3,7 @@ module.exports = {
   content: ["./src/**/*.{html,jsx,tsx}"],
   theme: {
     fontFamily: {
-      IgFont: "igfont"
+      igfont: "IgFont"
     },
     extend: {},
   },
