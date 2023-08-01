@@ -20,12 +20,12 @@ const Login = () => {
     <div className="flex h-screen w-screen items-center justify-center min-[876px]:justify-around min-[876px]:w-[55rem] min-[876px]:mx-auto">
       <div className="hidden h-[35rem] w-1/2 bg-[url('../public/phone.png')] bg-cover bg-no-repeat min-[876px]:relative min-[876px]:flex">
         <img
-          className="animate-out fade-out top-7 absolute right-[1.6rem]"
+          className="animate-out fade-out top-[1.5rem] absolute right-[3.3rem] h-[92%]"
           src={`slider_img_${imageIndex}.png`}
           alt=""
         />
       </div>
-      <div className="border flex h-[35rem] w-[95%] flex-col items-center gap-2 min-[370px]:w-[22rem]">
+      <div className="flex h-[35rem] w-[95%] flex-col items-center gap-2 min-[370px]:w-[22rem]">
         <div className="flex w-full flex-col items-center gap-4 border pt-5">
           <span className="fade-in-5 cursor-pointer font-igfont text-[2.3rem] font-bold text-black duration-300">
             Banjogram
