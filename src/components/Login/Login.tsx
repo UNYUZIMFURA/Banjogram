@@ -17,10 +17,10 @@ const Login = () => {
   }, [imageIndex]);
 
   return (
-    <div className="flex h-screen w-screen pt-[5rem] justify-center min-[876px]:w-[55rem] min-[876px]:mx-auto">
-      <div className="hidden h-[38rem] w-1/2 bg-[url('../public/phone.png')] bg-cover bg-no-repeat min-[876px]:relative min-[876px]:flex">
+    <div className="flex h-screen w-screen pt-[12vh] justify-center min-[876px]:w-[55rem] min-[876px]:mx-auto">
+      <div className="hidden h-[40rem] w-1/2 bg-[url('../public/phone.png')] bg-cover bg-no-repeat min-[876px]:relative min-[876px]:flex">
         <img
-          className="animate-out fade-out top-[1.5rem] absolute right-[3.2rem] h-[86%]"
+          className="animate-out fade-out top-[1.5rem] absolute right-[1.8rem] h-[86%]"
           src={`slider_img_${imageIndex}.png`}
           alt=""
         />
