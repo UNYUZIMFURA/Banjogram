@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { hideDiv } from "../../redux/actions";
-import SvgElement from "./SvgElement";
+import { VideoImgSvg } from "../../SVGs/SvgElements";
 import { FiArrowLeft } from "react-icons/fi";
 
 const PostingDiv = () => {
@@ -108,7 +108,7 @@ const PostingDiv = () => {
             className="flex flex-col items-center justify-center gap-4"
             id="child-2"
           >
-            <SvgElement />
+            <VideoImgSvg />
             <span className="text-lg">Drag photos and videos here</span>
             <input
               type="file"

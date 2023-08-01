@@ -23,7 +23,7 @@
       "types": ["node", "react", "react-dom"],
       "downlevelIteration": true
     },
-    "include": ["src"],
+    "include": ["src", "src/SVGs/SvgElements.jsx"],
     "exclude": ["node_modules", "build"]
   }
   

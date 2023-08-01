@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React from "react";
+import { useState,useEffect } from "react";
 import PostHeader from "./PostHeader";
-import { FiHeart } from "react-icons/fi";
-import { FaRegComment } from "react-icons/fa";
-import { TbSend } from "react-icons/tb";
-import { FaRegBookmark } from "react-icons/fa";
+
+import {
+  HeartSvg,
+  CommentSvg,
+  MessageSvg,
+  SaveSvg,
+} from "../../SVGs/SvgElements";
 
 const Post = () => {
   const [randomNumsArr, setRandomNumsArr] = useState<number[]>([]);
@@ -34,11 +37,12 @@ const Post = () => {
       <div className="flex w-full flex-col gap-2 p-3">
         <div className="flex items-center justify-between gap-2 py-2">
           <div className="flex gap-4">
-            <FiHeart size={25} color="white" cursor="pointer" />
-            <FaRegComment size={25} color="white" cursor="pointer" />
-            <TbSend size={25} color="white" cursor="pointer" />
+            <HeartSvg />
+
+            <CommentSvg />
+            <MessageSvg />
           </div>
-          <FaRegBookmark size={20} color="white" cursor="pointer" />
+          <SaveSvg />
         </div>
         <div className="flex items-center gap-2">
           <div className="h-5 w-5 cursor-pointer rounded-full border">
@@ -76,7 +80,7 @@ const Post = () => {
           <span>
             <span className="font-bold">ihirwe_olis</span> USA is still #1
           </span>
-          <FiHeart cursor="pointer" className="mr-1" />
+          <HeartSvg />
         </p>
       </div>
     </div>

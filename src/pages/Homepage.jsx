@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import Header from "../components/Header/Header";
+import Search from "../components/Search/Search";
 import Stories from "../components/Stories/Stories";
 import Posts from "../components/Posts/Posts";
 import NavBar from "../components/NavBar/NavBar";
@@ -15,7 +15,7 @@ const Homepage = () => {
       <NavBar />
       <div className="flex w-full flex-col items-center md:w-[85%] min-[1160px]:w-[90%] min-[1160px]:flex-row min-[1160px]:items-start min-[1160px]:justify-around min-[1264px]:h-full min-[1264px]:pt-8 xl:w-[80%] min-[1500px]:justify-center min-[1500px]:gap-[5rem]">
         <div className="flex w-full flex-col items-center min-[1160px]:w-fit">
-          <Header />
+          <Search />
           <Stories />
           <Posts />
         </div>

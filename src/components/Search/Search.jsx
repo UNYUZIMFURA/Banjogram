@@ -1,5 +1,4 @@
-import { FiHeart } from "react-icons/fi";
-import { CiSearch } from "react-icons/ci";
+import { SearchSvg, HeartSvg } from "../../SVGs/SvgElements";
 
 const Header = () => {
   return (
@@ -9,13 +8,13 @@ const Header = () => {
       </span>
       <div className="flex items-center h-full gap-6 px-2">
         <form className="w-68 flex h-9 items-center justify-evenly rounded-md bg-[#272727] indent-8 outline-none">
-          <CiSearch size={20} color="#a1a1a1" cursor="pointer" />
+          <SearchSvg />
           <input
             className="h-full w-[80%] bg-[#272727] text-white outline-none placeholder:font-light placeholder:text-[#a1a1a1]"
             placeholder="Search"
           />
         </form>
-        <FiHeart color="white" size={25} cursor="pointer" />
+        <HeartSvg />
       </div>
     </div>
   );
