@@ -27,7 +27,7 @@ const Login = () => {
       </div>
       <div className="border flex h-[35rem] w-[95%] flex-col items-center gap-2 min-[370px]:w-[22rem]">
         <div className="flex w-full flex-col items-center gap-4 border pt-5">
-          <span className="fade-in-5 cursor-pointer font-satisfy text-[2.3rem] font-bold text-black duration-300">
+          <span className="fade-in-5 cursor-pointer font-igfont text-[2.3rem] font-bold text-black duration-300">
             Banjogram
           </span>
           <div className="flex flex-col py-5">

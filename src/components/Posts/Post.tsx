@@ -37,8 +37,7 @@ const Post = () => {
       <div className="flex w-full flex-col gap-2 p-3">
         <div className="flex items-center justify-between gap-2 py-2">
           <div className="flex gap-4">
-            <HeartSvg />
-
+            <HeartSvg cursor="pointer"/>
             <CommentSvg />
             <MessageSvg />
           </div>

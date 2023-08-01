@@ -21,7 +21,7 @@ const NavBar = () => {
           cursor="pointer"
           className="hidden md:flex min-[1264px]:hidden"
         />
-        <span className="hidden cursor-pointer font-satisfy text-2xl text-white min-[1264px]:ml-8 min-[1264px]:flex">
+        <span className="hidden cursor-pointer font-igfont text-2xl text-white min-[1264px]:ml-8 min-[1264px]:flex">
           Banjogram
         </span>
         <div className="flex h-full w-full items-center justify-around md:h-fit md:flex-col md:justify-center md:gap-10 min-[1264px]:items-center min-[1264px]:gap-4">
