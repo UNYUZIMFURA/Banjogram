@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { IoLogoFacebook } from "react-icons/io";
 
-const Login = () => {
+interface Props {
+  displayUsernameInput: boolean;
+}
+
+const MainModal = (props: Props) => {
   const [imageIndex, setImageIndex] = useState<number>(1);
 
   useEffect(() => {
@@ -17,10 +21,10 @@ const Login = () => {
   }, [imageIndex]);
 
   return (
-    <div className="flex h-screen w-screen pt-[12vh] justify-center min-[876px]:w-[55rem] min-[876px]:mx-auto">
+    <div className="flex h-screen w-screen justify-center pt-[12vh] min-[876px]:mx-auto min-[876px]:w-[55rem]">
       <div className="hidden h-[40rem] w-1/2 bg-[url('../public/phone.png')] bg-cover bg-no-repeat min-[876px]:relative min-[876px]:flex">
         <img
-          className="animate-out fade-out top-[1.5rem] absolute right-[1.8rem] h-[86%]"
+          className="animate-out fade-out absolute right-[1.8rem] top-[1.5rem] h-[86%]"
           src={`slider_img_${imageIndex}.png`}
           alt=""
         />
@@ -36,6 +40,12 @@ const Login = () => {
                 placeholder="Phone number,username,or email"
                 className="text-ellipsis border  bg-[rgb(250,250,250)] p-2 outline-none placeholder:text-xs"
               />
+              {props.displayUsernameInput && (
+                <input
+                  placeholder="Username"
+                  className="text-ellipsis border  bg-[rgb(250,250,250)] p-2 outline-none placeholder:text-xs"
+                />
+              )}
               <input
                 placeholder="Password"
                 className="text-ellipsis border bg-[rgb(250,250,250)] p-2 outline-none placeholder:text-xs"
@@ -90,4 +100,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default MainModal;
