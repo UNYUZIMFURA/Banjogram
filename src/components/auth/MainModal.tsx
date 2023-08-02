@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { IoLogoFacebook } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
+  pageSource: string;
   displayUsernameInput: boolean;
 }
 
 const MainModal = (props: Props) => {
   const [imageIndex, setImageIndex] = useState<number>(1);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -75,9 +78,20 @@ const MainModal = (props: Props) => {
           </div>
         </div>
         <div className="flex w-full justify-center gap-2 border px-4 py-5 text-sm">
-          <span>Don't have an account?</span>
-          <span className="cursor-pointer font-semibold text-[rgb(0,149,246)]">
-            Sign up
+          <span>
+            {props.pageSource === "login"
+              ? `Don't have an account?`
+              : `Have an account?`}
+          </span>
+          <span
+            className="cursor-pointer font-semibold text-[rgb(0,149,246)]"
+            onClick={() => {
+              props.pageSource === "login"
+                ? navigate("/signup")
+                : navigate("/login");
+            }}
+          >
+            {props.pageSource === "login" ? `Sign up` : `Log in`}
           </span>
         </div>
         <div className="flex w-full flex-col items-center gap-4 py-2 text-sm">

@@ -3,7 +3,7 @@ import MainModal from "../MainModal";
 
 const Signup = () => {
   return (
-    <MainModal displayUsernameInput={true}/>
+    <MainModal displayUsernameInput={true} pageSource="signup"/>
   )
 }
 
