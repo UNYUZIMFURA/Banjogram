@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Props, User } from "utils";
 import { IoLogoFacebook } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
-interface Props {
-  pageSource: string;
-  displayUsernameInput: boolean;
-}
-
 const MainModal = (props: Props) => {
   const [imageIndex, setImageIndex] = useState<number>(1);
+  const [error, setError] = useState<string>("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,6 +20,75 @@ const MainModal = (props: Props) => {
     };
   }, [imageIndex]);
 
+  const [formData, setFormData] = useState<User>({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const collectFormData = (e: React.ChangeEvent<any>) => {
+    const { name, value } = e.target;
+
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const submitData = async (e: React.ChangeEvent<any>) => {
+    e.preventDefault();
+    try {
+      if (!formData.username || !formData.email || !formData.password) {
+        setError("Provide username, email and password!");
+      }
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/create`,
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const data = await res.json();
+      if (!data.success) {
+        setError(data.message);
+      }
+    } catch (err) {
+      setError("Unexcepted error, Retry!");
+    }
+  };
+
+  const login = async (e: React.ChangeEvent<any>) => {
+    e.preventDefault();
+    if (!formData.email || !formData.password) {
+      setError("Provide both email and password!");
+    }
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/login`,
+        {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      const data = await res.json();
+      console.log(data);
+      if (!data.success) {
+        setError(data.message);
+      } else if (data.success) {
+        navigate("/");
+      }
+    } catch (err) {
+      setError("Unexcepted error, Retry!");
+    }
+  };
+
   return (
     <div className="flex h-screen w-screen justify-center pt-[12vh] min-[876px]:mx-auto min-[876px]:w-[55rem]">
       <div className="hidden h-[40rem] w-1/2 bg-[url('../public/phone.png')] bg-cover bg-no-repeat min-[876px]:relative min-[876px]:flex">
@@ -32,30 +98,46 @@ const MainModal = (props: Props) => {
           alt=""
         />
       </div>
-      <div className="flex h-[35rem] w-[95%] flex-col items-center gap-2 min-[370px]:w-[22rem]">
+      <div className="flex h-[37rem] w-[95%] flex-col items-center gap-2 min-[370px]:w-[22rem]">
         <div className="flex w-full flex-col items-center gap-4 border pt-5">
           <span className="fade-in-5 cursor-pointer font-igfont text-[2.3rem] font-bold text-black duration-300">
             Banjogram
           </span>
-          <div className="flex flex-col py-5">
+          <form
+            className="flex flex-col py-5"
+            onSubmit={props.pageSource === "login" ? login : submitData}
+            method="POST"
+          >
             <div className="flex flex-col gap-2 pb-2">
               <input
-                placeholder="Phone number,username,or email"
-                className="text-ellipsis border  bg-[rgb(250,250,250)] p-2 outline-none placeholder:text-xs"
+                name="email"
+                type="email"
+                value={formData.email}
+                placeholder="email"
+                className="h-[2.3rem] text-ellipsis  border bg-[rgb(250,250,250)] px-2 text-xs outline-none placeholder:text-xs"
+                onChange={collectFormData}
               />
               {props.displayUsernameInput && (
                 <input
+                  name="username"
+                  type="text"
+                  value={formData.username}
                   placeholder="Username"
-                  className="text-ellipsis border  bg-[rgb(250,250,250)] p-2 outline-none placeholder:text-xs"
+                  className="h-[2.3rem] text-ellipsis  border bg-[rgb(250,250,250)] px-2 text-xs outline-none placeholder:text-xs"
+                  onChange={collectFormData}
                 />
               )}
               <input
+                name="password"
+                type="password"
+                value={formData.password}
                 placeholder="Password"
-                className="text-ellipsis border bg-[rgb(250,250,250)] p-2 outline-none placeholder:text-xs"
+                className="h-[2.3rem] text-ellipsis border bg-[rgb(250,250,250)] px-2 text-[0.5rem] outline-none placeholder:text-xs"
+                onChange={collectFormData}
               />
             </div>
             <div className="bg-[green flex flex-col items-center gap-4 py-2">
-              <button className="w-full cursor-pointer rounded-lg bg-[rgb(0,149,246)] py-[0.4rem] text-sm font-semibold text-white ">
+              <button className="w-full cursor-pointer rounded-lg bg-[rgb(0,149,246)] py-[0.4rem] text-sm font-semibold text-white">
                 Log in
               </button>
               <div className="flex items-center gap-6">
@@ -74,8 +156,11 @@ const MainModal = (props: Props) => {
               <span className="cursor-pointer text-xs text-[rgb(0,55,107)]">
                 Forgot password?
               </span>
+              <span className="text-sm leading-[18px] text-[rgb(273,73,86)]">
+                {error}
+              </span>
             </div>
-          </div>
+          </form>
         </div>
         <div className="flex w-full justify-center gap-2 border px-4 py-5 text-sm">
           <span>

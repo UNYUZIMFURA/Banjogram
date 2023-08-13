@@ -21,8 +21,6 @@ const Post = () => {
     setRandomNumsArr([generateRand(), generateRand()]);
   }, []);
 
-  console.log(randomNumsArr);
-
   return (
     <div className="mt-4 flex min-h-[80vh] w-screen flex-col min-[470px]:w-[29.5rem]">
       <PostHeader />
