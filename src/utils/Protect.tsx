@@ -45,12 +45,12 @@ const Protect = () => {
     }
   }, [token]);
 
-  return userAllowed && hasVerified ? (
+  return userAllowed ? (
     <Outlet />
   ) : hasVerified ? (
     <Navigate to="/login" />
   ) : (
-    <div className="h-screen w-screen bg-black text-white">Loading...</div>
+    <div className="h-screen w-screen bg-black p-4 text-white">Loading...</div>
   );
 };
 
