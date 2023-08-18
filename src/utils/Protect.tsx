@@ -34,6 +34,7 @@ const Protect = () => {
         );
         const data = await res.json();
         if (data.success === true) {
+          console.log(data)
           setUserAllowed(true);
           setHasVerified(true);
         } else {
