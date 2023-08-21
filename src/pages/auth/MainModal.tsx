@@ -78,6 +78,7 @@ const MainModal = (props: Props) => {
       }
       navigate("/");
     } catch (err) {
+      console.log(err)
       setError("Unexcepted error, Retry!");
     }
   };
@@ -105,6 +106,7 @@ const MainModal = (props: Props) => {
       }
       navigate("/");
     } catch (err) {
+      console.log(err)
       setError("Unexcepted error, Retry!");
     }
   };
