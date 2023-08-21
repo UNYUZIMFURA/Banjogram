@@ -41,6 +41,7 @@ const MainModal = (props: Props) => {
       if (!formData.username || !formData.email || !formData.password) {
         setError("Provide username, email and password!");
       }
+
       const res = await fetch(
         `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/create`,
         {
@@ -55,6 +56,27 @@ const MainModal = (props: Props) => {
       if (!data.success) {
         setError(data.message);
       }
+
+      const loginRes = await fetch(
+        `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/login`,
+        {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: formData.email,
+            password: formData.password,
+          }),
+        }
+      );
+
+      const loginData = await loginRes.json();
+      if (!loginData.success) {
+        setError(loginData.message);
+      }
+      navigate("/");
     } catch (err) {
       setError("Unexcepted error, Retry!");
     }
@@ -78,12 +100,10 @@ const MainModal = (props: Props) => {
         }
       );
       const data = await res.json();
-      console.log(data);
       if (!data.success) {
         setError(data.message);
-      } else if (data.success) {
-        navigate("/");
       }
+      navigate("/");
     } catch (err) {
       setError("Unexcepted error, Retry!");
     }
@@ -138,7 +158,7 @@ const MainModal = (props: Props) => {
             </div>
             <div className="bg-[green flex flex-col items-center gap-4 py-2">
               <button className="w-full cursor-pointer rounded-lg bg-[rgb(0,149,246)] py-[0.4rem] text-sm font-semibold text-white">
-                Log in
+                {props.pageSource === "login" ? "Login" : "Sign Up"}
               </button>
               <div className="flex items-center gap-6">
                 <div className="h-[1px] w-[5.7rem] bg-[rgb(219,219,219)]"></div>
