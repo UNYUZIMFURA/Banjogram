@@ -88,7 +88,6 @@ const MainModal = (props: Props) => {
       }
       login(e)
     } catch (err) {
-      console.log(err);
       setError("Unexcepted error, Retry!");
     }
   };
