@@ -38,7 +38,7 @@ const MainModal = (props: Props) => {
   const login = async (e: React.ChangeEvent<any>) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
-      setError("Provide both email and password!");
+      return setError("Provide both email and password!");
     }
     try {
       const res = await fetch(
@@ -70,7 +70,7 @@ const MainModal = (props: Props) => {
     e.preventDefault();
     try {
       if (!formData.username || !formData.email || !formData.password) {
-        setError("Provide username, email and password!");
+       return setError("Provide username, email and password!");
       }
 
       const res = await fetch(
