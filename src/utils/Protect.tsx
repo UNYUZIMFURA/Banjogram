@@ -21,7 +21,6 @@ const Protect = () => {
   }, []);
 
   useEffect(() => {
-    // setHasVerified(true);
     if (token) {
       const verifyUser = async () => {
         const res = await fetch(

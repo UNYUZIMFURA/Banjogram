@@ -35,6 +35,37 @@ const MainModal = (props: Props) => {
     }));
   };
 
+  const login = async (e: React.ChangeEvent<any>) => {
+    e.preventDefault();
+    if (!formData.email || !formData.password) {
+      setError("Provide both email and password!");
+    }
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/login`,
+        {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: formData.email,
+            password: formData.password
+          }),
+        }
+      );
+      const data = await res.json();
+      if (!data.success) {
+        setError(data.message);
+      }
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+      setError("Unexcepted error, Retry!");
+    }
+  };
+
   const submitData = async (e: React.ChangeEvent<any>) => {
     e.preventDefault();
     try {
@@ -56,57 +87,9 @@ const MainModal = (props: Props) => {
       if (!data.success) {
         setError(data.message);
       }
-
-      const loginRes = await fetch(
-        `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/login`,
-        {
-          method: "POST",
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: formData.email,
-            password: formData.password,
-          }),
-        }
-      );
-
-      const loginData = await loginRes.json();
-      if (!loginData.success) {
-        setError(loginData.message);
-      }
-      navigate("/");
+      login(e)
     } catch (err) {
-      console.log(err)
-      setError("Unexcepted error, Retry!");
-    }
-  };
-
-  const login = async (e: React.ChangeEvent<any>) => {
-    e.preventDefault();
-    if (!formData.email || !formData.password) {
-      setError("Provide both email and password!");
-    }
-    try {
-      const res = await fetch(
-        `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/login`,
-        {
-          method: "POST",
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-      const data = await res.json();
-      if (!data.success) {
-        setError(data.message);
-      }
-      navigate("/");
-    } catch (err) {
-      console.log(err)
+      console.log(err);
       setError("Unexcepted error, Retry!");
     }
   };
