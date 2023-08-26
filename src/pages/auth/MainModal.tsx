@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const MainModal = (props: Props) => {
   const [imageIndex, setImageIndex] = useState<number>(1);
-  const [error, setError] = useState<string>("");
+  const [respone, setResponse] = useState<string>("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -38,10 +38,10 @@ const MainModal = (props: Props) => {
   const login = async (e: React.ChangeEvent<any>) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
-      return setError("Provide both email and password!");
+      return setResponse("Provide both email and password!");
     }
     try {
-      setError("Loading...")
+      setResponse("Loading...")
       const res = await fetch(
         `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/login`,
         {
@@ -57,13 +57,13 @@ const MainModal = (props: Props) => {
       );
       const data = await res.json();
       if (!data.success) {
-        setError(data.message);
+        setResponse(data.message);
       }
-      setError("")
+      setResponse("")
       localStorage.setItem("token", data.token);
       navigate("/");
     } catch (err) {
-      setError("Unexcepted error, Retry!");
+      setResponse("Unexcepted error, Retry!");
     }
   };
 
@@ -71,9 +71,9 @@ const MainModal = (props: Props) => {
     e.preventDefault();
     try {
       if (!formData.username || !formData.email || !formData.password) {
-        return setError("Provide username, email and password!");
+        return setResponse("Provide username, email and password!");
       }
-
+      setResponse("Creating User!")
       const res = await fetch(
         `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/create`,
         {
@@ -86,11 +86,11 @@ const MainModal = (props: Props) => {
       );
       const data = await res.json();
       if (!data.success) {
-        setError(data.message);
+        setResponse(data.message);
       }
       login(e);
     } catch (err) {
-      setError("Unexcepted error, Retry!");
+      setResponse("Unexcepted error, Retry!");
     }
   };
 
@@ -162,7 +162,7 @@ const MainModal = (props: Props) => {
                 Forgot password?
               </span>
               <span className="text-sm leading-[18px] text-[rgb(273,73,86)]">
-                {error}
+                {respone}
               </span>
             </div>
           </form>
