@@ -59,6 +59,7 @@ const MainModal = (props: Props) => {
       if (!data.success) {
         setError(data.message);
       }
+      setError("")
       localStorage.setItem("token", data.token);
       navigate("/");
     } catch (err) {

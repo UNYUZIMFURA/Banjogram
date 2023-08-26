@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Outlet, Navigate } from "react-router-dom";
 
 const Protect = () => {
+  const [loading, setLoading] = useState(true)
   const [token, setToken] = useState<string | null>("");
   const [userAllowed, setUserAllowed] = useState(false);
 
@@ -25,13 +26,14 @@ const Protect = () => {
         const data = await res.json();
         if (data.success === true) {
           setUserAllowed(true);
+          setLoading(false)
         }
       };
       verifyUser();
     }
   }, [token]);
 
-  if (!userAllowed) {
+  if (!userAllowed && !loading) {
     return <Navigate to="/login" />;
   }
   return <Outlet />;
