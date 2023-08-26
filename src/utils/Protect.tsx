@@ -28,6 +28,9 @@ const Protect = () => {
           setUserAllowed(true);
           setLoading(false);
         }
+        else {
+          setLoading(false)
+        }
       };
       verifyUser();
     }
