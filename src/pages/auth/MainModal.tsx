@@ -45,7 +45,6 @@ const MainModal = (props: Props) => {
         `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/login`,
         {
           method: "POST",
-          credentials: "include",
           headers: {
             "Content-Type": "application/json",
           },
@@ -59,6 +58,7 @@ const MainModal = (props: Props) => {
       if (!data.success) {
         setError(data.message);
       }
+      console.log(data)
       navigate("/");
     } catch (err) {
       setError("Unexcepted error, Retry!");

@@ -3,7 +3,7 @@ import { Outlet, Navigate } from "react-router-dom";
 
 const Protect = () => {
   const [token, setToken] = useState("");
-  const [hasVerified, setHasVerified] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [userAllowed, setUserAllowed] = useState(false);
 
   useEffect(() => {
@@ -35,23 +35,19 @@ const Protect = () => {
         const data = await res.json();
         if (data.success === true) {
           setUserAllowed(true);
-          setHasVerified(true);
-        } else {
-          setUserAllowed(false);
-          setHasVerified(true);
+          setLoading(false);
         }
       };
       verifyUser();
     }
   }, [token]);
 
-  return userAllowed ? (
-    <Outlet />
-  ) : hasVerified ? (
-    <Navigate to="/login" />
-  ) : (
-    <div className="h-screen w-screen bg-black p-4 text-white">Loading...</div>
-  );
+  if (loading) {
+    return <div className="h-screen w-screen bg-black p-4 text-white">Loading....</div>;
+  } else if (!userAllowed) {
+    return <Navigate to="/login" />;
+  }
+  return <Outlet />;
 };
 
 export default Protect;
