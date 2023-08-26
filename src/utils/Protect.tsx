@@ -2,22 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Outlet, Navigate } from "react-router-dom";
 
 const Protect = () => {
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState<string | null>("");
   const [loading, setLoading] = useState(true);
   const [userAllowed, setUserAllowed] = useState(false);
 
   useEffect(() => {
-    const getCookie = (name) => {
-      const cookies = document.cookie.split("; ");
-      for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].split("=");
-        if (cookie[0] === name) {
-          return decodeURIComponent(cookie[1]);
-        }
-      }
-      return "";
-    };
-    setToken(getCookie("accessToken"));
+    const storage = localStorage.getItem("token");
+    setToken(storage);
   }, []);
 
   useEffect(() => {
@@ -43,7 +34,11 @@ const Protect = () => {
   }, [token]);
 
   if (loading) {
-    return <div className="h-screen w-screen bg-black p-4 text-white">Loading....</div>;
+    return (
+      <div className="h-screen w-screen bg-black p-4 text-white">
+        Loading....
+      </div>
+    );
   } else if (!userAllowed) {
     return <Navigate to="/login" />;
   }

@@ -50,7 +50,7 @@ const MainModal = (props: Props) => {
           },
           body: JSON.stringify({
             email: formData.email,
-            password: formData.password
+            password: formData.password,
           }),
         }
       );
@@ -58,7 +58,7 @@ const MainModal = (props: Props) => {
       if (!data.success) {
         setError(data.message);
       }
-      console.log(data)
+      localStorage.setItem("token", data.token);
       navigate("/");
     } catch (err) {
       setError("Unexcepted error, Retry!");
@@ -69,7 +69,7 @@ const MainModal = (props: Props) => {
     e.preventDefault();
     try {
       if (!formData.username || !formData.email || !formData.password) {
-       return setError("Provide username, email and password!");
+        return setError("Provide username, email and password!");
       }
 
       const res = await fetch(
@@ -86,7 +86,7 @@ const MainModal = (props: Props) => {
       if (!data.success) {
         setError(data.message);
       }
-      login(e)
+      login(e);
     } catch (err) {
       setError("Unexcepted error, Retry!");
     }
