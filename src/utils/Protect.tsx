@@ -36,7 +36,7 @@ const Protect = () => {
     }
   }, [token]);
 
-return loading ? (<div className="h-screen w-screen p-4 bg-black text-white">Loading</div>): userAllowed ? (
+return loading ? (<div className="h-screen w-screen p-4 bg-black text-white">Loading...</div>): userAllowed ? (
   <Outlet />
 ): (
   <Navigate to="/login" />
