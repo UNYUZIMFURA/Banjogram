@@ -33,11 +33,11 @@ const Protect = () => {
     }
   }, [token]);
 
-  if (!userAllowed && !loading) {
-    return <Navigate to="/login" />;
-  } else if (userAllowed) {
-    return <Outlet />;
-  }
+return loading ? (<div className="h-screen w-screen p-4 bg-black text-white">Loading</div>): userAllowed ? (
+  <Outlet />
+): (
+  <Navigate to="/login" />
+)
 };
 
 export default Protect;
