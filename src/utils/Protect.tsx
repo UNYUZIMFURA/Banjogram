@@ -27,20 +27,22 @@ const Protect = () => {
         if (data.success === true) {
           setUserAllowed(true);
           setLoading(false);
-        }
-        else {
-          setLoading(false)
+        } else {
+          setLoading(false);
         }
       };
       verifyUser();
     }
+    setLoading(false);
   }, [token]);
 
-return loading ? (<div className="h-screen w-screen p-4 bg-black text-white">Loading...</div>): userAllowed ? (
-  <Outlet />
-): (
-  <Navigate to="/login" />
-)
+  return loading ? (
+    <div className="h-screen w-screen bg-black p-4 text-white">Loading...</div>
+  ) : userAllowed ? (
+    <Outlet />
+  ) : (
+    <Navigate to="/login" />
+  );
 };
 
 export default Protect;
