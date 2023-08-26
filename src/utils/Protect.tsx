@@ -3,7 +3,6 @@ import { Outlet, Navigate } from "react-router-dom";
 
 const Protect = () => {
   const [token, setToken] = useState<string | null>("");
-  const [loading, setLoading] = useState(true);
   const [userAllowed, setUserAllowed] = useState(false);
 
   useEffect(() => {
@@ -26,20 +25,13 @@ const Protect = () => {
         const data = await res.json();
         if (data.success === true) {
           setUserAllowed(true);
-          setLoading(false);
         }
       };
       verifyUser();
     }
   }, [token]);
 
-  if (loading) {
-    return (
-      <div className="h-screen w-screen bg-black p-4 text-white">
-        Loading....
-      </div>
-    );
-  } else if (!userAllowed) {
+  if (!userAllowed) {
     return <Navigate to="/login" />;
   }
   return <Outlet />;

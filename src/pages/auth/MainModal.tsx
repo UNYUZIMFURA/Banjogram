@@ -41,6 +41,7 @@ const MainModal = (props: Props) => {
       return setError("Provide both email and password!");
     }
     try {
+      setError("Loading...")
       const res = await fetch(
         `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/login`,
         {
