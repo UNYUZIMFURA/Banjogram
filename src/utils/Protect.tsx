@@ -12,6 +12,7 @@ const Protect = () => {
   }, []);
 
   useEffect(() => {
+    console.log('something changed')
     if (token) { 
       console.log("a change");
       const verifyUser = async () => {
