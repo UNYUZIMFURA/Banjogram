@@ -169,9 +169,9 @@ const MainModal = (props: Props) => {
                 style={
                   errorOccured
                     ? {
-                        color: "text-[rgb(273,73,86)",
+                        color: "rgb(273,73,86)",
                       }
-                    : { color: "text-[rgb(0,55,107)" }
+                    : { color: "rgb(0,55,107)" }
                 }
               >
                 {response}
