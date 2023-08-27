@@ -13,7 +13,7 @@ const Protect = () => {
 
   useEffect(() => {
     if (token) {
-      console.log('a change')
+      console.log("a change");
       const verifyUser = async () => {
         const res = await fetch(
           `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/verify`,
@@ -28,16 +28,15 @@ const Protect = () => {
         if (data.success === true) {
           setUserAllowed(true);
           setLoading(false);
-        } else {
-          console.log('did not succeed')
+        } else if (!data.success) {
+          console.log("did not succeed");
           setLoading(false);
         }
       };
       verifyUser();
-    }
-    else {
-      setLoading(false)
-      console.log("undefined token")
+    } else {
+      setLoading(false);
+      console.log("undefined token");
     }
   }, [token]);
 
