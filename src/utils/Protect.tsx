@@ -30,10 +30,8 @@ const Protect = () => {
         if (data.success === true) {
           setUserAllowed(true);
           setLoading(false);
-        } else if (!data.success) {
-          console.log("did not succeed");
-          setLoading(false);
         }
+        setLoading(false);
       };
       verifyUser();
     }
