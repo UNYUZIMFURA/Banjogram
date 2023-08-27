@@ -73,7 +73,7 @@ const MainModal = (props: Props) => {
       if (!formData.username || !formData.email || !formData.password) {
         return setResponse("Provide username, email and password!");
       }
-      setResponse("Creating User!")
+      setResponse("Creating User...")
       const res = await fetch(
         `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/create`,
         {

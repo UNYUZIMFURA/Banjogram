@@ -8,17 +8,14 @@ const Protect = () => {
 
   useEffect(() => {
     const storage = localStorage.getItem("token");
+    if (storage === null || storage === "") {
+      return setLoading(false);
+    }
     setToken(storage);
   }, []);
 
   useEffect(() => {
-    console.log("something changed");
-    if (token === null || "") {
-      console.log("Something wrong");
-      setLoading(false);
-    }
     if (token) {
-      console.log("a change");
       const verifyUser = async () => {
         const res = await fetch(
           `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/verify`,
