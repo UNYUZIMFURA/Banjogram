@@ -18,7 +18,7 @@ const Protect = () => {
     if (token) {
       const verifyUser = async () => {
         const res = await fetch(
-          `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/verify`,
+          `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/verify-token`,
           {
             method: "POST",
             headers: {
