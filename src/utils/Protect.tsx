@@ -39,7 +39,7 @@ const Protect = () => {
   return userAllowed ? (
     <Outlet />
   ) : loading ? (
-    <div className="bg-black p-4 h-screen w-screen text-white">Loading...</div>
+    <div className="h-screen w-screen bg-black p-4 text-white">Loading...</div>
   ) : (
     <Navigate to="/login" />
   );
