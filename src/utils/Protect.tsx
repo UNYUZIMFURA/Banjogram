@@ -35,6 +35,7 @@ const Protect = () => {
       };
       verifyUser();
     } else {
+      console.log('undefined token')
       setLoading(false);
     }
   }, [token]);
