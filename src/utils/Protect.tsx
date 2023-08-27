@@ -12,7 +12,7 @@ const Protect = () => {
   }, []);
 
   useEffect(() => {
-    if (token) {
+    if (token) { 
       console.log("a change");
       const verifyUser = async () => {
         const res = await fetch(
@@ -34,10 +34,7 @@ const Protect = () => {
         }
       };
       verifyUser();
-    } else {
-      console.log('undefined token')
-      setLoading(false);
-    }
+    } 
   }, [token]);
 
   return userAllowed ? (
