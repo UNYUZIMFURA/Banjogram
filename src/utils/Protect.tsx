@@ -29,6 +29,7 @@ const Protect = () => {
           setUserAllowed(true);
           setLoading(false);
         } else {
+          console.log('did not succeed')
           setLoading(false);
         }
       };
