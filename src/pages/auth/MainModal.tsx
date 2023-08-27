@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 const MainModal = (props: Props) => {
   const [imageIndex, setImageIndex] = useState<number>(1);
-  const [respone, setResponse] = useState<string>("");
+  const [response, setResponse] = useState<string>("");
+  const [errorOccured, setErrOccured] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -41,7 +42,7 @@ const MainModal = (props: Props) => {
       return setResponse("Provide both email and password!");
     }
     try {
-      setResponse("Logging In...")
+      setResponse("Logging In...");
       const res = await fetch(
         `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/login`,
         {
@@ -59,11 +60,12 @@ const MainModal = (props: Props) => {
       if (!data.success) {
         setResponse(data.message);
       }
-      setResponse("")
+      setResponse("");
       localStorage.setItem("token", data.token);
       navigate("/");
     } catch (err) {
       setResponse("Unexcepted error, Retry!");
+      setErrOccured(true);
     }
   };
 
@@ -73,7 +75,7 @@ const MainModal = (props: Props) => {
       if (!formData.username || !formData.email || !formData.password) {
         return setResponse("Provide username, email and password!");
       }
-      setResponse("Creating User...")
+      setResponse("Creating User...");
       const res = await fetch(
         `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/create`,
         {
@@ -91,6 +93,7 @@ const MainModal = (props: Props) => {
       login(e);
     } catch (err) {
       setResponse("Unexcepted error, Retry!");
+      setErrOccured(true);
     }
   };
 
@@ -161,8 +164,17 @@ const MainModal = (props: Props) => {
               <span className="cursor-pointer text-xs text-[rgb(0,55,107)]">
                 Forgot password?
               </span>
-              <span className="text-sm leading-[18px] text-[rgb(273,73,86)]">
-                {respone}
+              <span
+                className="text-sm leading-[18px]"
+                style={
+                  errorOccured
+                    ? {
+                        color: "text-[rgb(273,73,86)",
+                      }
+                    : { color: "text-[rgb(0,55,107)" }
+                }
+              >
+                {response}
               </span>
             </div>
           </form>
