@@ -39,6 +39,7 @@ const MainModal = (props: Props) => {
   const login = async (e: React.ChangeEvent<any>) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
+      setErrOccured(true)
       return setResponse("Provide both email and password!");
     }
     try {
@@ -73,6 +74,7 @@ const MainModal = (props: Props) => {
     e.preventDefault();
     try {
       if (!formData.username || !formData.email || !formData.password) {
+        setErrOccured(true)
         return setResponse("Provide username, email and password!");
       }
       setResponse("Creating User...");
@@ -88,12 +90,13 @@ const MainModal = (props: Props) => {
       );
       const data = await res.json();
       if (!data.success) {
+        setErrOccured(true)
         setResponse(data.message);
       }
       login(e);
     } catch (err) {
-      setResponse("Unexcepted error, Retry!");
       setErrOccured(true);
+      setResponse("Unexcepted error, Retry!");
     }
   };
 
