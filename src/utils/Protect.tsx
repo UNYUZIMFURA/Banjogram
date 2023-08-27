@@ -35,6 +35,9 @@ const Protect = () => {
       };
       verifyUser();
     }
+    else {
+      console.log("undefined token")
+    }
   }, [token]);
 
   return userAllowed ? (
