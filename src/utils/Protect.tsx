@@ -32,7 +32,9 @@ const Protect = () => {
         }
       };
       verifyUser();
-    }
+    } else {
+      setLoading(false)
+    } 
   }, [token]);
 
   return userAllowed ? (
