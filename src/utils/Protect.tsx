@@ -3,7 +3,7 @@ import { Outlet, Navigate } from "react-router-dom";
 
 const Protect = () => {
   const [loading, setLoading] = useState(true);
-  const [token, setToken] = useState<string | null>("");
+  const [token, setToken] = useState<string | null>(null);
   const [userAllowed, setUserAllowed] = useState(false);
 
   useEffect(() => {
@@ -13,6 +13,7 @@ const Protect = () => {
 
   useEffect(() => {
     if (token) {
+      console.log('a change')
       const verifyUser = async () => {
         const res = await fetch(
           `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/verify`,
@@ -32,9 +33,7 @@ const Protect = () => {
         }
       };
       verifyUser();
-    } else {
-      setLoading(false)
-    } 
+    }
   }, [token]);
 
   return userAllowed ? (
