@@ -12,8 +12,12 @@ const Protect = () => {
   }, []);
 
   useEffect(() => {
-    console.log('something changed')
-    if (token) { 
+    console.log("something changed");
+    if (token === null || "") {
+      console.log("Something wrong");
+      setLoading(false);
+    }
+    if (token) {
       console.log("a change");
       const verifyUser = async () => {
         const res = await fetch(
@@ -35,7 +39,7 @@ const Protect = () => {
         }
       };
       verifyUser();
-    } 
+    }
   }, [token]);
 
   return userAllowed ? (
