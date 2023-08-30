@@ -39,7 +39,7 @@ const MainModal = (props: Props) => {
   const login = async (e: React.ChangeEvent<any>) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
-      setErrOccured(true)
+      setErrOccured(true);
       return setResponse("Provide both email and password!");
     }
     try {
@@ -74,12 +74,12 @@ const MainModal = (props: Props) => {
     e.preventDefault();
     try {
       if (!formData.username || !formData.email || !formData.password) {
-        setErrOccured(true)
+        setErrOccured(true);
         return setResponse("Provide username, email and password!");
       }
       setResponse("Creating User...");
       const res = await fetch(
-        `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/create`,
+        `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/verify-credentials`,
         {
           method: "POST",
           body: JSON.stringify(formData),
@@ -90,10 +90,11 @@ const MainModal = (props: Props) => {
       );
       const data = await res.json();
       if (!data.success) {
-        setErrOccured(true)
+        setErrOccured(true);
         setResponse(data.message);
       }
-      login(e);
+      localStorage.setItem("userData", JSON.stringify(formData));
+      navigate("/verify-email");
     } catch (err) {
       setErrOccured(true);
       setResponse("Unexcepted error, Retry!");
