@@ -79,7 +79,7 @@ const MainModal = (props: Props) => {
       }
       setResponse("Creating User...");
       const res = await fetch(
-        `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/verify-credentials`,
+        `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/create`,
         {
           method: "POST",
           body: JSON.stringify(formData),
@@ -93,8 +93,7 @@ const MainModal = (props: Props) => {
         setErrOccured(true);
         setResponse(data.message);
       }
-      localStorage.setItem("userData", JSON.stringify(formData));
-      navigate("/verify-email");
+      
     } catch (err) {
       setErrOccured(true);
       setResponse("Unexcepted error, Retry!");

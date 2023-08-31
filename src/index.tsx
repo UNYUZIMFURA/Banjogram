@@ -5,7 +5,6 @@ import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/auth/Login/Login";
 import Signup from "pages/auth/Signup/Signup";
-import Email from "pages/auth/Email/Email";
 import Protect from "utils/Protect";
 import { configureStore } from "@reduxjs/toolkit";
 import { allReducers } from "./redux/reducers";
@@ -26,7 +25,6 @@ root.render(
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/verify-email" element={<Email />} />
         </Routes>
       </BrowserRouter>
     </Provider>
