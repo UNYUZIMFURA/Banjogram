@@ -60,13 +60,13 @@ const VerifyEmail = () => {
     }
 
     try {
-      setResponse("Verifying OTP!");
+      setResponse("Verifying OTP...");
       const res = await fetch(
         `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/verify-otp`,
         {
           method: "POST",
           body: JSON.stringify({
-            userEmail,
+            email: userEmail,
             otp,
           }),
           headers: {
