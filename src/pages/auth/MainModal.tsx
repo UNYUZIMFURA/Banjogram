@@ -36,7 +36,7 @@ const MainModal = (props: Props) => {
     }));
   };
 
-  const login = async (e: React.ChangeEvent<any>) => {
+   const login = async (e: React.ChangeEvent<any>) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
       setErrOccured(true);
@@ -72,12 +72,13 @@ const MainModal = (props: Props) => {
 
   const submitData = async (e: React.ChangeEvent<any>) => {
     e.preventDefault();
-    try {
+   
       if (!formData.username || !formData.email || !formData.password) {
         setErrOccured(true);
         return setResponse("Provide username, email and password!");
       }
       setResponse("Creating User...");
+      try {
       const res = await fetch(
         `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/create`,
         {
@@ -93,7 +94,8 @@ const MainModal = (props: Props) => {
         setErrOccured(true);
         setResponse(data.message);
       }
-      
+      localStorage.setItem("email", formData.email)
+      navigate("/verify-email")
     } catch (err) {
       setErrOccured(true);
       setResponse("Unexcepted error, Retry!");
@@ -220,3 +222,4 @@ const MainModal = (props: Props) => {
 };
 
 export default MainModal;
+
