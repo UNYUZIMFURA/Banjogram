@@ -54,7 +54,7 @@ const VerifyEmail = () => {
 
   const verifyUser = async (e: React.ChangeEvent<any>) => {
     e.preventDefault();
-    if (!otp) {
+    if (!otp || !userEmail) {
       setErrOccured(true);
       return setResponse("Provide OTP");
     }
