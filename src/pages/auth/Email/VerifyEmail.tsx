@@ -17,7 +17,7 @@ const VerifyEmail = () => {
     setUserEmail(userEmail);
   }, []);
   
-  const verifyUser = async (e: React.ChangeEvent<any>) => {
+  const verifyUser = async (e: React.ChangeEvent<any> ) => {
     e.preventDefault();
     if (!otp) {
       setErrOccured(true);
@@ -26,7 +26,7 @@ const VerifyEmail = () => {
 
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/verify-token`,
+        `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/verify-email`,
         {
           method: "POST",
           body: JSON.stringify({
@@ -67,9 +67,8 @@ const VerifyEmail = () => {
           src={`slider_img_${imageIndex}.png`}
           alt=""
         />
-        {otp}
       </div>
-      <div className="flex h-[37rem] w-[95%] flex-col items-center gap-3 min-[370px]:w-[22rem]">
+      <div className="flex h-[37rem] w-[95%] flex-col items-center gap-3 min-[370px]:w-[22rem] px-4">
         <div className="h-[3rem] w-[3rem] bg-[blue]"></div>
         <span className="text-sm font-bold ">Enter Confirmation Code</span>
         <span className="text-center text-sm leading-6">
