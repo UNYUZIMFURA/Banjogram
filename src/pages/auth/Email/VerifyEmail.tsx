@@ -124,7 +124,7 @@ const VerifyEmail = () => {
                 type="password"
                 value={userPassword}
                 placeholder="Confirm Password"
-                className="h-[2.3rem] text-ellipsis border bg-[rgb(250,250,250)] px-2 text-[0.5rem] outline-none placeholder:text-xs"
+                className="h-[2.3rem] text-ellipsis rounded-lg border bg-[rgb(250,250,250)] px-2 text-xs outline-none placeholder:text-sm"
                 onChange={(e) => setUserPassword((e.target.value))}
               />
           <button className="cursor-pointer text-sm font-bold text-[rgb(0,149,246)]">
