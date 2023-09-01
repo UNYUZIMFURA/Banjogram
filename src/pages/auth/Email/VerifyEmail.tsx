@@ -5,7 +5,7 @@ const VerifyEmail = () => {
   const navigate = useNavigate();
   const [imageIndex, setImageIndex] = useState<number>(1);
   const [userEmail, setUserEmail] = useState("");
-  const [userPassword,setUserPassword] = useState("")
+  const [userPassword, setUserPassword] = useState("");
   const [response, setResponse] = useState<string>("");
   const [errorOccured, setErrOccured] = useState(false);
   const [otp, setOtp] = useState(0);
@@ -51,8 +51,8 @@ const VerifyEmail = () => {
       setErrOccured(true);
     }
   };
-  
-  const verifyUser = async (e: React.ChangeEvent<any> ) => {
+
+  const verifyUser = async (e: React.ChangeEvent<any>) => {
     e.preventDefault();
     if (!otp) {
       setErrOccured(true);
@@ -60,8 +60,9 @@ const VerifyEmail = () => {
     }
 
     try {
+      setResponse("Verifying OTP!");
       const res = await fetch(
-        `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/verify-email`,
+        `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/verify-otp`,
         {
           method: "POST",
           body: JSON.stringify({
@@ -74,9 +75,11 @@ const VerifyEmail = () => {
         }
       );
       const data = await res.json();
-      if (data.success === true) {
-        login(e)
+      if (!data.success) {
+        setResponse(data.message);
       }
+      setResponse("");
+      login(e);
     } catch (err) {
       setResponse("Failure in Verification!");
       setErrOccured(true);
@@ -103,7 +106,7 @@ const VerifyEmail = () => {
           alt=""
         />
       </div>
-      <div className="flex h-[37rem] w-[95%] flex-col items-center gap-3 min-[370px]:w-[22rem] px-4">
+      <div className="flex h-[37rem] w-[95%] flex-col items-center gap-3 px-4 min-[370px]:w-[22rem]">
         <div className="h-[3rem] w-[3rem] bg-[blue]"></div>
         <span className="text-sm font-bold ">Enter Confirmation Code</span>
         <span className="text-center text-sm leading-6">
@@ -119,14 +122,14 @@ const VerifyEmail = () => {
             placeholder="Confirmation Code"
             onChange={(e) => setOtp(Number(e.target.value))}
           />
-           <input
-                name="password"
-                type="password"
-                value={userPassword}
-                placeholder="Confirm Password"
-                className="h-[2.3rem] text-ellipsis rounded-lg border bg-[rgb(250,250,250)] px-2 text-xs outline-none placeholder:text-sm"
-                onChange={(e) => setUserPassword((e.target.value))}
-              />
+          <input
+            name="password"
+            type="password"
+            value={userPassword}
+            placeholder="Confirm Password"
+            className="h-[2.3rem] text-ellipsis rounded-lg border bg-[rgb(250,250,250)] px-2 text-xs outline-none placeholder:text-sm"
+            onChange={(e) => setUserPassword(e.target.value)}
+          />
           <button className="cursor-pointer text-sm font-bold text-[rgb(0,149,246)]">
             Go Back
           </button>
