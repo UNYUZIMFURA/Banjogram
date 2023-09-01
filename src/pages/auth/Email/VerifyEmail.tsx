@@ -5,6 +5,7 @@ const VerifyEmail = () => {
   const navigate = useNavigate();
   const [imageIndex, setImageIndex] = useState<number>(1);
   const [userEmail, setUserEmail] = useState("");
+  const [userPassword,setUserPassword] = useState("")
   const [response, setResponse] = useState<string>("");
   const [errorOccured, setErrOccured] = useState(false);
   const [otp, setOtp] = useState(0);
@@ -16,6 +17,40 @@ const VerifyEmail = () => {
     }
     setUserEmail(userEmail);
   }, []);
+
+  const login = async (e: React.ChangeEvent<any>) => {
+    e.preventDefault();
+    if (!userEmail || !userPassword) {
+      setErrOccured(true);
+      return setResponse("Provide both email and password!");
+    }
+    try {
+      setResponse("Logging In...");
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_ENDPOINT}/api/auth/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: userEmail,
+            password: userPassword,
+          }),
+        }
+      );
+      const data = await res.json();
+      if (!data.success) {
+        setResponse(data.message);
+      }
+      setResponse("");
+      localStorage.setItem("token", data.token);
+      navigate("/");
+    } catch (err) {
+      setResponse("Unexcepted error, Retry!");
+      setErrOccured(true);
+    }
+  };
   
   const verifyUser = async (e: React.ChangeEvent<any> ) => {
     e.preventDefault();
@@ -40,7 +75,7 @@ const VerifyEmail = () => {
       );
       const data = await res.json();
       if (data.success === true) {
-        navigate("/");
+        login(e)
       }
     } catch (err) {
       setResponse("Failure in Verification!");
@@ -84,6 +119,14 @@ const VerifyEmail = () => {
             placeholder="Confirmation Code"
             onChange={(e) => setOtp(Number(e.target.value))}
           />
+           <input
+                name="password"
+                type="password"
+                value={userPassword}
+                placeholder="Confirm Password"
+                className="h-[2.3rem] text-ellipsis border bg-[rgb(250,250,250)] px-2 text-[0.5rem] outline-none placeholder:text-xs"
+                onChange={(e) => setUserPassword((e.target.value))}
+              />
           <button className="cursor-pointer text-sm font-bold text-[rgb(0,149,246)]">
             Go Back
           </button>
