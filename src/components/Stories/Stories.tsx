@@ -12,7 +12,7 @@ const Stories = () => {
     { id: 7, userName: "neymarjr" },
     { id: 8, userName: "_rl9" },
     { id: 9, userName: "therock" },
-    { id: 0, userName: "kallehallden" },
+    { id: 10, userName: "kallehallden" },
   ];
   return (
     <div className="flex h-32 w-full items-center overflow-scroll px-2 scrollbar-hide min-[630px]:w-[40rem] outline-none">
