@@ -14,11 +14,11 @@ const PostInfo = (props) => {
         />
       </div>
       <span className="cursor-pointer text-sm font-semibold text-white">
-        mindset.therapy
+      {props.username}
       </span>
       <div className="flex items-center justify-between">
         <BsDot fill="gray" size={20} />
-        <span className="text-sm text-[gray]">41m</span>
+        <span className="text-sm text-[gray]">51m</span>
       </div>
     </div>
   );

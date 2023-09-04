@@ -9,7 +9,7 @@ import {
   SaveSvg,
 } from "../../SVGs/SvgElements";
 
-const Post = () => {
+const Post = (props) => {
   const [randomNumsArr, setRandomNumsArr] = useState<number[]>([]);
 
   function generateRand() {
@@ -23,7 +23,7 @@ const Post = () => {
 
   return (
     <div className="mt-4 flex min-h-[80vh] w-screen flex-col min-[470px]:w-[29.5rem]">
-      <PostHeader />
+      <PostHeader username={props.username}/>
       <div className="flex h-[62%] w-full cursor-pointer rounded-[0.2rem]">
         <img
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomNumsArr[0]}`}
@@ -58,7 +58,7 @@ const Post = () => {
       </div>
       <div className="flex items-center px-2 py-1 scrollbar-hide">
         <p className="text-sm text-white">
-          <span className="cursor-pointer font-bold">433_football</span>{" "}
+          <span className="cursor-pointer font-bold">{props.username}</span>{" "}
           <span className="cursor-pointer text-[#bed1e9]">@leo_messi</span> has
           moved to Inter Miami just as
           <span className="cursor-pointer text-[#bed1e9]">
