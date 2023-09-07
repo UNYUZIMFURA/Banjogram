@@ -64,9 +64,9 @@ const NavBar = () => {
             <span className="hidden text-white min-[1264px]:flex">Create</span>
           </div>
           <div className="min-[1264px] flex cursor-pointer gap-5 rounded-lg min-[1264px]:w-[90%] min-[1264px]:p-3 min-[1264px]:pl-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] ">
-            <div className="loading h-[1.7rem] w-[1.7rem] rounded-full bg-black">
+            <div className="load h-[1.7rem] w-[1.7rem] rounded-full bg-black">
               <img
-                src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
+                src={`${process.env.REACT_APP_SECONDARY_IMAGES_ENDPOINT}?random=${randomString}`}
                 alt=""
                 className="h-full w-full rounded-full"
               />

@@ -143,7 +143,7 @@ const PostingDiv = () => {
             <div className="flex items-center gap-3 py-1">
               <div className="h-8 w-8 cursor-pointer rounded-full">
                 <img
-                  src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
+                  src={`${process.env.REACT_APP_SECONDARY_IMAGES_ENDPOINT}?random=${randomString}`}
                   alt="..."
                   className="rounded-full object-cover"
                   loading="lazy"

@@ -17,7 +17,7 @@ const Story = (props: StoryProps) => {
     >
       <div className="story grid h-[4rem] min-w-[4rem] cursor-pointer place-items-center">
         <img
-          src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
+          src={`${process.env.REACT_APP_SECONDARY_IMAGES_ENDPOINT}?random=${randomString}`}
           alt="..."
           className="rounded-full"
           loading="lazy"
