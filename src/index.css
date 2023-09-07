@@ -3,13 +3,26 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: IgFont;
-    src: url("./Fonts/IgFont_2.otf");
+  font-family: IgFont;
+  src: url("./Fonts/IgFont_2.otf");
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+.loading {
+  animation: skeleton-loading 1s linear infinite alternate; 
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: rgb(38,38,38)
+  }
+
+  100% {
+    background-color: rgb(38,38,38,.5)
+  }
+}

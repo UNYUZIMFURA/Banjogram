@@ -1,10 +1,11 @@
-import "./styles/story.css";
+import "index.css";
 import React from "react";
+import "./styles/story.css";
 
 type StoryProps = {
-  id: number
-  userName: string
-}
+  id: number;
+  userName: string;
+};
 
 const Story = (props: StoryProps) => {
   const randomString = Math.random();
@@ -14,7 +15,7 @@ const Story = (props: StoryProps) => {
         props.id === 1 ? "ml-0" : "ml-4"
       } flex flex-col items-center justify-center gap-2`}
     >
-      <div className="story h-[4rem] min-w-[4rem] cursor-pointer grid place-items-center">
+      <div className="story grid h-[4rem] min-w-[4rem] cursor-pointer place-items-center">
         <img
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
           alt="..."

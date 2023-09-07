@@ -1,5 +1,5 @@
-import React from "react";
-import { useState,useEffect } from "react";
+import "index.css";
+import React, { useState, useEffect } from "react";
 import PostHeader from "./PostHeader";
 
 import {
@@ -23,26 +23,26 @@ const Post = (props) => {
 
   return (
     <div className="mt-4 flex min-h-[80vh] w-screen flex-col min-[470px]:w-[29.5rem]">
-      <PostHeader username={props.username}/>
+      <PostHeader username={props.username} />
       <div className="flex h-[62%] w-full cursor-pointer rounded-[0.2rem]">
         <img
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomNumsArr[0]}`}
           alt=""
-          className="w-full rounded-t-[0.2rem] object-cover"
+          className="loading w-full rounded-t-[0.2rem] object-cover"
           loading="lazy"
         />
       </div>
       <div className="flex w-full flex-col gap-2 p-3">
         <div className="flex items-center justify-between gap-2 py-2">
           <div className="flex gap-4">
-            <HeartSvg cursor="pointer"/>
+            <HeartSvg cursor="pointer" />
             <CommentSvg />
             <MessageSvg />
           </div>
           <SaveSvg />
         </div>
         <div className="flex items-center gap-2">
-          <div className="h-5 w-5 cursor-pointer rounded-full border">
+          <div className="loading h-5 w-5 cursor-pointer rounded-full border">
             <img
               src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomNumsArr[1]}`}
               alt=""

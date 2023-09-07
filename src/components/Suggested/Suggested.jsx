@@ -1,3 +1,4 @@
+import "index.css"
 import ProfileDetails from "./ProfileDetails";
 import SuggestedAccount from "./SuggestedAccount";
 

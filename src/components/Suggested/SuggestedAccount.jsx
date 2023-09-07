@@ -1,22 +1,28 @@
+import "index.css";
+
 const SuggestedAccount = (props) => {
   const randomString = Math.random();
   return (
-    <div className="cursor-pointer flex h-16 w-full items-center justify-between px-1">
+    <div className="flex h-16 w-full cursor-pointer items-center justify-between px-1">
       <div className="flex gap-4">
-        <div className="h-10 w-10 rounded-full cursor-pointer">
-        <img
-          src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
-          alt="..."
-          className="object-cover rounded-full"
-          loading="lazy"
-        />
+        <div className="loading h-10 w-10 cursor-pointer rounded-full">
+          <img
+            src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
+            alt="..."
+            className="rounded-full object-cover"
+            loading="lazy"
+          />
         </div>
         <div className="flex flex-col gap-1">
           <span className="text-sm font-semibold">{props.username}</span>
-          <span className="tracking-tight text-xs text-[rgb(168,168,168)] font-medium">Followed by {props.followedBy}</span>
+          <span className="text-xs font-medium tracking-tight text-[rgb(168,168,168)]">
+            Followed by {props.followedBy}
+          </span>
         </div>
       </div>
-      <span className="text-xs font-bold text-[rgb(0,149,246)] cursor-pointer">Follow</span>
+      <span className="cursor-pointer text-xs font-bold text-[rgb(0,149,246)]">
+        Follow
+      </span>
     </div>
   );
 };
