@@ -8,7 +8,7 @@ const SuggestedAccount = (props) => {
         <div className="loading h-10 w-10 cursor-pointer rounded-full">
           <img
             src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
-            alt="..."
+            alt=""
             className="rounded-full object-cover"
             loading="lazy"
           />

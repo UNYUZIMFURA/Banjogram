@@ -8,7 +8,7 @@ const ProfileDetails = () => {
         <div className="loading h-12 w-12 rounded-full">
           <img
             src={`${process.env.REACT_APP_IMAGES_ENDPOINT}?random=${randomString}`}
-            alt="..."
+            alt=""
             className="rounded-full object-cover"
             loading="lazy" 
           />

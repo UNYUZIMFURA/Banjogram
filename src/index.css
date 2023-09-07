@@ -15,6 +15,8 @@ body {
 
 .loading {
   animation: skeleton-loading 1s linear infinite alternate; 
+  /* animation-delay: 200ms; */
+  outline: none;
 }
 
 @keyframes skeleton-loading {
