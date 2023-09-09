@@ -20,7 +20,6 @@ const NavBar = () => {
     dispatch(showDiv());
   };
 
-  const randomString = Math.random();
   return (
     <div className="fixed bottom-0 h-12 w-full border-t border-[#303030] bg-black md:left-0 md:top-0 md:flex md:h-screen md:w-[4.5rem] md:flex-col md:items-center md:justify-between md:border-r md:pb-20 min-[1264px]:static min-[1264px]:w-[17.5rem] 2xl:w-[20rem]">
       <div className="flex h-full w-full items-center md:h-fit md:flex-col md:gap-8 md:py-8 min-[1264px]:items-start">
@@ -74,7 +73,7 @@ const NavBar = () => {
           <div className="min-[1264px] flex cursor-pointer gap-5 rounded-lg min-[1264px]:w-[90%] min-[1264px]:p-3 min-[1264px]:pl-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] ">
             <div className="load h-[1.7rem] w-[1.7rem] rounded-full bg-black">
               <img
-                src={`${process.env.REACT_APP_SECONDARY_IMAGES_ENDPOINT}?random=${randomString}`}
+                src={`${process.env.REACT_APP_IMAGES_ENDPOINT}/?user`}
                 alt=""
                 className="h-full w-full rounded-full"
               />

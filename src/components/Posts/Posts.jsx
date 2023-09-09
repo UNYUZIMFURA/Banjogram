@@ -2,7 +2,7 @@ import Post from "./Post";
 
 const Posts = () => {
   const posts = [
-    { id: 1, username: "leomessi", category: "Soccer", comments: "20.5K" },
+    { id: 1, username: "leomessi", category: "World Cup", comments: "20.5K" },
     {
       id: 2,
       username: "rocky_kimomo",

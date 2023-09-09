@@ -1,13 +1,12 @@
 import "index.css";
 
 const SuggestedAccount = (props) => {
-  const randomString = Math.random();
   return (
     <div className="flex h-16 w-full cursor-pointer items-center justify-between px-1">
       <div className="flex gap-4">
         <div className="load h-10 w-10 cursor-pointer rounded-full">
           <img
-            src={`${process.env.REACT_APP_SECONDARY_IMAGES_ENDPOINT}?random=${randomString}`}
+            src={`${process.env.REACT_APP_IMAGES_ENDPOINT}/?${props.category}`}
             alt=""
             className="rounded-full object-cover"
             loading="lazy"

@@ -5,10 +5,10 @@ import "./styles/story.css";
 type StoryProps = {
   id: number;
   userName: string;
+  category: string;
 };
 
 const Story = (props: StoryProps) => {
-  const randomString = Math.random();
   return (
     <div
       className={`h-full w-[4rem] ${
@@ -17,7 +17,7 @@ const Story = (props: StoryProps) => {
     >
       <div className="story grid h-[4rem] min-w-[4rem] cursor-pointer place-items-center">
         <img
-          src={`${process.env.REACT_APP_SECONDARY_IMAGES_ENDPOINT}?random=${randomString}`}
+          src={`${process.env.REACT_APP_IMAGES_ENDPOINT}/?${props.category}`}
           alt="..."
           className="rounded-full"
           loading="lazy"

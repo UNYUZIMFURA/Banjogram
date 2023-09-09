@@ -7,22 +7,27 @@ const Suggested = () => {
     {
       username: "joy_kevin_banjo",
       followedBy: "sugirayvan",
+      category: "Programmer"
     },
     {
       username: "_patriicke",
       followedBy: "edmond_gaks",
+      category: "Football"
     },
     {
       username: "__i.divin__",
       followedBy: "tresorr_officiel",
+      category: "Basketball"
     },
     {
       username: "rca.alumni",
       followedBy: "joy_kevin_banjo",
+      category: "Coding"
     },
     {
       username: "jay_loo1",
       followedBy: "manzi_cedrick",
+      category: "Musician"
     },
   ];
 
@@ -51,6 +56,7 @@ const Suggested = () => {
         {suggestedAcc.map((suggestion, index) => (
           <SuggestedAccount
             key={index}
+            category={suggestion.category}
             username={suggestion.username}
             followedBy={suggestion.followedBy}
           />

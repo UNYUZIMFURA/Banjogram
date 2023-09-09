@@ -1,5 +1,5 @@
 import "index.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PostHeader from "./PostHeader";
 import {
   HeartSvg,
@@ -10,23 +10,13 @@ import {
 
 const Post = (props) => {
   const [liked, setLiked] = useState(false);
-  const [randomNumsArr, setRandomNumsArr] = useState<number[]>([]);
-
-  function generateRand() {
-    const randomString = Math.random();
-    return randomString;
-  }
-
-  useEffect(() => {
-    setRandomNumsArr([generateRand(), generateRand()]);
-  }, []);
 
   return (
     <div className="mt-4 flex min-h-[80vh] w-screen flex-col min-[470px]:w-[29.5rem]">
       <PostHeader username={props.username} />
       <div className="load flex h-[62%] w-full cursor-pointer rounded-[0.2rem]">
         <img
-          src={`${process.env.REACT_APP_PRIMARY_IMAGES_ENDPOINT}/?${props.category}`}
+          src={`${process.env.REACT_APP_IMAGES_ENDPOINT}/?${props.category}`}
           alt=""
           className="w-full rounded-t-[0.2rem] object-cover"
           loading="lazy"
@@ -61,7 +51,7 @@ const Post = (props) => {
           {!props.likes && (
             <div className="load h-5 w-5 cursor-pointer rounded-full border">
               <img
-                src={`${process.env.REACT_APP_SECONDARY_IMAGES_ENDPOINT}?random=${randomNumsArr[1]}`}
+                src={`${process.env.REACT_APP_IMAGES_ENDPOINT}/?cristiano`}
                 alt=""
                 className="rounded-full"
                 loading="lazy"
