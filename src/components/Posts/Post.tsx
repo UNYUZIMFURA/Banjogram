@@ -78,7 +78,7 @@ const Post = (props) => {
         ) : (
           <p className="text-sm text-white">
             <span className="cursor-pointer font-bold">{props.username} </span>
-            Finally! Campeones Del Mundo!!!!!!! Vamos Argentina{" "}
+            Finally! Campeones Del Mundo!!!!!! Vamos Argentina{" "}
             <span className="cursor-pointer text-[#bed1e9]">
               {" "}
               @afaseleccion,
