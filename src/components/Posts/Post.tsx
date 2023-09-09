@@ -1,14 +1,12 @@
 import "index.css";
 import React, { useState, useEffect } from "react";
 import PostHeader from "./PostHeader";
-
-import { HeartSvg, CommentSvg, MessageSvg } from "../../SVGs/SvgElements";
+import { HeartSvg, CommentSvg, MessageSvg, SaveSvg } from "../../SVGs/SvgElements";
 
 const Post = (props) => {
-  const [randomNumsArr, setRandomNumsArr] = useState<number[]>([]);
   const [liked, setLiked] = useState(false);
-  const [saved, setSaved] = useState(false);
-
+  const [randomNumsArr, setRandomNumsArr] = useState<number[]>([]);
+ 
   function generateRand() {
     const randomString = Math.random();
     return randomString;
@@ -52,30 +50,7 @@ const Post = (props) => {
             <CommentSvg />
             <MessageSvg />
           </div>
-          <div
-            className="cursor-pointer"
-            onClick={() => setSaved((prevState) => !prevState)}
-          >
-            <svg
-              aria-label="Save"
-              cursor="pointer"
-              color={saved ? "rgb(255,48,64)" : "rgb(245,245,245)"}
-              height="24"
-              role="img"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <title>Save</title>
-              <polygon
-                fill="none"
-                points="20 21 12 13.44 4 21 4 3 20 3 20 21"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-              ></polygon>
-            </svg>
-          </div>
+          <SaveSvg/>
         </div>
         <div className="flex items-center gap-2">
           {!props.likes && (
