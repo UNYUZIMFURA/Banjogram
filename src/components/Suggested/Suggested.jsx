@@ -7,27 +7,27 @@ const Suggested = () => {
     {
       username: "joy_kevin_banjo",
       followedBy: "sugirayvan",
-      category: "Programmer"
+      category: "Programmer",
     },
     {
       username: "_patriicke",
       followedBy: "edmond_gaks",
-      category: "Football"
+      category: "Football",
     },
     {
       username: "__i.divin__",
       followedBy: "tresorr_officiel",
-      category: "Basketball"
+      category: "Basketball",
     },
     {
       username: "rca.alumni",
       followedBy: "joy_kevin_banjo",
-      category: "Coding"
+      category: "Coding",
     },
     {
       username: "jay_loo1",
       followedBy: "manzi_cedrick",
-      category: "Musician"
+      category: "Musician",
     },
   ];
 

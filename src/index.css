@@ -14,16 +14,16 @@ body {
 }
 
 .load {
-  animation: skeleton-loading 1s linear infinite alternate; 
+  animation: skeleton-loading 1s linear infinite alternate;
   outline: none;
 }
 
 @keyframes skeleton-loading {
   0% {
-    background-color: rgb(38,38,38)
+    background-color: rgb(38, 38, 38);
   }
 
   100% {
-    background-color: rgb(38,38,38,.5)
+    background-color: rgb(38, 38, 38, 0.5);
   }
 }

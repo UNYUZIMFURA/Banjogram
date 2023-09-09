@@ -7,7 +7,7 @@ const PostInfo = (props) => {
     <div className="flex h-full items-center justify-center gap-2">
       <div className="story flex h-[3rem] w-[3rem] cursor-pointer">
         <img
-          src={`https://picsum.photos/400/400?random=${randomString}`}
+          src={`https://picsum.photos/600/600?random=${randomString}`}
           alt="..."
           className="rounded-full object-cover"
           loading="lazy"
