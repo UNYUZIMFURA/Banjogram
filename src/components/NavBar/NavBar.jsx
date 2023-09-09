@@ -1,5 +1,13 @@
-import "index.css"
-import { HomeSvg, SearchSvg, ExploreSvg, ReelsSvg, MessageSvg, HeartSvg, CreateSvg } from "../../SVGs/SvgElements";
+import "index.css";
+import {
+  HomeSvg,
+  SearchSvg,
+  ExploreSvg,
+  ReelsSvg,
+  MessageSvg,
+  HeartSvg,
+  CreateSvg,
+} from "../../SVGs/SvgElements";
 import { BsInstagram } from "react-icons/bs";
 import { RiMenuFill } from "react-icons/ri";
 import { useDispatch } from "react-redux";
@@ -14,7 +22,7 @@ const NavBar = () => {
 
   const randomString = Math.random();
   return (
-    <div className="bg-black fixed bottom-0 h-12 w-full border-t border-[#303030] md:left-0 md:top-0 md:flex md:h-screen md:w-[4.5rem] md:flex-col md:items-center md:justify-between md:border-r md:pb-20 min-[1264px]:static min-[1264px]:w-[17.5rem] 2xl:w-[20rem]">
+    <div className="fixed bottom-0 h-12 w-full border-t border-[#303030] bg-black md:left-0 md:top-0 md:flex md:h-screen md:w-[4.5rem] md:flex-col md:items-center md:justify-between md:border-r md:pb-20 min-[1264px]:static min-[1264px]:w-[17.5rem] 2xl:w-[20rem]">
       <div className="flex h-full w-full items-center md:h-fit md:flex-col md:gap-8 md:py-8 min-[1264px]:items-start">
         <BsInstagram
           size={23}
@@ -22,7 +30,7 @@ const NavBar = () => {
           cursor="pointer"
           className="hidden md:flex min-[1264px]:hidden"
         />
-        <span className="hidden cursor-pointer font-igfont font-light text-[1.8rem] text-white min-[1264px]:ml-8 min-[1264px]:flex">
+        <span className="hidden cursor-pointer font-igfont text-[1.8rem] font-light text-white min-[1264px]:ml-8 min-[1264px]:flex">
           Banjogram
         </span>
         <div className="flex h-full w-full items-center justify-around md:h-fit md:flex-col md:justify-center md:gap-10 min-[1264px]:items-center min-[1264px]:gap-4">

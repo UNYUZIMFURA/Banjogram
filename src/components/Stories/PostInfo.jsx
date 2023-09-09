@@ -14,7 +14,7 @@ const PostInfo = (props) => {
         />
       </div>
       <span className="cursor-pointer text-sm font-semibold text-white">
-      {props.username}
+        {props.username}
       </span>
       <div className="flex items-center justify-between">
         <BsDot fill="gray" size={20} />

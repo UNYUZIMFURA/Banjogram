@@ -15,7 +15,7 @@ const Stories = () => {
     { id: 10, userName: "kallehallden" },
   ];
   return (
-    <div className="flex h-32 w-full items-center overflow-scroll px-2 scrollbar-hide min-[630px]:w-[40rem] outline-none">
+    <div className="flex h-32 w-full items-center overflow-scroll px-2 outline-none scrollbar-hide min-[630px]:w-[40rem]">
       {stories.map((item) => (
         <Story id={item.id} key={item.id} userName={item.userName} />
       ))}

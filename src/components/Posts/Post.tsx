@@ -1,12 +1,17 @@
 import "index.css";
 import React, { useState, useEffect } from "react";
 import PostHeader from "./PostHeader";
-import { HeartSvg, CommentSvg, MessageSvg, SaveSvg } from "../../SVGs/SvgElements";
+import {
+  HeartSvg,
+  CommentSvg,
+  MessageSvg,
+  SaveSvg,
+} from "../../SVGs/SvgElements";
 
 const Post = (props) => {
   const [liked, setLiked] = useState(false);
   const [randomNumsArr, setRandomNumsArr] = useState<number[]>([]);
- 
+
   function generateRand() {
     const randomString = Math.random();
     return randomString;
@@ -50,7 +55,7 @@ const Post = (props) => {
             <CommentSvg />
             <MessageSvg />
           </div>
-          <SaveSvg/>
+          <SaveSvg />
         </div>
         <div className="flex items-center gap-2">
           {!props.likes && (
@@ -100,7 +105,8 @@ const Post = (props) => {
         </span>
         <p className="flex items-center justify-between text-sm">
           <span>
-            <span className="font-bold">joy_kevin</span> The images make it look real!
+            <span className="font-bold">joy_kevin</span> The images make it look
+            real!
           </span>
           <HeartSvg />
         </p>
