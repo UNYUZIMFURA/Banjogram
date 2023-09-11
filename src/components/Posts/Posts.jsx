@@ -73,7 +73,7 @@ const Posts = () => {
       username: "bkarenarw",
       caption:
         "Heads Up!!! Nigerian Superstar davido will be performing this Saturday!",
-      category: "Live Performance",
+      category: "Performance",
       likes: "9.2K",
       comments: "5,500",
     },
