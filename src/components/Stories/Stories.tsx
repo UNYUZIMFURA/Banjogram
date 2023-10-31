@@ -5,7 +5,7 @@ const Stories = () => {
   const stories = [
     { id: 1, userName: "element_eleeeh", category: "Music" },
     { id: 2, userName: "k.mbappe", category: "Football" },
-    { id: 3, userName: "paulkagame", category: "Politics" },
+    { id: 3, userName: "paulkagame", category: "President" },
     { id: 4, userName: "rocky_kimomo", category: "Cinema" },
     { id: 5, userName: "leo_messi", category: "World Cup" },
     { id: 6, userName: "cristiano", category: "Champions League" },
