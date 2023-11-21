@@ -12,9 +12,9 @@ const Post = (props) => {
   const [liked, setLiked] = useState(false);
 
   return (
-    <div className="mt-4 flex min-h-[80vh] w-screen flex-col min-[470px]:w-[29.5rem]">
+    <div className="mt-4 flex w-full flex-col min-[470px]:w-[29.5rem]">
       <PostHeader username={props.username} />
-      <div className="load flex h-[62%] w-full cursor-pointer rounded-[0.2rem]">
+      <div className="load h-[28rem] flex w-full cursor-pointer rounded-[0.2rem] md:h-[30rem]">
         <img
           src={`${process.env.REACT_APP_IMAGES_ENDPOINT}/?${props.category}`}
           alt=""

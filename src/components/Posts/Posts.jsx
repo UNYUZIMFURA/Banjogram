@@ -79,7 +79,7 @@ const Posts = () => {
     },
   ];
   return (
-    <div className="flex h-[70vh] w-full flex-col items-center gap-12 md:h-[78vh]">
+    <div className="flex h-[70vh] w-full flex-col items-center gap-12 md:h-[78vh] px-1">
       {posts.map((post) => (
         <Post
           id={post.id}
