@@ -9,7 +9,6 @@ const PostingDiv = () => {
   const [windowWidth, setWindowWidth] = useState(0);
   const [image, setImage] = useState("");
   const [nextClicked, setNextClicked] = useState(false);
-  const [caption, setCaption] = useState("");
 
   useEffect(() => {
     if (nextClicked) {
@@ -42,10 +41,6 @@ const PostingDiv = () => {
       window.removeEventListener("resize", handleResize);
     };
   });
-
-  useEffect(() => {
-    console.log(caption);
-  }, [caption]);
 
   const closeDiv = () => {
     dispatch(hideDiv());
@@ -86,7 +81,7 @@ const PostingDiv = () => {
       id="upload-div-holder"
     >
       <form
-        className="flex h-[48vh] w-full flex-col justify-between rounded-xl bg-[#272727] min-[350px]:w-[21.7rem] min-[720px]:h-[55vw] min-[720px]:w-[50%] min-[970px]:h-[40rem] min-[970px]:w-[37rem] min-[1905px]:h-[48rem] min-[1905px]:w-[45rem]"
+        className="flex h-[23rem] w-full flex-col justify-between rounded-xl bg-[#272727] min-[350px]:w-[21.7rem] min-[720px]:h-[55vw] min-[720px]:w-[50%] min-[970px]:h-[40rem] min-[970px]:w-[37rem] min-[1905px]:h-[48rem] min-[1905px]:w-[45rem]"
         id="posting-div"
       >
         <div className="flex h-[2.8rem] w-full items-center justify-between border-b border-[#3E4042] px-4 font-semibold text-white">
@@ -152,7 +147,6 @@ const PostingDiv = () => {
             <textarea
               className="h-[10rem] w-full resize-none rounded-lg border border-[#3E4042] bg-[#272727] p-4 text-white outline-none"
               placeholder="Write a caption..."
-              onChange={(e) => setCaption(e.target.value)}
             />
           </div>
         </div>
