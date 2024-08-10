@@ -2,7 +2,6 @@ import "./styles/story.css";
 import { BsDot } from "react-icons/bs";
 import { v4 } from "uuid";
 
-
 const PostInfo = (props) => {
   return (
     <div className="flex h-full items-center justify-center gap-2">

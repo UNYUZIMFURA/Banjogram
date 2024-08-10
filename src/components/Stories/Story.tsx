@@ -3,7 +3,6 @@ import React from "react";
 import "./styles/story.css";
 import { v4 } from "uuid";
 
-
 type StoryProps = {
   id: number;
   userName: string;
