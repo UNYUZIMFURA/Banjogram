@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { hideDiv } from "../../redux/actions";
 import { VideoImgSvg } from "../../SVGs/SvgElements";
 import { FiArrowLeft } from "react-icons/fi";
+import { v4 } from "uuid";
 
 const PostingDiv = () => {
   const dispatch = useDispatch();
@@ -136,7 +137,7 @@ const PostingDiv = () => {
             <div className="flex items-center gap-3 py-1">
               <div className="h-8 w-8 cursor-pointer rounded-full">
                 <img
-                  src={`${process.env.REACT_APP_IMAGES_ENDPOINT}/?fashion`}
+                  src={`https://picsum.photos/600/600?random=${v4()}`}
                   alt="..."
                   className="rounded-full object-cover"
                   loading="lazy"

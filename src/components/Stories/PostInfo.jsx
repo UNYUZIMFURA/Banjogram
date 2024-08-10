@@ -1,13 +1,14 @@
 import "./styles/story.css";
 import { BsDot } from "react-icons/bs";
+import { v4 } from "uuid";
+
 
 const PostInfo = (props) => {
-  const randomString = Math.random();
   return (
     <div className="flex h-full items-center justify-center gap-2">
       <div className="story flex h-[3rem] w-[3rem] cursor-pointer">
         <img
-          src={`${process.env.REACT_APP_IMAGES_ENDPOINT}/?beach`}
+          src={`https://picsum.photos/600/600?random=${v4()}`}
           alt="..."
           className="rounded-full object-cover"
           loading="lazy"

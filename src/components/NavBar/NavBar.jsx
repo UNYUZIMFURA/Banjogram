@@ -12,6 +12,8 @@ import { BsInstagram } from "react-icons/bs";
 import { RiMenuFill } from "react-icons/ri";
 import { useDispatch } from "react-redux";
 import { showDiv } from "../../redux/actions";
+import { v4 } from "uuid";
+
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -73,7 +75,7 @@ const NavBar = () => {
           <div className="min-[1264px] flex cursor-pointer gap-5 rounded-lg min-[1264px]:w-[90%] min-[1264px]:p-3 min-[1264px]:pl-4 min-[1264px]:hover:bg-[rgba(255,255,255,.1)] ">
             <div className="load h-[1.7rem] w-[1.7rem] rounded-full bg-black">
               <img
-                src={`${process.env.REACT_APP_IMAGES_ENDPOINT}/?user`}
+                src={`https://picsum.photos/600/600?random=${v4()}`}
                 alt=""
                 className="h-full w-full rounded-full"
               />

@@ -1,4 +1,5 @@
 import "index.css";
+import { v4 } from "uuid";
 
 const ProfileDetails = () => {
   return (
@@ -6,7 +7,7 @@ const ProfileDetails = () => {
       <div className="flex gap-4">
         <div className="load h-12 w-12 rounded-full">
           <img
-            src={`${process.env.REACT_APP_IMAGES_ENDPOINT}/?computer`}
+            src={`https://picsum.photos/600/600?random=${v4()}`}
             alt=""
             className="rounded-full object-cover"
             loading="lazy"

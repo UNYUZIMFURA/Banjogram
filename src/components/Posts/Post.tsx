@@ -7,6 +7,7 @@ import {
   MessageSvg,
   SaveSvg,
 } from "../../SVGs/SvgElements";
+import { v4 } from "uuid";
 
 const Post = (props) => {
   const [liked, setLiked] = useState(false);
@@ -16,7 +17,7 @@ const Post = (props) => {
       <PostHeader username={props.username} />
       <div className="load h-[28rem] flex w-full cursor-pointer rounded-[0.2rem] md:h-[30rem]">
         <img
-          src={`${process.env.REACT_APP_IMAGES_ENDPOINT}/?${props.category}`}
+          src={`https://picsum.photos/600/600?random=${v4()}`}
           alt=""
           className="w-full rounded-t-[0.2rem] object-cover"
           loading="lazy"
@@ -51,7 +52,7 @@ const Post = (props) => {
           {!props.likes && (
             <div className="load h-5 w-5 cursor-pointer rounded-full border">
               <img
-                src={`${process.env.REACT_APP_IMAGES_ENDPOINT}/?cristiano`}
+                src={`https://picsum.photos/400/400?random=${v4()}`}
                 alt=""
                 className="rounded-full"
                 loading="lazy"

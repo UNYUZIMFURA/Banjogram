@@ -1,6 +1,8 @@
 import "index.css";
 import React from "react";
 import "./styles/story.css";
+import { v4 } from "uuid";
+
 
 type StoryProps = {
   id: number;
@@ -17,7 +19,7 @@ const Story = (props: StoryProps) => {
     >
       <div className="story grid h-[4rem] min-w-[4rem] cursor-pointer place-items-center">
         <img
-          src={`${process.env.REACT_APP_IMAGES_ENDPOINT}/?${props.category}`}
+          src={`https://picsum.photos/600/600?random=${v4()}`}
           alt="..."
           className="rounded-full"
           loading="lazy"
