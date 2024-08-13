@@ -7,7 +7,7 @@ const SuggestedAccount = (props) => {
       <div className="flex gap-4">
         <div className="load h-10 w-10 cursor-pointer rounded-full">
           <img
-            src={`https://picsum.photos/600/6p00?random=${v4()}`}
+            src={`https://picsum.photos/600/600?random=${v4()}`}
             alt=""
             className="rounded-full object-cover"
             loading="lazy"
