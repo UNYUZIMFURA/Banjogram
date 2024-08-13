@@ -15,7 +15,7 @@ const SuggestedAccount = (props) => {
         </div>
         <div className="flex flex-col gap-1">
           <span className="text-sm font-semibold">{props.username}</span>
-          <span className="text-xs font-medium tracking-tight text-[rgb(15,14,14)]">
+          <span className="text-xs font-medium tracking-tight text-[rgb(168,168,168)]">
             Followed by {props.followedBy}
           </span>
         </div>
